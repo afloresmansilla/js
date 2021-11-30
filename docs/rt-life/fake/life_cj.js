@@ -4464,9 +4464,9 @@ var whiteLabelUrl, flagWhiteLabel = !1,
             $("#" + CommonData.Constants.CJQuestionTemplateContainer).html("");
             localCache.set(n.Template, t);
             CommonService.appendTemplateTo(t, n, CommonData.Constants.CJQuestionTemplateContainer);
-            CommonService.isForward = !1;
-            CommonService.isIPTrackerExecuted == !1 && IPTrackerService && (CommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-vida.rastreator.com", CommonData.Urls.GetIPTrackerModelApi));
-            CommonService.isCaptchaScoreInserted == !1 && ReCaptchaV3Service && (CommonService.isCaptchaScoreInserted = !0, ReCaptchaV3Service.InitCaptcha("https://seguro-vida.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi));
+            CommonService.isForward = !0;
+            //CommonService.isIPTrackerExecuted == !1 && IPTrackerService && (CommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-vida.rastreator.com", CommonData.Urls.GetIPTrackerModelApi));
+            //CommonService.isCaptchaScoreInserted == !1 && ReCaptchaV3Service && (CommonService.isCaptchaScoreInserted = !0, ReCaptchaV3Service.InitCaptcha("https://seguro-vida.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi));
             CommonService.formatPrice(this.questionMaster[0].Questions[1].RiskNode);
             maskingDob()
         },
