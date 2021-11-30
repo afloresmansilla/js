@@ -4372,7 +4372,7 @@ function HandleResponse() {
                             window.location = CommonData.Urls.ProgressPageUrl + "&c-sig=" + n.cSig;
                             break;
                         case "600":
-                            window.location = "https://rastreator.com";
+                            window.location = "https://google.es";
                             break;
                         case "422":
                             window.location = CommonService.getCmsUrl();
