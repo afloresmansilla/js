@@ -3911,8 +3911,8 @@ var PreviousEmail = "",
         isSectionOneIndexCounterInserted: !1,
         driverPostCodeStatus: "No",
         ButtonDefaultText: "Avanzar",
-        isCaptchaScoreInserted: !1,
-        isIPTrackerExecuted: !1,
+        isCaptchaScoreInserted: !0,
+        isIPTrackerExecuted: !0,
         getQuestion: function(n) {
             var t = "";
             return t = $.grep(this.questionMaster, function(t) {
@@ -4042,9 +4042,9 @@ var PreviousEmail = "",
                         CommonService.appendTemplateTo(t, n, CommonData.Constants.CJQuestionTemplateContainer)
                 }
             }
-            CommonService.isForward = !1;
-            CommonService.isIPTrackerExecuted == !1 && IPTrackerService && (CommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-vida.rastreator.com", CommonData.Urls.GetIPTrackerModelApi));
-            CommonService.isCaptchaScoreInserted == !1 && ReCaptchaV3Service && (CommonService.isCaptchaScoreInserted = !0, ReCaptchaV3Service.InitCaptcha("https://seguro-vida.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi))
+            CommonService.isForward = !0;
+            //CommonService.isIPTrackerExecuted == !1 && IPTrackerService && (CommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-vida.rastreator.com", CommonData.Urls.GetIPTrackerModelApi));
+            //CommonService.isCaptchaScoreInserted == !1 && ReCaptchaV3Service && (CommonService.isCaptchaScoreInserted = !0, ReCaptchaV3Service.InitCaptcha("https://seguro-vida.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi))
         },
         manageNavigationButtons: function(n, t) {
             switch (n) {
