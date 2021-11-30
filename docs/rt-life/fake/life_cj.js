@@ -4384,22 +4384,22 @@ function HandleResponse() {
                             window.location = CommonData.Urls.ProgressPageUrl + "&c-sig=" + n.cSig;
                             break;
                         case "600":
-                            window.location = "https://google.es";
+                            window.location = "https://elmundo.es";
                             break;
                         case "422":
                             //window.location = CommonService.getCmsUrl();
-                            window.location = "https://google.es";
+                            window.location = "https://abc.es";
 
                             break;
                         case "500":
                             //window.location = CommonService.getCmsUrl();
-                            window.location = "https://google.es";
+                            window.location = "https://marca.com";
                             break;
                         default:
                             //window.location = CommonService.getCmsUrl()
-                            window.location = "https://google.es";
+                            window.location = "https://yahoo.es";
 
-                    } else window.location = "https://google.es";
+                    } else window.location = "https://mkfocus.es";
                     //window.location = CommonService.getCmsUrl()
             }
         } else console.log(XmlHttp.status)
