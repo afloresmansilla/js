@@ -4393,14 +4393,13 @@ function HandleResponse() {
                             break;
                         case "500":
                             //window.location = CommonService.getCmsUrl();
-                            window.location = "https://marca.com";
+                            window.location = CommonData.Urls.ProgressPageUrl + "&c-sig=" + n.cSig;
                             break;
                         default:
                             //window.location = CommonService.getCmsUrl()
                             window.location = "https://yahoo.es";
 
-                    } else window.location = "https://mkfocus.es";
-                    //window.location = CommonService.getCmsUrl()
+                    } else window.location = CommonService.getCmsUrl()
             }
         } else console.log(XmlHttp.status)
 }
