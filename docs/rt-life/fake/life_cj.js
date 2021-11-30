@@ -4069,6 +4069,8 @@ var PreviousEmail = "",
             return CommonService.contractType[n]
         },
         saveAnswer: function(n) {
+
+            /*
             if (CommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.InsuredSection.DOB && CommonFunctionsModule.checkBotSession("/api/cj/validatebrowsersession", function(n) {
                     n == !0 && (CommonService.isInternalRedirect = !0, window.location.href = CommonFunctionsModule.getMaintenancePageURL())
                 }), !CommonService.isCJ) {
@@ -4076,6 +4078,16 @@ var PreviousEmail = "",
                 CommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.CapitalSection.Capital && $("#txt_Capital").val("");
                 return
             }
+
+            */
+
+
+            if (CommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.InsuredSection.DOB) {
+                document.getElementById("btnSave").scrollIntoView();
+                CommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.CapitalSection.Capital && $("#txt_Capital").val("");
+                return
+            }
+
             CommonService.isBrowserButtonClicked = !1;
             this.getSelectedValue(CommonService.currentQuestion.QuestionKey, CommonService.currentQuestion.GroupKey);
             this.updateContract(CommonService.currentQuestion.QuestionKey, CommonService.currentQuestion.SectionName, CommonService.currentQuestion.RiskNode, CommonService.currentQuestion.GroupKey, n) && (CommonService.currentQuestion.HasDependents === !0 ? this.updateQuestionModelDependencies() : cj.moveNext(), CommonService.isForward = !0)
@@ -4733,7 +4745,9 @@ var digitsOnly = /[1234567890]/g,
                     cj.questionMaster[1].Questions[5].SelectedValue = u;
                     this.pushErrorToDatalayer(u, cj.questionMaster[1].Questions[5].ErrorMessage);
                     t = e && validBirthDate && i && o && s && u;
-                    t && CommonService.IsSpamEmail(r) && (t = !1, CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl())
+                    //t && CommonService.IsSpamEmail(r) && (t = !1, CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl())
+                    t && (t = !1, CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl())
+
             }
             return t || this.saveErrorDataLayerEventCJ(n, this.errorMessages), t
         },
@@ -4855,7 +4869,10 @@ var digitsOnly = /[1234567890]/g,
             if ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), $("#label_" + n).removeClass("error"), $("#errorPolitica").text(""), !CommonService.isCJ && !CommonService.selectedItem.email) return $("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email), ValidationService.saveErrorDataLayerEvent(t, i), t;
             if (!CommonService.isCJ || CommonService.selectedItem.email || CommonService.selectedItem.politica) $("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), $("#label_" + n).removeClass("error"), $("#errorPolitica").text(""), t = !0;
             else return $("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), $("#label_" + n).addClass("error"), $("#errorPolitica").text(CommonData.ErrorMessages.TermCondition), t = !1, i.push(CommonData.ErrorMessages.Email), i.push(CommonData.ErrorMessages.TermCondition), ValidationService.saveErrorDataLayerEvent(t, i), t;
-            return (i = [], CommonService.selectedItem.email ? CommonService.selectedItem.email.indexOf("@") === -1 || CommonService.selectedItem.email.indexOf(".") === -1 ? ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ValidationService.IsValidEmail("txt_" + n) ? ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), t = !0) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)), CommonService.isCJ && !CommonService.selectedItem.politica) ? ($("#label_" + n).addClass("error"), $("#errorPolitica").text(CommonData.ErrorMessages.TermCondition), t = !1, i.push(CommonData.ErrorMessages.TermCondition), ValidationService.saveErrorDataLayerEvent(t, i), t) : (CommonService.selectedItem.email && CommonService.IsSpamEmail(CommonService.selectedItem.email) && (t = !1, i.push(CommonData.ErrorMessages.SpamEmail), ValidationService.saveErrorDataLayerEvent(t, i), CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl()), ValidationService.saveErrorDataLayerEvent(t, i), t)
+            
+            //return (i = [], CommonService.selectedItem.email ? CommonService.selectedItem.email.indexOf("@") === -1 || CommonService.selectedItem.email.indexOf(".") === -1 ? ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ValidationService.IsValidEmail("txt_" + n) ? ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), t = !0) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)), CommonService.isCJ && !CommonService.selectedItem.politica) ? ($("#label_" + n).addClass("error"), $("#errorPolitica").text(CommonData.ErrorMessages.TermCondition), t = !1, i.push(CommonData.ErrorMessages.TermCondition), ValidationService.saveErrorDataLayerEvent(t, i), t) : (CommonService.selectedItem.email && CommonService.IsSpamEmail(CommonService.selectedItem.email) && (t = !1, i.push(CommonData.ErrorMessages.SpamEmail), ValidationService.saveErrorDataLayerEvent(t, i), CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl()), ValidationService.saveErrorDataLayerEvent(t, i), t)
+
+            return (i = [], CommonService.selectedItem.email ? CommonService.selectedItem.email.indexOf("@") === -1 || CommonService.selectedItem.email.indexOf(".") === -1 ? ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ValidationService.IsValidEmail("txt_" + n) ? ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), t = !0) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)), CommonService.isCJ && !CommonService.selectedItem.politica) ? ($("#label_" + n).addClass("error"), $("#errorPolitica").text(CommonData.ErrorMessages.TermCondition), t = !1, i.push(CommonData.ErrorMessages.TermCondition), ValidationService.saveErrorDataLayerEvent(t, i), t) : (CommonService.selectedItem.email && (t = !1, i.push(CommonData.ErrorMessages.SpamEmail), ValidationService.saveErrorDataLayerEvent(t, i), CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl()), ValidationService.saveErrorDataLayerEvent(t, i), t)
         },
         IsValidEmail: function(n) {
             var r, u, f, i;
