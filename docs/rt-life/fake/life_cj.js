@@ -3891,7 +3891,7 @@ function code2city(n) {
 var PreviousEmail = "",
     Previousphone = "",
     CommonService = {
-        isBrowserButtonClicked: !0,
+        isBrowserButtonClicked: !1,
         maxQuestionReached: "",
         currentQuestion: {},
         questionMaster: {},
