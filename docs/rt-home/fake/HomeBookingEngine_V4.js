@@ -4676,7 +4676,8 @@ var PreviousEmail = "",
         previousSection: "",
         dataLayerEvent: {},
         isIPTrackerExecuted: !1,
-        isCaptchaRequiredForAutomation: !1,
+        //Esto lo he cambiado
+        isCaptchaRequiredForAutomation: !0,
         getQuestion: function(n) {
             var t = "";
             return t = $.grep(this.questionMaster, function(t) {
@@ -5731,7 +5732,7 @@ var digitsOnly = /[1234567890]/g,
             t && $("#" + t).addClass("error");
             $(".error").removeClass("hidden");
             $("#errorContainer").text(n)
-        },
+        },/*
         hideError: function(n) {
             n && $("#" + n).removeClass("error");
             $("#errorContainer").text("");
