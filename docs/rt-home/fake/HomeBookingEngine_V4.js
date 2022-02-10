@@ -4336,6 +4336,8 @@ function hideCaptchaIcon() {
         n != null && n.length > 0 && n[0].parentElement != null && (n[0].parentElement.hidden = !0)
     }, 2e3)
 }
+
+/*
 var ReCaptchaV3Service = ReCaptchaV3Service || {};
 ReCaptchaV3Service.InitCaptcha = function(n, t) {
     var i = n + t;
@@ -4350,6 +4352,9 @@ ReCaptchaV3Service.InitCaptcha = function(n, t) {
     });
     hideCaptchaIcon()
 };
+
+*/
+
 var upaCommonService = {
     isAlreadyLogedin: !1,
     isUserLoggedIn: !1,
