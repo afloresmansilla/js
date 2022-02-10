@@ -5734,7 +5734,7 @@ var digitsOnly = /[1234567890]/g,
             t && $("#" + t).addClass("error");
             $(".error").removeClass("hidden");
             $("#errorContainer").text(n)
-        },/*
+        },
         hideError: function(n) {
             n && $("#" + n).removeClass("error");
             $("#errorContainer").text("");
@@ -5808,13 +5808,12 @@ var digitsOnly = /[1234567890]/g,
                     i = HomeValidationService.validateHabitualPostalCode(t);
                     break;
 
-                /*
                 case CommonData.QuestionKeys.OtherSection.Email:
                     i = HomeValidationService.validateVCEmailQuestion(t);
                     break;
                 case CommonData.QuestionKeys.OtherSection.Phone:
                     i = HomeValidationService.validatePhone(t)
-                */
+                
             }
             return i
         },
