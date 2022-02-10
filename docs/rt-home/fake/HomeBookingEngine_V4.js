@@ -4888,7 +4888,13 @@ var PreviousEmail = "",
             }, 2e3) : HomeCommonService.isCJ && upaCommonService.isUPAEnable && n[0].QuestionKey != CommonData.QuestionKeys.OtherSection.Email ? HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent) : HomeCommonService.isCJ && !upaCommonService.isUPAEnable ? HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent) : HomeCommonService.isCJ || HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent);
             HomeCommonService.selectedItem = {};
             c || (this.currentQuestion = n[n.length - 1]);
-            HomeCommonService.isCJ && (HomeCommonService.isBrowserButtonClicked || cj.manageHash(a), progressBar.updateProgress(n[0].QuestionNumber), HomeCommonService.ElementScrollIntoView("cj-wrapper"), a === 1 && document.readyState === "interactive" && $("head").append('<link  href="' + CommonData.Urls.NEW_COOKIE_CSS + '" rel="stylesheet" type="text/css" />'), a === 2 && ReCaptchaV3Service && ReCaptchaV3Service.InitCaptcha("https://seguro-hogar.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi), HomeCommonService.isIPTrackerExecuted == !1 && IPTrackerService && (HomeCommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-hogar.rastreator.com", CommonData.Urls.GetIPTrackerModelApi)), upaCommonService.showHideUPALoginIcon());
+
+
+            //Esto lo he quitado
+            //HomeCommonService.isCJ && (HomeCommonService.isBrowserButtonClicked || cj.manageHash(a), progressBar.updateProgress(n[0].QuestionNumber), HomeCommonService.ElementScrollIntoView("cj-wrapper"), a === 1 && document.readyState === "interactive" && $("head").append('<link  href="' + CommonData.Urls.NEW_COOKIE_CSS + '" rel="stylesheet" type="text/css" />'), a === 2 && ReCaptchaV3Service && ReCaptchaV3Service.InitCaptcha("https://seguro-hogar.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi), HomeCommonService.isIPTrackerExecuted == !1 && IPTrackerService && (HomeCommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-hogar.rastreator.com", CommonData.Urls.GetIPTrackerModelApi)), upaCommonService.showHideUPALoginIcon());
+
+
+            HomeCommonService.isCJ && (HomeCommonService.isBrowserButtonClicked || cj.manageHash(a), progressBar.updateProgress(n[0].QuestionNumber), HomeCommonService.ElementScrollIntoView("cj-wrapper"), a === 1 && document.readyState === "interactive" && $("head").append('<link  href="' + CommonData.Urls.NEW_COOKIE_CSS + '" rel="stylesheet" type="text/css" />'), a === 2, HomeCommonService.isIPTrackerExecuted == !1 && IPTrackerService && (HomeCommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-hogar.rastreator.com", CommonData.Urls.GetIPTrackerModelApi)), upaCommonService.showHideUPALoginIcon());
             maskingDob()
         },
         answerQuestion: function() {},
