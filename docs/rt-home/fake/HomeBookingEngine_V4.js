@@ -4676,8 +4676,7 @@ var PreviousEmail = "",
         previousSection: "",
         dataLayerEvent: {},
         isIPTrackerExecuted: !1,
-        //Esto lo he cambiado
-        isCaptchaRequiredForAutomation: !0,
+        isCaptchaRequiredForAutomation: !1,
         getQuestion: function(n) {
             var t = "";
             return t = $.grep(this.questionMaster, function(t) {
@@ -4832,7 +4831,10 @@ var PreviousEmail = "",
                         i = i + "&hidSelectedInsuranceStartDateDayValue=" + k.getDate().toString();
                         i = i + "&hidSelectedInsuranceStartDateMonthValue=" + (k.getMonth() + 1).toString();
                         i = i + "&hidSelectedInsuranceStartDateYearValue=" + k.getFullYear().toString();
-                        HomeCommonService.isCJ ? (d = HomeCommonService.captchaRequired(i), n[0].IsCaptchaRequired = d, HomeCommonService.isCaptchaRequiredForAutomation = d) : n[0].IsCaptchaRequired = !1;
+
+                        //Esto lo he cambiado
+                        //HomeCommonService.isCJ ? (d = HomeCommonService.captchaRequired(i), n[0].IsCaptchaRequired = d, HomeCommonService.isCaptchaRequiredForAutomation = d) : n[0].IsCaptchaRequired = !1;
+                        
                         g = $.trim($("#hidEmailIdFromSSO").val());
                         g && (n[0].SelectedValue = g);
                         n[0].SelectedValue && (n[0].SelectedValue.indexOf("*") < 0 && (PreviousEmail = n[0].SelectedValue), nt = "", nt = EmailMask(n[0].SelectedValue), n[0].SelectedValue = nt, n[0].Title += " (Utilizaste éste en la anterior comparativa. Si quieres, puedes cambiarlo)");
