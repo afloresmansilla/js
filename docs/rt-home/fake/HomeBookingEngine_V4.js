@@ -4298,6 +4298,8 @@ var CommonFunctionsModule = {
     }
 };
 
+
+/*
 function OnCaptchaSuccess(n) {
     var t = typeof n == "string" ? JSON.parse(n) : n;
     OnCaptchaReady(t)
@@ -4337,7 +4339,6 @@ function hideCaptchaIcon() {
     }, 2e3)
 }
 
-/*
 var ReCaptchaV3Service = ReCaptchaV3Service || {};
 ReCaptchaV3Service.InitCaptcha = function(n, t) {
     var i = n + t;
@@ -5803,11 +5804,14 @@ var digitsOnly = /[1234567890]/g,
                 case CommonData.QuestionKeys.PolicyHolderSection.HabitualPostalCode:
                     i = HomeValidationService.validateHabitualPostalCode(t);
                     break;
+
+                /*
                 case CommonData.QuestionKeys.OtherSection.Email:
                     i = HomeValidationService.validateVCEmailQuestion(t);
                     break;
                 case CommonData.QuestionKeys.OtherSection.Phone:
                     i = HomeValidationService.validatePhone(t)
+                */
             }
             return i
         },
