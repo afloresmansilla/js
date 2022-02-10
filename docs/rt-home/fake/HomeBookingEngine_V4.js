@@ -4360,7 +4360,7 @@ var upaCommonService = {
     isAlreadyLogedin: !1,
     isUserLoggedIn: !1,
     isMobileDevice: !1,
-    isUPAEnable: !1,
+    isUPAEnable: !0,
     isErrorInLoginOrRegistrationInUPA: !1,
     isUPASocialUser: !1,
     loggedInUserEmail: "",
