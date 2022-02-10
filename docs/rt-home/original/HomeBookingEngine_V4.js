@@ -3595,226 +3595,47 @@
         }
     })
 })(jQuery);
-var CommonData = {
-    Urls: {
-        QuotePageUrlFromWS: "$lifeQuotesUrl$/resultados-comparativa/isWaitPageFromSection",
-        QuestionAPI: "/api/CJ/",
-        SectionWiseAPI: "/api/SectionWise/",
-        GetCaptchaV3ModelApi: "/api/CJ/GetCaptchaV3Model",
-        GetIPTrackerModelApi: "/api/CJ/GetIPTrackerModel",
-        GetPrefilledContactModel: "/api/CJ/GetPrefilledContactModel",
-        WS_UpdateQuesionDetailsApi: "/ws/update-question-model/",
-        WS_GetSectionDetailsApi: "/ws/get-section-details/",
-        WS_GetQuestionDetailsApi: "/ws/get-question-model/",
-        CJ_Default_URL: "/datos-comparativa.aspx",
-        TemplateURL: "/Templates/",
-        ReActivateSessionApi: "/api/CJ/ReactivateSession",
-        KillSessionApi: "/api/CJ/KillSession",
-        CheckEmailSpamApi: "/api/CJ/IsSpamEmail",
-        Progress_Page_URL: "/progress.aspx?waitPageType=isWaitPageCounterInserted",
-        SaveCounterURL: "https://seguro-vida.rastreator.com/LifeCallbacks.aspx?Option=SaveCounter&CounterName=",
-        SpanEmailCheckURL: "https://seguro-vida.rastreator.com/LifeCallbacks.aspx?Option=SpamEmailCheck&email=",
-        CaptchaRequiredCheckURL: "https://seguro-vida.rastreator.com/LifeCallbacks.aspx?Option=CaptchaRequired&JourneyTime=",
-        ProgressPageUrl: "https://seguro-vida.rastreator.com/progress.aspx?waitpagetype=isWaitPageCounterInserted",
-        ProgressPageFromWS: "https://seguro-vida.rastreator.com/progress.aspx?waitpagetype=isWaitPageFromSection",
-        Image_CDN: "",
-        CSS_CDN: "",
-        JS_CDN: "",
-        SaveCallMeBackURL: "/api/CJ/SaveCallMeBackDetails?",
-        CJUrlLocalEnvironment: "http://seguro-vida.rastreatorlocal.com/",
-        CJUrlDevEnvironment: "https://seguro-vida.rastreatordev.com/",
-        CJUrlTestEnvironment: "https://seguro-vida.rastreatortest.com/",
-        CJUrlProductionEnvironment: "https://seguro-vida.rastreator.com/",
-        CmsUrlTestEnvironment: "http://www.rastreatortest.com/",
-        CmsUrlProdctionEnvironment: "https://www.rastreator.com/",
-        TrackerJSLocalEnv: "http://tracker.rastreatorlocal.com",
-        TrackerJSTestEnv: "https://tracker.rastreatortest.com",
-        TrackerJSProdEnv: "https://tracker.rastreator.com",
-        SegurosCmsUrlTestEnvironment: "http://testing.seguros.es/",
-        SegurosCJUrlProductionEnvironment: "https://www.seguros.es/"
-    },
-    ErrorMessages: {
-        SessionExpired: "SessionExpired",
-        DateInvalid: "Por favor, introduce una fecha válida.",
-        Day: "Por favor, selecciona el día.",
-        Month: "Por favor, selecciona el mes.",
-        Year: "Por favor, selecciona el año.",
-        InvalidDayMessage: "Por favor, introduce un día.",
-        InvalidMonthMessage: "Por favor, selecciona un mes.",
-        InvalidYearMessage: "Por favor, introduce un año.",
-        Email: "Por favor, introduce un email correcto",
-        InvalidCaptcha: "Por favor, introduce los números de la imagen",
-        InvalidCaptchaOperation: "Por favor, introduce el resultado de la operación",
-        TermCondition: "Por favor, acepta el Aviso Legal y la Política de privacidad para continuar",
-        InvalidDropDownSelection: "Por favor, selecciona una opción",
-        Options: "Por favor seleccione una opción",
-        Date: "Por favor, selecciona las fechas",
-        SingleDate: "Por favor, selecciona la fecha",
-        InvalidaAge: "Por favor, Introduce una edad",
-        InvalidRelationSelection: "Por favor, selecciona la relación de los asegurados",
-        InvalidaAgeGT2YearsFromNow: "La fecha de inicio no puede exceder los 2 años desde hoy",
-        SpamEmail: "El correo electrónico ingresado es correo no deseado.",
-        PostalCode: "Por favor, introduce un código postal correcto.",
-        InvalidCapital: "Por favor, introduce una cantidad para avanzar",
-        CapitalLessThan12K: "El valor del capital debe ser mayor o igual a 12.000€",
-        CapitalGreaterThan1bn: "El valor debe ser menor o igual que 10.000.000€",
-        InvalidPhone: "Por favor, introduce un teléfono válido"
-    },
-    Constants: {
-        Separator: ".",
-        CallCentreQuestionAPIKey: "GetQuestionMasterForCallCentre",
-        GetCallCentreExecutiveAPIKey: "GetCallCenterExecutives",
-        SavePartialRiskAPIKey: "SavePartialRisk",
-        CJQuestionAPIKey: "GetQuestionMasterForCJ",
-        WSQuestionAPIKey: "GetQuestionModelForWS",
-        SubmitRisk: "SubmitRisk",
-        SubmitContract: "SubmitContract",
-        QuotePage: "QuotePage",
-        CJQuestionTemplateContainer: "QuestionWrapper",
-        CJSaveAnswerDataLayerEvent: "cjanswer",
-        WsSaveAnswerDataLayerEvent: "wiseanswer",
-        WSSectionAPIKey: "UpdateSectionDetails",
-        SaveButtonTextAsAdvance: "Avanzar",
-        SaveButtonTextAsDontKnow: "Todavía no lo sé",
-        SavePartialContract: "SavePartialContract",
-        ProductNameForHelpModule: "Seguro de vida",
-        InsuredSection: "InsuredSection",
-        RisksSection: "RisksSection",
-        CapitalSection: "CapitalSection",
-        EmailSection: "EmailSection",
-        PhoneClickedButtonDefaultText: "No quiero dar mi teléfono",
-        PostalCodeControlId: "txt_PostalCode",
-        PostalCodeResultControlId: "lblCity",
-        InsuredSection: "InsuredSection",
-        WhiteLabelString: "utm_campaign=whitelabels",
-        PolicyHolderSection: "PolicyHolderSection",
-        InsuranceSection: "InsuranceSection"
-    },
-    QuestionKeys: {
-        InsuredSection: {
-            InsurancePurpose: "Question_InsuredSection_InsurancePurpose",
-            Gender: "Question_InsuredSection_Gender",
-            DOB: "Question_InsuredSection_DOB",
-            PostalCode: "Question_InsuredSection_PostalCode"
-        },
-        RisksSection: {
-            IsSmoke: "Question_RisksSection_IsSmoke",
-            IsRiskJob: "Question_RisksSection_IsRiskJob",
-            ExtremeSport: "Question_RisksSection_ExtremeSport"
-        },
-        CapitalSection: {
-            Capital: "Question_CapitalSection_Capital"
-        },
-        EmailSection: {
-            Phone: "Question_EmailSection_Phone",
-            Email: "Question_EmailSection_Email"
-        }
-    },
-    Templates: {
-        SingleListTemplate: "SingleListTemplate.htm"
-    },
-    RiskNodes: {
-        Gender: "Gender",
-        DOB: "BirthDate",
-        IsCapitalOther: "IsCapitalOther"
-    },
-    Counters: [
-        ["1", "rs.life.InsuranceSection"],
-        ["2", "rs.life.PolicyHolderSection"],
-    ],
-    QuestionsScrollKeyList: [
-        ["Question_InsuredSection_DOB", "div_BirthDate"]
-    ],
-    HttpMethods: {
-        GET: "GET",
-        POST: "POST",
-        DELETE: "DELETE"
-    }
-};
-var localCache = {
-    data: {},
-    remove: function(n) {
-        delete localCache.data[n]
-    },
-    exist: function(n) {
-        return localCache.data.hasOwnProperty(n) && localCache.data[n] !== null
-    },
-    get: function(n) {
-        return localCache.data[n]
-    },
-    set: function(n, t) {
-        localCache.remove(n);
-        localCache.data[n] = t
-    }
-};
 
-function checkSessionTimeout() {
-    var n = $("#hidSessionTimeoutValue").val();
+function CheckSessionTimeout() {
+    var n = 59;
     n = n * 6e4 - 3e4;
     timeout !== undefined && window.clearTimeout(timeout);
-    timeout = window.setTimeout("showTimeoutTravelWindow();", n)
+    timeout = window.setTimeout("showTimeoutHome();", n)
 }
 
-function InitSessionTimer() {
+function InitHome() {
+    SaveTracker("rs.sessionexpiry.tracking");
     secs = 30;
-    StopSessionTimer();
-    StartSessionTimer();
-    $("#sessionOkButton").unbind("click");
-    $("#btnSessionCancel").unbind("click");
-    $("#sessionOkButton").click(function() {
-        StopSessionTimeout();
-        isTimeRunning()
-    });
-    $("#btnSessionCancel").click(function() {
-        isOverlayClick = !0;
-        isTimeRunning(isOverlayClick)
-    })
+    StopHomeTimer();
+    StartHomeTimer()
 }
 
-function StopSessionTimer() {
+function StopHomeTimer() {
     TimerRunning && window.clearTimeout(TimerID);
     TimerRunning = !1
 }
 
-function StartSessionTimer() {
+function StartHomeTimer() {
     TimerRunning = !0;
-    TimerID = window.setTimeout("StartSessionTimer()", 1e3);
-    secs === 0 && StopSessionTimer();
+    TimerID = window.setTimeout("StartHomeTimer()", 1e3);
+    secs === 0 ? (HomeCommonService.IsRemainingSecsExpired = !0, StopHomeTimer()) : HomeCommonService.IsRemainingSecsExpired = !1;
     secs--
 }
 
-function StopSessionTimeout() {
+function PageRedirectToCMS() {
+    window.onbeforeunload = null;
+    $("#sessionDialog").hide();
+    $(".overlay").removeClass("active");
+    var n = location.href.replace(location.href, "https://www.rastreator.com");
+    window.parent.location.replace(n)
+}
+
+function StopHomeTimeout() {
+    console.log("==Stop Timer==");
     window.clearTimeout(timeout)
 }
 
-function isTimeRunning(n) {
-    var t = "";
-    TimerRunning ? (t = CommonData.Urls.ReActivateSessionApi, processSessionReactivation(t)) : (t = CommonData.Urls.KillSessionApi, processSessionKill(t, n))
-}
-
-function processSessionReactivation(n) {
-    StopSessionTimer();
-    checkSessionTimeout();
-    isOverlayClick = !1;
-    $.ajax({
-        type: "GET",
-        async: !1,
-        url: n,
-        data: {},
-        contentType: "application/json",
-        dataType: "json",
-        success: function(n) {
-            n === "SessionReactivationFailed" ? (CommonService.isInternalRedirect = !0, window.location.href = CommonService.getCmsUrl()) : ($("#sessionDialog").hide(), $(".overlay").removeClass("active"), isSessionExpiryModalActive = !1)
-        },
-        failure: function() {
-            CommonService.isInternalRedirect = !0;
-            window.location.href = CommonService.getCmsUrl()
-        }
-    })
-}
-
-function processSessionKill(n) {
-    StopSessionTimer();
+function processHomeSessionKill(n) {
     $.ajax({
         type: "GET",
         url: n,
@@ -3823,36 +3644,917 @@ function processSessionKill(n) {
         contentType: "application/json",
         dataType: "json",
         success: function() {
-            $("#sessionDialog").hide();
-            $(".overlay").removeClass("active");
-            console.log("==Redirect==");
-            CommonService.isInternalRedirect = !0;
-            window.location.href = CommonService.getCmsUrl()
+            PageRedirectToCMS()
         },
         failure: function() {
             console.log("==Fail Session==")
         }
     })
 }
-var secs, TimerRunning, TimerID, showTimeoutTravelWindow, timeout, isOverlayClick;
-TimerRunning = !1;
-isOverlayClick = !1;
-isSessionExpiryModalActive = !1;
-showTimeoutTravelWindow = function() {
-    $(".overlay").addClass("active");
-    $("#sessionDialog").show();
-    CallSaveTracker("rs.sessionexpiry.tracking");
-    isSessionExpiryModalActive = !0;
-    InitSessionTimer()
-};
 
-function MaskPhoneNumber(n, t) {
-    return CommonService.isCJ == !0 && n && (!t || t == "" || n == t) ? n.replace(/\d(?=\d{3})/g, "●") : t
+function processHomeSessionReactivation(n) {
+    CheckSessionTimeout();
+    isOverlayClick = !1;
+    $.ajax({
+        type: "GET",
+        async: !1,
+        url: n,
+        data: {},
+        contentType: "application/json",
+        dataType: "json",
+        success: function() {
+            $("#sessionDialog").hide();
+            $(".overlay").removeClass("active");
+            console.log("==Session Reactive==")
+        },
+        failure: function() {
+            console.log("==Fail Reactive Session==")
+        }
+    })
 }
 
-function MaskDIN(n) {
-    var t = n.substring(2, n.length - 1).replace(/\w/g, "#");
-    return n.substring(0, 2) + t.substring(0, n.length - 1) + n.substring(n.length - 1)
+function isTimeRunning(n, t) {
+    TimerRunning ? (n = n + "?Option=ReactivateSession", processHomeSessionReactivation(n)) : (n = n + "?Option=KillSession", processHomeSessionKill(n, t))
+}
+var secs, TimerRunning, TimerID, showTimeoutHome, pUrl, timeout, isOverlayClick;
+TimerRunning = !1;
+console.log("Home Product Session JS Loaded");
+isOverlayClick = !1;
+showTimeoutHome = function() {
+    $(".overlay").addClass("active");
+    $("#sessionDialog").show().load("/Sesion-Vencimiento.aspx")
+};
+$(".wsection").click(function() {
+    $.post("/HomeCallbacks.aspx", function(n) {
+        if (n === "SessionExpired" || n === "SpamSuspected") {
+            var t = location.href.replace(location.href, "https://www.rastreator.com");
+            window.parent.location.replace(t)
+        }
+    })
+});
+var LastQuote = function() {},
+    lastQuoteObj;
+LastQuote.prototype = function() {
+    var f, t, o, r, u, c, s, n, l, y, p = function() {
+            ft()
+        },
+        a = function() {
+            if (h(u) && (CommonFunctionsModule.setCookieForHours("lq_trackingid", u, 24), lastQuoteObj.IsPopUpShowed = e("is_popup"), lastQuoteObj.IsPopUpShowed === undefined || lastQuoteObj.IsPopUpShowed === null ? (lastQuoteObj.IsPopUpShowed = "true", n = "true", i("is_verify", n)) : (lastQuoteObj.IsPopUpShowed = "false", n = "false", i("is_verify", n)), i("is_popup", lastQuoteObj.IsPopUpShowed)), f.CustomerActivityID > 0) {
+                if (lastQuoteObj.IsPopUpShowed = e("is_popup"), !h(u) && lastQuoteObj.IsPopUpShowed === "true" && !r) return !1;
+                lastQuoteObj.IsPopUpShowed !== "false" || r || i("is_popup", "true");
+                HomeCommonService.saveCounter(HomeCommonService.getCounterName("LastQuotePopUpIndex"));
+                $(".overlay").addClass("active");
+                $("#loadPreviousQuoteModel").show().load("/PreviousQuote.aspx");
+                $("#previousQuoteModalEmail").hide();
+                setTimeout(function() {
+                    HomeCommonService.pushDataLayerEvent({
+                        event: "virtualpage",
+                        virtualpage: "lastquotepopup",
+                        categoryvp: "insurance",
+                        productvp: "home",
+                        lastquotepopupscreen: "1"
+                    })
+                }, 2e3)
+            }
+        },
+        w = function() {
+            $(".overlay").removeClass("active");
+            $("#previousQuoteModal").hide();
+            var n = event.target.className.indexOf("second-screen") > -1 ? "2" : event.target.className.indexOf("third-screen") > -1 ? "3" : "1";
+            HomeCommonService.dataLayerEvent = {
+                event: "lastquotepopupanswer",
+                lastquotepopupanswer: "close",
+                lastquotepopupcategory: "insurance",
+                lastquotepopupproduct: "home",
+                lastquotepopupscreen: n
+            };
+            HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent);
+            $("html, body").animate({
+                scrollTop: 0
+            })
+        },
+        b = function(n) {
+            $(".overlay").removeClass("active");
+            $("#previousQuoteModal").hide();
+            var t = n.target.className.indexOf("second-screen") > -1 ? "2" : n.target.className.indexOf("third-screen") > -1 ? "3" : "1";
+            HomeCommonService.dataLayerEvent = {
+                event: "lastquotepopupanswer",
+                lastquotepopupanswer: "nuevacomparativa",
+                lastquotepopupcategory: "insurance",
+                lastquotepopupproduct: "home",
+                lastquotepopupscreen: t
+            };
+            HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent);
+            $("html, body").animate({
+                scrollTop: 0
+            })
+        },
+        k = function(n) {
+            $(".overlay").removeClass("active");
+            $("#previousQuoteModal").hide();
+            var t = n.target.className.indexOf("second-screen") > -1 ? "2" : n.target.className.indexOf("third-screen") > -1 ? "3" : "1";
+            HomeCommonService.dataLayerEvent = {
+                event: "lastquotepopupanswer",
+                lastquotepopupanswer: "close",
+                lastquotepopupcategory: "insurance",
+                lastquotepopupproduct: "home",
+                lastquotepopupscreen: t
+            };
+            HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent);
+            $("html, body").animate({
+                scrollTop: 0
+            })
+        },
+        d = function() {
+            et(f);
+            HomeCommonService.dataLayerEvent = {
+                event: "lastquotepopupanswer",
+                lastquotepopupanswer: "recuperarcomparativa",
+                lastquotepopupcategory: "insurance",
+                lastquotepopupproduct: "home",
+                lastquotepopupscreen: "1"
+            };
+            HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent);
+            lastQuoteObj.IsPopUpShowed = e("is_popup");
+            n = e("is_verify");
+            !h(u) && lastQuoteObj.IsPopUpShowed === "true" && r && n == "true" ? v() : (i("is_popup", "true"), $(".overlay").addClass("second-screen"), $(".icon-cancel").addClass("icon-cancel-second-screen"), $(".closePreviousQuoteModalByButton").addClass("second-screen"), HomeCommonService.saveCounter(HomeCommonService.getCounterName("LastQuotePopUpVerifyEmail")), $("#previousQuoteModalEmailBlock").removeAttr("style"), $("#previousQuoteModalEmailBlock").css("display", "block"), $("#previousQuoteStep1").css("display", "none"));
+            HomeCommonService.dataLayerEvent = {
+                event: "virtualpage",
+                virtualpage: "lastquotepopup",
+                categoryvp: "insurance",
+                productvp: "home",
+                lastquotepopupscreen: "2"
+            };
+            HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent)
+        },
+        g = function() {
+            var t = $("#txt_Email").val();
+            if (t = t.replace("á", "a"), t = t.replace("Á", "A"), t = t.replace("é", "e"), t = t.replace("É", "E"), t = t.replace("í", "i"), t = t.replace("Í", "I"), t = t.replace("ó", "o"), t = t.replace("Ó", "O"), t = t.replace("ú", "u"), t = t.replace("Ú", "U"), $("#txt_Email").val(t), HomeCommonService.selectedItem.email = t, $("#txt_Email").removeClass("error"), $("#errorEmail").text(""), it())
+                if (f.EmailAddress.toLowerCase() === t.toLowerCase()) n = "true", i("is_verify", n), HomeCommonService.saveCounter(HomeCommonService.getCounterName("LastQuotePopUpdetails")), $(".overlay").removeClass("second-screen"), $(".overlay").addClass("third-screen"), $(".icon-cancel").removeClass("icon-cancel-second-screen"), $(".icon-cancel").addClass("icon-cancel-third-screen"), $(".closePreviousQuoteModalByButton").removeClass("second-screen"), $(".closePreviousQuoteModalByButton").addClass("third-screen"), HomeCommonService.dataLayerEvent = {
+                    event: "lastquotepopupanswer",
+                    lastquotepopupanswer: "emailverify",
+                    lastquotepopupcategory: "insurance",
+                    lastquotepopupproduct: "home",
+                    lastquotepopupscreen: "2"
+                }, HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent), $("#Screen1").css("display", "none"), $("#Screen3").removeAttr("style"), $("#Screen3").css("display", "block"), HomeCommonService.dataLayerEvent = {
+                    event: "virtualpage",
+                    virtualpage: "lastquotepopup",
+                    categoryvp: "insurance",
+                    productvp: "home",
+                    lastquotepopupscreen: "3"
+                }, HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent);
+                else return n = "false", i("is_verify", n), HomeCommonService.dataLayerEvent = {
+                    event: "virtualpage",
+                    virtualpage: "lastquotepopuperror",
+                    categoryvp: "insurance",
+                    productvp: "home",
+                    lastquotepopupscreen: "2"
+                }, HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent), $("#txt_Email").addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.PreviousQuotePopUpEmailNotMatch), !1;
+            else return HomeCommonService.dataLayerEvent = {
+                event: "virtualpage",
+                virtualpage: "lastquotepopuperror",
+                categoryvp: "insurance",
+                productvp: "home",
+                lastquotepopupscreen: "2"
+            }, HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent), !1
+        },
+        v = function() {
+            rt()
+        },
+        nt = function() {
+            if (getKeyCode(this, event) == 13) return $("#PreviousQuoteStep2").click()
+        },
+        tt = function() {
+            HomeCommonService.isInternalRedirect = !0;
+            var n = s + "/modifica-tus-datos.aspx?c-sig=" + l + "&id=" + o + "&returncode=lastquotes";
+            wsURl = location.href.replace(location.href, n);
+            window.parent.location.replace(n)
+        },
+        it = function() {
+            var n = !1;
+            return HomeCommonService.selectedItem.email && HomeCommonService.selectedItem.email.indexOf("@") !== -1 && HomeCommonService.selectedItem.email.indexOf(".") !== -1 && HomeValidationService.IsValidEmail("txt_Email") ? ($("#txt_Email").removeClass("error"), $("#errorEmail").text(""), n = !0) : ($("#txt_Email").addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.InvalidPreviousQuotePopUpEmail), n = !1), n
+        },
+        rt = function() {
+            var t = ut(),
+                n;
+            HomeCommonService.isInternalRedirect = !0;
+            n = location.href.replace(location.href, t);
+            window.parent.location.replace(n)
+        },
+        ut = function() {
+            return s + "/email-quotes-landing.aspx?returncode=lastquotes&id=" + o
+        },
+        ft = function() {
+            $.ajax({
+                type: "GET",
+                url: CommonData.Urls.GetLastQuoteDetailURL,
+                contentType: "application/json;",
+                dataType: "json",
+                async: !1,
+                success: function(n) {
+                    n && (f = JSON.parse(n.Item1), t = JSON.parse(n.Item2), r = t.IsMobile, o = t.encryptedQuoteID, u = t.SessionTrackerID, c = t.IsRastreator, s = t.landingUrlBase, l = t.cSig, t.isUPAEnable || a())
+                }
+            })
+        },
+        et = function(n) {
+            $("#spanEmail").html(n.MaskedEmailAddress);
+            $("#firstRow").html(n.HouseKind + ' <i class="icon icon-check"><\/i>');
+            $("#secondRow").html(n.PostalCode + ' <i class="icon icon-check"><\/i>');
+            $("#thirdRow").html(n.HouseArea + 'm2 <i class="icon icon-check"><\/i>');
+            $("#fourthRow").html(n.ContructionYear + ' <i class="icon icon-check"><\/i>')
+        },
+        e = function(n) {
+            return localStorage.getItem(n)
+        },
+        i = function(n, t) {
+            localStorage.setItem(n, t)
+        },
+        ot = function(n) {
+            n in localStorage && localStorage.removeItem(n)
+        },
+        h = function(n) {
+            return CommonFunctionsModule.getCookie("lq_trackingid") !== n || CommonFunctionsModule.getCookie("lq_trackingid") === "" ? !0 : !1
+        };
+    return {
+        PreviousQuoteModalLoad: a,
+        ClosePreviousQuoteModal: w,
+        ClosePreviousQuoteModalByButton: b,
+        ClosePreviousQuoteModalByOverlay: k,
+        PreviousQuoteStep1: d,
+        PreviousQuoteStep2: g,
+        PreviousQuoteStep3: v,
+        keyPressOnEmail: nt,
+        GetWS: tt,
+        init: p,
+        IsMobile: r,
+        IsRastreator: c,
+        IsPopUpShowed: y
+    }
+}();
+lastQuoteObj = new LastQuote;
+
+function wait(n) {
+    for (var t = Date.now(), i = t; i - t < n;) i = Date.now()
+}
+var body = document.querySelector("body"),
+    helpButton = document.querySelector("#helpButton"),
+    helpWrapper = document.querySelector(".help-wrapper"),
+    chatBtn = document.querySelector('.menu-item[data-id="chat"]');
+window.addEventListener("DOMContentLoaded", function() {
+    var n = document.createElement("script"),
+        t, i;
+    n.type = "text/javascript";
+    n.async = !0;
+    n.src = "//storage.googleapis.com/code.snapengage.com/js/640432e3-3bc9-444f-9b6b-23cb7583d25a.js";
+    t = !1;
+    n.onload = n.onreadystatechange = function() {
+        t || this.readyState && this.readyState !== "loaded" && this.readyState !== "complete" || (t = !0, SnapEngage.getAgentStatusAsync(function(n) {
+            n || chatBtn == null || (chatBtn.style.display = "none")
+        }), SnapEngage.setCallback("Open", function() {
+            body.style.overflow = "auto";
+            helpButton.style.opacity = 1;
+            helpWrapper.classList.remove("in", "desktop", "mobile", "callmeback", "chat", "email")
+        }))
+    };
+    i = document.getElementsByTagName("script")[0];
+    i.parentNode.insertBefore(n, i)
+});
+$(document).ready(function() {
+    CheckSessionTimeout();
+    initCJ();
+    wait(500);
+    progressBar.init();
+    progressBar.resetSection();
+    dhtmlHistory.firstLoad = null;
+    window.historyStorage.init();
+    window.dhtmlHistory.create();
+    dhtmlHistory.initialize();
+    dhtmlHistory.addListener(HandleNavigation);
+    HomeCommonService.isInternalRedirect = !1;
+    $(window).on("beforeunload pagehide", function() {
+        if (!flagWhiteLabel && !HomeCommonService.isInternalRedirect) return !1
+    });
+    setTimeout(function() {
+        var n = $(".grecaptcha-badge");
+        n !== null && n.parent().hide()
+    }, 1e3);
+    $(".collapse").on("click", ".collapse-trigger", function() {
+        $(this).next(".collapsed").toggleClass("active");
+        $(this).find("span").toggleClass("active");
+        var n = $(this).next(".collapsed.active")[0];
+        $(this).next(".collapsed.active")[0] !== undefined && setTimeout(function() {
+            n !== undefined && n.firstElementChild !== undefined && n.firstElementChild !== null && n.firstElementChild.scrollIntoView({
+                block: "start",
+                behavior: "smooth"
+            })
+        }, 100)
+    })
+});
+var CommonData = {
+    Urls: {
+        GetCaptchaV3ModelApi: "/api/CJ/GetCaptchaV3Model",
+        GetIPTrackerModelApi: "/api/CJ/IsIPTrakingEnable",
+        QuestionAPI: "/api/CJ/",
+        CJ_Default_URL: "/datos-comparativa.aspx",
+        TemplateURL: "/Templates/",
+        Progress_Page_URL: "/progress.aspx?waitPageType=isWaitPageCounterInserted",
+        SaveCounterURL: "https://seguro-hogar.rastreator.com/HomeCallbacks.aspx?Option=SaveCounter&CounterName=",
+        SpanEmailCheckURL: "https://seguro-hogar.rastreator.com/HomeCallbacks.aspx?Option=SpamEmailCheck&email=",
+        CaptchaRequiredCheckURL: "https://seguro-hogar.rastreator.com/HomeCallbacks.aspx?Option=CaptchaRequired&JourneyTime=",
+        Image_CDN: "",
+        CSS_CDN: "",
+        JS_CDN: "",
+        SaveCallMeBackURL: "/api/CJ/SaveCallMeBackDetails?",
+        RedirectUrl: "https://www.rastreator.com/",
+        GetLastQuoteDetailURL: "/api/CJ/GetLastQuoteDetail",
+        SetEmailVerificationStatusForLastQuoteURL: "/api/CJ/SetEmailVerificationStatusForLastQuote",
+        CmsUrlTestEnvironment: "http://www.rastreatortest.com/",
+        CmsUrlProdctionEnvironment: "https://www.rastreator.com/",
+        SegurosCmsUrlTestEnvironment: "http://testing.seguros.es/",
+        SegurosCJUrlProductionEnvironment: "https://www.seguros.es/",
+        MaintenancePageTest: "http://maintenance.rastreatortest.com/mantenimiento.html",
+        MaintenancePageProd: "http://maintenance.rastreator.com/mantenimiento.html",
+        RobotRedirectionPage: "https://www.rastreator.com/mantenimiento.aspx",
+        UPASettingsApi: "/api/CJ/GetUpaConfiguration"
+    },
+    ErrorMessages: {
+        SessionExpired: "SessionExpired",
+        DateInvalid: "Por favor, selecciona una fecha válida.",
+        Day: "Por favor, selecciona un día.",
+        Month: "Por favor, selecciona un mes.",
+        Year: "Por favor, selecciona un año.",
+        InvalidDayMessage: "Por favor, introduce un día.",
+        InvalidMonthMessage: "Por favor, selecciona un mes.",
+        InvalidYearMessage: "Por favor, introduce un año.",
+        PostalCode: "Por favor, introduce un código postal correcto.",
+        Dni: "Por favor, introduce un DNI/NIE válido.",
+        HabitualPostalCode: "Por favor, introduce un Código Postal correcto.",
+        InvalidDateExceedMessage: "La fecha de inscripción no puede exceder la fecha de compra. Por favor, seleccione uno",
+        Email: "Por favor, introduce un email correcto",
+        Phone: "Por favor, introduce un teléfono correcto",
+        InvalidCaptcha: "Por favor, introduce los números de la imagen",
+        InvalidCaptchaOperation: "Por favor, introduce el resultado de la operación",
+        TermCondition: "Por favor, acepta el Aviso Legal y la Política de Privacidad",
+        InvalidDropDownSelection: "Por favor, selecciona una opción",
+        InvalidHouseArea: "Por favor, introduce una superficie de vivienda correcta",
+        InvalidLandArea: "Por favor, introduce una superficie de parcela correcta",
+        HouseAreaLessThan20NotAllowed: "La superficie de la vivienda debe ser mayor o igual a 20 m2",
+        NumberOfRooms: "Por favor, selecciona el número de dormitorios de los que dispone la vivienda",
+        NumberOfRestRooms: "Por favor, selecciona el número de baños y/o aseos de los que dispone la vivienda",
+        ContinentRequired: "Por favor, introduce el valor del continente de la vivienda",
+        InvalidContinentWithZero: "Por favor, introduce el valor del continente de la vivienda",
+        InvalidContinent: "Por favor, introduce un valor correcto para el continente de la vivienda hasta 12.000",
+        InvalidContent: "Por favor, introduce el valor del contenido de la vivienda",
+        InvalidSafeBox: "Por favor, introduce un valor correcto",
+        InvalidValueofSpecialObjects: "Por favor, introduce un valor correcto",
+        PolicyHolderLegalAge: "El tomador del seguro debe ser mayor de edad",
+        FavouriteKindInsurance: "Por favor, selecciona al menos una opción",
+        Options: "Por favor seleccione una opción",
+        DateInvalidNotWithinSixMonths: "Revisa la fecha de contratación/renovación. No puede ser superior a 6 meses desde la fecha actual",
+        InvalidPreviousQuotePopUpEmail: "Por favor, introduce una dirección de e-mail correcta",
+        PreviousQuotePopUpEmailNotMatch: "El email no coincide con la anterior comparativa. Recuerda que debe ser el mismo que usaste."
+    },
+    Constants: {
+        IsRobotSessionHome: "GetIsRobotSessionHome",
+        IsSessionAvailableApiKey: "IsSessionAvailable",
+        CallCentreQuestionAPIKey: "GetQuestionMasterForCallCentre",
+        CheckSpamEmailAPIKey: "IsSpamEmail",
+        GetCallCentreExecutiveAPIKey: "GetCallCenterExecutives",
+        SavePartialRiskAPIKey: "SavePartialRisk",
+        CJQuestionAPIKey: "GetQuestionMasterForCJ",
+        WSQuestionAPIKey: "GetQuestionModelForWS",
+        WSCheckCaptchaAPIKey: "CheckCaptchaRequiredForWS",
+        CaptchaValidationKey: "ValidateCaptcha",
+        EmailQuestionKey: "Question_OthersSection_EMail",
+        SubmitRisk: "SubmitRisk",
+        SubmitRiskWS: "SubmitRiskWS",
+        QuotePage: "QuotePage",
+        WhiteLabelString: "utm_campaign=whitelabels",
+        CJQuestionTemplateContainer: "QuestionWrapper",
+        CJQuestionSafeBoxSubTemplateContainer: "subTemplate_",
+        PostalCodeControlId: "txt_PostalCode",
+        PostalCodeResultControlId: "lblCity",
+        ContructionYear: "ContructionYear",
+        RenewalYear: "RenewalYear",
+        HouseSection: "HouseSection",
+        InsuranceSection: "InsuranceSection",
+        PolicyHolderSection: "PolicyHolderSection",
+        OtherSection: "OtherSection",
+        CJSaveAnswerDataLayerEvent: "cjanswer",
+        ProductNameForHelpModule: "Seguro de Hogar",
+        GetFirstQuestionDetailsCJ: "GetFirstQuestionDetailsCJ",
+        RiskCompareExcludingPhone: "RiskCompareExcludingPhone"
+    },
+    QuestionKeys: {
+        HouseSection: {
+            Occupation: "Question_HomeSection_Occupation",
+            Utilization: "Question_HomeSection_Utilization",
+            PersonInHouse: "Question_HomeSection_PersonInHouse",
+            IsHouseInsured: "Question_HomeSection_IsHouseInsured",
+            IsHouseMortgage: "Question_HomeSection_IsHouseMortgage",
+            PostalCode: "Question_HomeSection_PostalCode",
+            HouseKind: "Question_HomeSection_HouseKind",
+            Situation: "Question_HomeSection_Situation",
+            ConstructionYear: "Question_HomeSection_ConstructionYear",
+            HouseArea: "Question_HomeSection_HouseArea",
+            LandArea: "Question_HomeSection_LandArea",
+            NumberOfRooms: "Question_HomeSection_NumberOfRooms",
+            NumberOfRestRooms: "Question_HomeSection_NumberOfRestRooms",
+            ConstructionQuality: "Question_HomeSection_ConstructionQuality",
+            ConstructionMaterial: "Question_HomeSection_ConstructionMaterial",
+            RenewedAll: "Question_HomeSection_RenewedAll",
+            RenewalYear: "Question_HomeSection_RenewalYear",
+            AllProtectionSystems: "Question_ProtectionSection_AllProtectionSystems",
+            IsAlarmConnectedCentral: "Question_ProtectionSection_IsAlarmConnectedCentral"
+        },
+        InsuranceSection: {
+            Continent: "Question_CapitalSection_Continent",
+            Content: "Question_CapitalSection_Content",
+            JewelsOutOfSafeBox: "Question_CapitalSection_JewelsOutOfSafeBox",
+            JewelsInSafeBox: "Question_CapitalSection_JewelsInSafeBox",
+            ValueOfAllSpecialObjects: "Question_CapitalSection_ValueOfAllSpecialObjects",
+            FavouriteKindInsurance: "Question_ProtectionSection_FavouriteKindInsurance",
+            InitialDateOfInsurance: "Question_CapitalSection_InitialDateOfInsurance"
+        },
+        PolicyHolderSection: {
+            PolicyHolderDateofBirth: "Question_CapitalSection_PolicyHolderDateofBirth",
+            PolicyHolderOriginCountry: "Question_CapitalSection_PolicyHolderOriginCountry",
+            Defaulter: "Question_ProtectionSection_Defaulter",
+            DNI: "Question_ProtectionSection_DNI",
+            HabitualPostalCode: "Question_ProtectionSection_HabitualPostalCode"
+        },
+        OtherSection: {
+            Phone: "Question_OthersSection_Phone",
+            Email: "Question_OthersSection_EMail"
+        }
+    },
+    Templates: {
+        TwoListTemplate: "TwoListTemplate.htm",
+        SingleListTemplate: "SingleListTemplate.htm",
+        PolicyHolderCountryTemplate: "PolicyHolderOriginCountry.htm"
+    },
+    RiskNodes: {
+        HouseOccupation: "HouseOccupation",
+        HouseUtilization: "HouseUtilization",
+        IsHouseInsured: "IsHouseInsured",
+        IsHouseMortgage: "IsHouseMortgage",
+        HouseArea: "HouseArea",
+        LandArea: "LandArea",
+        NumberOfRooms: "NumberOfRooms",
+        NumberOfBathrooms: "NumberOfBathrooms",
+        ConstructionQuality: "ConstructionQuality",
+        ConstructionMaterial: "ConstructionMaterial",
+        Windowgrilles: "Windowgrilles",
+        ArmoredDoor: "ArmoredDoor",
+        AlarmSystem: "AlarmSystem",
+        Safebox: "Safebox",
+        ArmoredWindows: "ArmoredWindows",
+        PermanentSecurityStaff: "PermanentSecurityStaff",
+        Container: "Container",
+        Content: "Content",
+        JewelsOutOfSafeBox: "JewelsOutOfSafeBox",
+        JewelsInSafeBox: "JewelsInSafeBox",
+        PolicyHolderBirthDate: "PolicyHolderBirthDate",
+        PolicyHolderOriginCountry: "PolicyHolderOriginCountry",
+        FavouriteKindInsurance: "MainCoveragesSelected",
+        InitialDateOfInsurance: "InitialDateOfInsurance",
+        PolicyStartRealDate: "PolicyStartRealDate",
+        ValueOfAllSpecialObjects: "ValueOfAllSpecialObjects"
+    },
+    QuestionsScrollKeyList: [
+        ["Question_HomeSection_Utilization", "div_Question_HomeSection_Utilization"],
+        ["Question_HomeSection_IsHouseMortgage", "div_Question_HomeSection_IsHouseMortgage"],
+        ["Question_HomeSection_NumberOfRestRooms", "question_NumberOfBathrooms"],
+        ["Question_HomeSection_NumberOfRooms", "question_NumberOfRooms"],
+        ["Question_HomeSection_ConstructionMaterial", "div_Question_HomeSection_ConstructionMaterial"],
+        ["Question_HomeSection_HouseArea", "div_HouseArea"],
+        ["Question_HomeSection_LandArea", "div_LandArea"],
+        ["Question_CapitalSection_Content", "div_Content"],
+        ["Question_CapitalSection_Continent", "div_Container"],
+        ["Question_CapitalSection_JewelsInSafeBox", "div_JewelsInSafeBox"],
+        ["Email", "txtCaptcha"]
+    ],
+    Counters: [
+        ["HouseSection", "rs.hogar.house.index"],
+        ["InsuranceSection", "rs.hogar.insurance.index"],
+        ["PolicyHolderSection", "rs.hogar.policyholder.index"],
+        ["OtherSection", "rs.hogar.othersection.index"],
+        ["Question_HomeSection_Occupation", "rs.home.Utilization"],
+        ["Question_HomeSection_Utilization", "rs.hogar.Purpose"],
+        ["Question_HomeSection_PersonInHouse", "rs.home.ResidentPeople"],
+        ["Question_HomeSection_IsHouseInsured", "rs.home.IsHouseInsured"],
+        ["Question_HomeSection_PostalCode", "rs.home.PostalCode"],
+        ["Question_HomeSection_HouseKind", "rs.home.Kind"],
+        ["Question_HomeSection_Situation", "rs.home.Situation"],
+        ["Question_HomeSection_ConstructionYear", "rs.home.ConstructionYear"],
+        ["Question_HomeSection_HouseArea", "rs.home.HouseAndLandArea"],
+        ["Question_HomeSection_NumberOfRooms", "rs.home.NumberOfRooms"],
+        ["Question_HomeSection_ConstructionQuality", "rs.home.ConstructionQuality"],
+        ["Question_HomeSection_RenewedAll", "rs.home.Rehabilitated"],
+        ["Question_HomeSection_RenewalYear", "rs.home.YearRehabilitated"],
+        ["Question_ProtectionSection_AllProtectionSystems", "rs.home.ProtectionSystem"],
+        ["Question_ProtectionSection_IsAlarmConnectedCentral", "rs.home.ConnectedAlarm"],
+        ["Question_CapitalSection_Continent", "rs.home.Container"],
+        ["Question_CapitalSection_Content", "rs.home.Content"],
+        ["Question_CapitalSection_JewelsOutOfSafeBox", "rs.home.JewelsInandOutSafeBox"],
+        ["Question_CapitalSection_ValueOfAllSpecialObjects", "rs.home.SpecialValueObject"],
+        ["Question_CapitalSection_PolicyHolderDateofBirth", "rs.home.BirthdayPolicyHolder"],
+        ["Question_CapitalSection_PolicyHolderOriginCountry", "rs.home.BirthPlacePolicyHolder"],
+        ["Question_CapitalSection_InitialDateOfInsurance", "rs.home.InitialDateOfInsurance"],
+        ["Question_ProtectionSection_FavouriteKindInsurance", "rs.home.CoverTypeMultiOption"],
+        ["Question_ProtectionSection_Defaulter", "rs.home.HolderIsDefaulter"],
+        ["Question_ProtectionSection_DNI", "rs.home.HolderDNI"],
+        ["Question_ProtectionSection_HabitualPostalCode", "rs.home.HabitualPostalCode"],
+        ["Question_OthersSection_Phone", "rs.home.Phone"],
+        ["Question_OthersSection_EMail", "rs.home.Email"],
+        ["LastQuotePopUpIndex", "rs.hogar.LastQuotePopUp.index"],
+        ["LastQuotePopUpVerifyEmail", "rs.hogar.LastQuotePopUp.VerifyEmail"],
+        ["LastQuotePopUpdetails", "rs.hogar.LastQuotePopUp.details"],
+        ["LastQuotePopUpEditCJ", "rs.home.LastQuotePopUp.EditCJ"]
+    ],
+    HouseWindowGrilles: {
+        EveryDoorsWindows: "EveryDoorsWindows",
+        OnlyGroundFloor: "OnlyGroundFloor",
+        No: "No"
+    },
+    AlarmSystems: {
+        InEveryAccess: "InEveryAccess",
+        OnlyOnGroundFloor: "OnlyOnGroundFloor",
+        No: "No"
+    },
+    Safeboxes: {
+        Fitted: "Fitted",
+        NotFitted: "NotFitted",
+        No: "No"
+    },
+    AllProtectionSystems: ["Windowgrilles1", "Windowgrilles2", "Safebox1", "ArmoredDoor", "ArmoredWindows", "Safebox2", "AlarmSystem1", "AlarmSystem2", "PermanentSecurityStaff", "OtherProtectionSystems"],
+    GroupKeys: {
+        JewelsInSafeAndOutSafeBox: "House_JewelsInSafeAndOutSafeBox"
+    }
+};
+var CommonFunctionsModule = {
+    formatNumberWithSeperator: function(n) {
+        var f = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ",",
+            e, r;
+        n += "";
+        var u = n.split("."),
+            t = u[0],
+            i = "";
+        for (u.forEach(function(n, t) {
+                t !== 0 && (i += n)
+            }), e = u.length > 1 ? "." : "", r = /(\d+)(\d{3})/; r.test(t);) t = t.replace(r, "$1" + f + "$2");
+        return i = i.replace(r, "$1" + f + "$2"), t + e + i
+    },
+    getAgeUsingDateOfBirth: function(n) {
+        var t = new Date,
+            i = new Date(n),
+            r = t.getFullYear() - i.getFullYear(),
+            u = t.getMonth() - i.getMonth();
+        return (u < 0 || u === 0 && t.getDate() < i.getDate()) && r--, r
+    },
+    isValidDateFormatDDMMYYYY: function(n) {
+        return /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/.test(n)
+    },
+    loadScript: function(n, t) {
+        var i = document.createElement("script");
+        i.type = "text/javascript";
+        i.readyState ? i.onreadystatechange = function() {
+            (i.readyState === "loaded" || i.readyState === "complete") && (i.onreadystatechange = null, t())
+        } : i.onload = function() {
+            t()
+        };
+        i.src = n;
+        document.getElementsByTagName("head")[0].appendChild(i)
+    },
+    setCookieForHours: function(n, t, i) {
+        var u = new Date,
+            f, r;
+        u.setTime(u.getTime() + i * 36e5);
+        f = "expires=" + u.toUTCString();
+        r = window.location.href.replace("//", "/").split("/")[1].split(".");
+        r = r[r.length - 2] + "." + r[r.length - 1];
+        document.cookie = n + "=" + t + ";" + f + ";path=/;domain=" + r + ";"
+    },
+    setCookieForDays: function(n, t, i) {
+        var u = new Date,
+            f, r;
+        u.setTime(u.getTime() + i * 864e5);
+        f = "expires=" + u.toUTCString();
+        r = window.location.href.replace("//", "/").split("/")[1].split(".");
+        r = r[r.length - 2] + "." + r[r.length - 1];
+        document.cookie = n + "=" + t + ";" + f + ";path=/;domain=" + r + ";"
+    },
+    getCookie: function(n) {
+        for (var t, r = n + "=", f = decodeURIComponent(document.cookie), u = f.split(";"), i = 0; i < u.length; i++) {
+            for (t = u[i]; t.charAt(0) == " ";) t = t.substring(1);
+            if (t.indexOf(r) == 0) return t.substring(r.length, t.length)
+        }
+        return ""
+    },
+    allowNumbersOnly: function(n) {
+        $(n).val($(n).val().replace(/[^0-9]/g, ""))
+    },
+    onlyNumberInput: function(n) {
+        n = n ? n : window.event;
+        var t = n.which ? n.which : n.keyCode;
+        return t < 32 || t > 47 && t < 58
+    },
+    IsValidEmail: function(n) {
+        var r, u, f, i;
+        if (CommonService.selectedItem.email = $.trim(CommonService.selectedItem.email), CommonService.selectedItem.email == "") return !1;
+        var t = CommonService.selectedItem.email,
+            h = t.substr(t.lastIndexOf(".") + 1);
+        if (h.length > 5) return !1;
+        if (t.match(/@+/) == null || (r = t.split("@"), u = r[0], u.match(/\.$/) != null || t.match(/\.\./) != null) || (f = t.match(/^[A-Za-z0-9]+[A-Za-z0-9_\.-]+@[A-Za-z0-9]+([\.-]?[A-Za-z0-9]+)*(\.[A-Za-z0-9]{2,5})+$/), f == null)) return document.getElementById(n).focus(), !1;
+        var e = document.getElementById(n).value,
+            o = e.substring(e.lastIndexOf("@") + 1),
+            s;
+        for (i = 0; i < o.length; i++)
+            if (s = o.substring(i, i + 1), "(~`!#$%^&*_+|=}{'?/)".indexOf(s) >= 0) return document.getElementById(n).focus(), !1;
+        return !0
+    },
+    getCurrentEnvCMSUrl: function(n, t) {
+        var i = window.location.href,
+            r = window.location.search.toLowerCase().indexOf("utm_source=seguros.es") > 0;
+        return r ? this.getSegurosCMSUrl() : i.indexOf("localhost") >= 0 || i.indexOf("rastreatortest.com") >= 0 || i.indexOf("rastreatorlocal.com") >= 0 || i.indexOf("rastreatordev.com") >= 0 ? n : i.indexOf("rastreator.com") >= 0 ? t : void 0
+    },
+    getSegurosCMSUrl: function() {
+        if (window.location.ancestorOrigins != undefined && window.location.ancestorOrigins[0] !== undefined) return window.location.ancestorOrigins[0];
+        var n = document.URL;
+        return n.indexOf("localhost") >= 0 || n.indexOf("rastreatortest.com") >= 0 || n.indexOf("rastreatorlocal.com") >= 0 || n.indexOf("rastreatordev.com") >= 0 ? segTest : segProd
+    },
+    getMaintenancePageURL: function() {
+        return document.location.hostname.indexOf("rastreator.com") > -1 ? "https://maintenance.rastreator.com/mantenimiento.html" : "https://maintenance.rastreatortest.com/mantenimiento.html"
+    },
+    checkBotSession: function(n, t) {
+        $.ajax({
+            type: "GET",
+            async: !1,
+            url: n,
+            contentType: "application/json",
+            dataType: "json",
+            success: t
+        })
+    }
+};
+
+function OnCaptchaSuccess(n) {
+    var t = typeof n == "string" ? JSON.parse(n) : n;
+    OnCaptchaReady(t)
+}
+
+function OnCaptchaError(n) {
+    console.log("SaveVerifyCaptcha : FAIL.. && Error response:" + n)
+}
+
+function CheckIfNewSession(n) {
+    return CommonFunctionsModule.getCookie(n) === "false" || CommonFunctionsModule.getCookie(n) === "" ? !0 : !1
+}
+
+function OnCaptchaReady(n) {
+    window.grecaptcha && grecaptcha.ready(function() {
+        if (n.CaptchaV3Model.IsEnabled) try {
+            var t = CheckIfNewSession(n.CaptchaV3Model.Settings.CookieKey);
+            t && (CommonFunctionsModule.setCookieForDays(n.CaptchaV3Model.Settings.CookieKey, !0, 1), grecaptcha.execute(n.CaptchaV3Model.Settings.SiteKey, {
+                action: "homepage"
+            }).then(function(t) {
+                var i = n.CaptchaV3Model.Settings.CaptchaVerificationCustomAPI + "?sessiontrackerid=" + n.CaptchaV3Model.Settings.SessionTrackerId + "&token=" + t;
+                $.getJSON(i, function(n) {
+                    console.log(n)
+                })
+            }));
+            hideCaptchaIcon()
+        } catch (i) {
+            console.log(i)
+        }
+    })
+}
+
+function hideCaptchaIcon() {
+    setTimeout(function() {
+        var n = document.getElementsByClassName("grecaptcha-badge");
+        n != null && n.length > 0 && n[0].parentElement != null && (n[0].parentElement.hidden = !0)
+    }, 2e3)
+}
+var ReCaptchaV3Service = ReCaptchaV3Service || {};
+ReCaptchaV3Service.InitCaptcha = function(n, t) {
+    var i = n + t;
+    $.ajax({
+        type: "GET",
+        async: !1,
+        url: i,
+        contentType: "application/json",
+        dataType: "json",
+        success: OnCaptchaSuccess,
+        failure: OnCaptchaError
+    });
+    hideCaptchaIcon()
+};
+var upaCommonService = {
+    isAlreadyLogedin: !1,
+    isUserLoggedIn: !1,
+    isMobileDevice: !1,
+    isUPAEnable: !1,
+    isErrorInLoginOrRegistrationInUPA: !1,
+    isUPASocialUser: !1,
+    loggedInUserEmail: "",
+    isUserGoOnEmailSent: !1,
+    isUserOnFirstLoginPage: !1,
+    showHideUPALoginIcon: function() {
+        const n = document.getElementById("cj-header");
+        (window.location.hash == "#Q1" || window.location.hash == "#Q2" && upaCommonService.isOwnLanding()) && upaCommonService.isUPAEnable ? (upaCommonService.isMobileDevice ? $("#upa-login-trigger-mobile").css("display", "block") : $("#upa-login-trigger").css("display", "block"), n.classList.add("upa-header")) : (upaCommonService.isMobileDevice ? $("#upa-login-trigger-mobile").css("display", "none") : $("#upa-login-trigger").css("display", "none"), n != null && n.classList.remove("upa-header"))
+    },
+    isOwnLanding: function() {
+        var i, t = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&"),
+            n;
+        if (t.length <= 1) return !1;
+        for (n = 0; n < t.length; n++)
+            if (i = t[n].split("="), i[1] == "OwnLanding") return !0
+    },
+    addTriggerEventListiner: function() {
+        var n = document.querySelector("webc-login-trigger");
+        n && (n.addEventListener("finish", function(n) {
+            if (n && n.detail && n.detail[0].step == "SSO-header" && n.detail[0].data.access == "login-header" && n.detail[0].status == !0 && (window.location.hash == "#Q1" || window.location.hash == "#Q2" && upaCommonService.isOwnLanding())) {
+                upaCommonService.isUserLoggedIn = !0;
+                upaCommonService.isAlreadyLogedin = !0;
+                upaCommonService.loggedInUserEmail = n.detail[0].data.email;
+                var t = {
+                    event: "login",
+                    loginID: n.detail[0].data.userAccountID
+                };
+                HomeCommonService.pushDataLayerEvent(t);
+                HomeCommonService.saveCounter("rs.upa.cj.sso.qv-logged-in");
+                upaAutoPopulateService.addUPAData(n.detail[0].data, !0)
+            }
+        }), n.addEventListener("logout", function() {
+            upaCommonService.isUserLoggedIn = !1;
+            upaCommonService.isAlreadyLogedin = !1;
+            HomeCommonService.saveCounter("rs.upa.c-salir.Q1")
+        }))
+    },
+    appendLoginTriggerInHeader: function() {
+        upaCommonService.isUPAEnable = !0;
+        $("#seo-title-id").html("");
+        var n = upaCommonService.createLoginTriggerComponent();
+        $("#seo-title-id").append("<div class='upalogin'><h1 class='pull-right' id='upa-login-trigger'>" + n.outerHTML + "<\/h1><\/div>")
+    },
+    appendMobileLoginTriggerInHeader: function() {
+        upaCommonService.isUPAEnable = !0;
+        $("#upa-login-trigger-mobile").html("");
+        var n = upaCommonService.createLoginTriggerComponent();
+        $("#upa-login-trigger-mobile").append(n.outerHTML);
+        upaCommonService.isMobileDevice = !0
+    },
+    createLoginTriggerComponent: function() {
+        var n = document.createElement("webc-login-trigger");
+        return n.setAttribute("light-icon", "true"), n.setAttributeNode(document.createAttribute("allow-save-comparative-data")), n.setAttributeNode(document.createAttribute("redirect")), n.setAttribute("product-id", "3"), n
+    },
+    pushPopupEvent: function() {
+        HomeCommonService.pushDataLayerEvent({
+            event: "cjanswer",
+            cjcategory: "insurance",
+            cjproduct: "home",
+            questionanswer: "q1",
+            answer: "openupa"
+        })
+    },
+    pushNotYouEvent: function() {
+        HomeCommonService.pushDataLayerEvent({
+            event: "cjanswer",
+            cjcategory: "insurance",
+            cjproduct: "home",
+            questionanswer: "qx",
+            answer: "¿no eres tu?"
+        })
+    },
+    getUrlVars: function() {
+        for (var t = [], n, r = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&"), i = 0; i < r.length; i++) n = r[i].split("="), t.push(n[0]), t[n[0]] = n[1];
+        return t
+    },
+    showUpaComponent: function() {
+        $("#newEmailForm").css("display", "none");
+        $("#upaLoginBox").css("display", "none");
+        $("#EmailFailureTemplate").css("display", "none");
+        upaCommonService.addUpaLoginEventListner();
+        !upaCommonService.isUPAEnable || upaCommonService.isUserLoggedIn || upaCommonService.isErrorInLoginOrRegistrationInUPA ? upaCommonService.isUPAEnable && upaCommonService.isUserLoggedIn && !upaCommonService.isErrorInLoginOrRegistrationInUPA && ($("#newEmailForm").css("display", "block"), $("#next").css("display", "block")) : ($("#upaLoginBox").css("display", "block"), $("#next").css("display", "none"))
+    },
+    addUpaLoginEventListner: function() {
+        document.querySelector("webc-login").addEventListener("finish", function(n) {
+            if (n && n.detail) {
+                var t = HomeCommonService.getCounterName("Question_OthersSection_EMail");
+                switch (n.detail[0].step) {
+                    case "facebook-sso-step":
+                    case "google-sso-step":
+                        n.detail[0].data.access == "login-rrss" && n.detail[0].status && (upaCommonService.isUserLoggedIn = !0, upaCommonService.hideUPABoxAndShowNewTelephonePage("social", n.detail[0].data.email), HomeCommonService.saveCounter("rs.upa.cj.p-recepcion.success-cajaUPA"), HomeCommonService.saveCounter(t));
+                        break;
+                    case "access-email-step":
+                        n.detail[0].data.access == "login" && n.detail[0].status && (upaCommonService.isUserLoggedIn = !0, upaCommonService.hideUPABoxAndShowNewTelephonePage("email", n.detail[0].data.email), HomeCommonService.saveCounter("rs.upa.cj.p-recepcion.success-cajaUPA"), HomeCommonService.saveCounter(t));
+                        break;
+                    case "SSO":
+                        n.detail[0].data.access == "login" && n.detail[0].status && (upaCommonService.isUPASocialUser = !0, upaCommonService.isUserLoggedIn = !0, upaCommonService.isAlreadyLogedin = !0, $("#txt_Email").val(n.detail[0].data.email), $("p#newEmailText").removeClass("text-center"), $("p#newEmailText").text("En la siguiente pantalla podrás elegir el mejor seguro para ti. Además, te enviaremos los resultados por email."), HomeCommonService.isCaptchaRequiredForAutomation && HomeCommonService.refreshPromotionPageCaptchaImage(), HomeCommonService.saveCounter("rs.upa.cj.p-recepcion.success-logado-preQV"), HomeCommonService.saveCounter(t), HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent));
+                        break;
+                    case "privacy-agreement-step":
+                        n.detail[0].data.access == "register" && n.detail[0].status && (upaCommonService.isUserLoggedIn = !0, upaCommonService.hideUPABoxAndShowNewTelephonePage("email", n.detail[0].data.email), $("#checkBox_Email").attr("checked", !0), $("#divPolitica").hide(), HomeCommonService.saveCounter("rs.upa.cj.p-recepcion.success-cajaUPA"), HomeCommonService.saveCounter(t));
+                        break;
+                    case "access-rrss-step":
+                        n.detail[0].data.access == "register" && n.detail[0].status && (upaCommonService.isUserLoggedIn = !0, upaCommonService.hideUPABoxAndShowNewTelephonePage("social", n.detail[0].data.email), $("#checkBox_Email").attr("checked", !0), $("#divPolitica").hide(), HomeCommonService.saveCounter("rs.upa.cj.p-recepcion.success-cajaUPA"), HomeCommonService.saveCounter(t));
+                        break;
+                    case "create-account-step":
+                        n.detail[0].data.access == "register" && n.detail[0].status && (upaCommonService.isUserLoggedIn = !0, upaCommonService.hideUPABoxAndShowNewTelephonePage("email", n.detail[0].data.email), HomeCommonService.saveCounter("rs.upa.cj.p-recepcion.success-cajaUPA"), HomeCommonService.saveCounter(t))
+                }
+                n.detail.length > 0 && !n.detail[0].status && (upaCommonService.isErrorInLoginOrRegistrationInUPA = !0, HomeCommonService.saveCounter("rs.upa.cj.p-recepcion.failure"), HomeCommonService.saveCounter(t), $("#newEmailForm").remove(), $("#upaLoginBox").hide(), $("#EmailFailureTemplate").show(), HomeCommonService.isCaptchaRequiredForAutomation && (document.getElementById("EmailFailImageCaptcha").src = "captchaImage.aspx?v=" + Math.random()), $("#next").css("display", "block"))
+            }
+        })
+    },
+    hideUPABoxAndShowNewTelephonePage: function(n, t) {
+        document.getElementById("upaLoginBox").style.setProperty("display", "none", "important");
+        document.getElementById("newEmailForm").style.setProperty("display", "block", "important");
+        $("p#newEmailText").text("En la siguiente pantalla podrás elegir el mejor seguro para ti.");
+        $("p#newEmailText").addClass("text-center");
+        HomeCommonService.isCaptchaRequiredForAutomation && HomeCommonService.refreshPromotionPageCaptchaImage();
+        $("#txt_Email").val(t);
+        upaCommonService.loggedInUserEmail = t;
+        $("#next").css("display", "block");
+        HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent);
+        switch (n) {
+            case "email":
+                document.getElementById("divEmail").style.setProperty("display", "none", "important");
+                document.getElementById("itIsYou").style.setProperty("visibility", "hidden", "important");
+                break;
+            case "social":
+                document.getElementById("divEmail").style.setProperty("display", "block", "important");
+                document.getElementById("itIsYou").style.setProperty("visibility", "visible", "important")
+        }
+    },
+    isItNotYou: function() {
+        upaCommonService.pushNotYouEvent();
+        HomeCommonService.saveCounter("rs.upa.cj.p-recepcion.success-cajaUPA.c-no-eres-tu");
+        upaCommonService.deleteCookieByName("verifieduserInfo,verifieduserToken");
+        upaCommonService.isUserLoggedIn = !1;
+        upaCommonService.isAlreadyLogedin = !1;
+        upaCommonService.showUPABoxAndHideNewTelephonePage();
+        $("#next").css("display", "none");
+        var n = document.querySelector("webc-login");
+        n && n.vueComponent.restart()
+    },
+    showUPABoxAndHideNewTelephonePage: function() {
+        document.getElementById("upaLoginBox").style.setProperty("display", "block", "important");
+        document.getElementById("newEmailForm").style.setProperty("display", "none", "important")
+    },
+    deleteCookieByName: function(n) {
+        var t = ["rastreator.com", "rastreatortest.com"],
+            i = n.split(",");
+        i.forEach(function(n) {
+            t.forEach(function(t) {
+                document.cookie = n + "=;path=/" + (t ? ";domain=" + t : "") + ";expires=Thu, 01 Jan 1970 00:00:01 GMT"
+            })
+        })
+    },
+    isUpaGoBackActive: function(n) {
+        var t;
+        if (n) {
+            var i = n.shadowRoot.getElementById("privacy-agreement-step").className.split(/\s+/),
+                r = n.shadowRoot.getElementById("email-sent-step").className.split(/\s+/),
+                u = n.shadowRoot.getElementById("access-step").className.split(/\s+/);
+            for (upaCommonService.isUserOnFirstLoginPage = upaCommonService.getCookie("verifieduserToken") == null ? !0 : !1, t = 0; t < r.length; t++) r[t] === "in" && (upaCommonService.isUserOnFirstLoginPage = !1, upaCommonService.isUserGoOnEmailSent = !0);
+            for (t = 0; t < u.length; t++) u[t] === "in" && (upaCommonService.isUserOnFirstLoginPage = !0, upaCommonService.isUserGoOnEmailSent = !1);
+            if (n && (!upaCommonService.isUserOnFirstLoginPage || upaCommonService.isUserGoOnEmailSent) && !upaCommonService.isUserLoggedIn) {
+                for (t = 0; t < i.length; t++) i[t] === "in" && HomeCommonService.saveCounter("rs.upa.cj.p-acceso-atras");
+                return !0
+            }
+            return !1
+        }
+        return !1
+    },
+    getCookie: function(n) {
+        var i = document.cookie,
+            u = n + "=",
+            t = i.indexOf("; " + u),
+            r;
+        if (t == -1) {
+            if (t = i.indexOf(u), t != 0) return null
+        } else t += 2, r = document.cookie.indexOf(";", t), r == -1 && (r = i.length);
+        return decodeURI(i.substring(t + u.length, r))
+    }
+};
+var upaAutoPopulateService = {
+    UPAData: {},
+    IsSignIn: !1,
+    addUPAData: function(n, t) {
+        this.UPAData = n;
+        this.IsSignIn = t
+    }
+};
+
+function code2city(n) {
+    var t = new Array(53),
+        i, r;
+    return t[0] = "", t[1] = "ARABA/&Aacute;LAVA", t[2] = "ALBACETE", t[3] = "ALACANT/ALICANTE", t[4] = "ALMER&Iacute;A", t[5] = "&Aacute;VILA", t[6] = "BADAJOZ", t[7] = "ILLES BALEARS/ISLAS BALEARES", t[8] = "BARCELONA", t[9] = "BURGOS", t[10] = "C&Aacute;CERES", t[11] = "C&Aacute;DIZ", t[12] = "CASTELL&Oacute;/CASTELL&Oacute;N", t[13] = "CIUDAD REAL", t[14] = "C&Oacute;RDOBA", t[15] = "A CORU&Ntilde;A/LA CORU&Ntilde;A", t[16] = "CUENCA", t[17] = "GIRONA/GERONA", t[18] = "GRANADA", t[19] = "GUADALAJARA", t[20] = "GIPUZKOA/GUIP&Uacute;ZCOA", t[21] = "HUELVA", t[22] = "HUESCA", t[23] = "JA&Eacute;N", t[24] = "LE&Oacute;N", t[25] = "LLEIDA/L&Eacute;RIDA", t[26] = "LA RIOJA", t[27] = "LUGO", t[28] = "MADRID", t[29] = "M&Aacute;LAGA", t[30] = "MURCIA", t[31] = "NAFARROA/NAVARRA", t[32] = "OURENSE/ORENSE", t[33] = "ASTURIAS", t[34] = "PALENCIA", t[35] = "LAS PALMAS", t[36] = "PONTEVEDRA", t[37] = "SALAMANCA", t[38] = "SANTA CRUZ DE TENERIFE", t[39] = "CANTABRIA", t[40] = "SEGOVIA", t[41] = "SEVILLA", t[42] = "SORIA", t[43] = "TARRAGONA", t[44] = "TERUEL", t[45] = "TOLEDO", t[46] = "VALENCIA", t[47] = "VALLADOLID", t[48] = "BIZKAIA/VIZCAYA", t[49] = "ZAMORA", t[50] = "ZARAGOZA", t[51] = "CEUTA", t[52] = "MELILLA", i = "", isNaN(n) || n > 0 && n < 53 && (r = new Number(n), i = t[r]), i
+}
+
+function getKeyCode(n, t) {
+    if (!t) var t = window.event;
+    return t.keyCode ? code = t.keyCode ? t.keyCode : t.charCode : t.which && (code = t.which), code
 }
 
 function EmailMask(n) {
@@ -3869,29 +4571,86 @@ function IsCheckEmail() {
     n.indexOf("*") >= 0 && n === EmailMask(PreviousEmail) && PreviousEmail !== "" && (document.getElementById("txt_Email").value = "")
 }
 
-function IsCheckPhone() {
-    var n = $("input[name='txt_Phone']").val();
-    n.indexOf("●") >= 0 && n === MaskPhoneNumber(Previousphone, "") && Previousphone !== "" && (document.getElementById("txt_Phone").value = "")
+function MaskPhoneNumber(n) {
+    return n.replace(/\d(?=\d{3})/g, "●")
 }
 
-function getKeyCode(n, t) {
-    if (!t) var t = window.event;
-    return t.keyCode ? code = t.keyCode ? t.keyCode : t.charCode : t.which && (code = t.which), code
+function resetPrefillNumber(n) {
+    $(n).val().indexOf("●") >= 0 && $(n).val("")
 }
 
-function CallSaveTracker(n) {
-    typeof SaveTracker != undefined ? SaveTracker(n) : setTimeout(SaveTracker(n), 100)
+function resetPrefillDin(n) {
+    $(n).val().indexOf("*") >= 0 && $(n).val("")
 }
 
-function code2city(n) {
-    var t = new Array(53),
-        i, r;
-    return t[0] = "", t[1] = "ARABA/&Aacute;LAVA", t[2] = "ALBACETE", t[3] = "ALACANT/ALICANTE", t[4] = "ALMER&Iacute;A", t[5] = "&Aacute;VILA", t[6] = "BADAJOZ", t[7] = "ILLES BALEARS/ISLAS BALEARES", t[8] = "BARCELONA", t[9] = "BURGOS", t[10] = "C&Aacute;CERES", t[11] = "C&Aacute;DIZ", t[12] = "CASTELL&Oacute;/CASTELL&Oacute;N", t[13] = "CIUDAD REAL", t[14] = "C&Oacute;RDOBA", t[15] = "A CORU&Ntilde;A/LA CORU&Ntilde;A", t[16] = "CUENCA", t[17] = "GIRONA/GERONA", t[18] = "GRANADA", t[19] = "GUADALAJARA", t[20] = "GIPUZKOA/GUIP&Uacute;ZCOA", t[21] = "HUELVA", t[22] = "HUESCA", t[23] = "JA&Eacute;N", t[24] = "LE&Oacute;N", t[25] = "LLEIDA/L&Eacute;RIDA", t[26] = "LA RIOJA", t[27] = "LUGO", t[28] = "MADRID", t[29] = "M&Aacute;LAGA", t[30] = "MURCIA", t[31] = "NAFARROA/NAVARRA", t[32] = "OURENSE/ORENSE", t[33] = "ASTURIAS", t[34] = "PALENCIA", t[35] = "LAS PALMAS", t[36] = "PONTEVEDRA", t[37] = "SALAMANCA", t[38] = "SANTA CRUZ DE TENERIFE", t[39] = "CANTABRIA", t[40] = "SEGOVIA", t[41] = "SEVILLA", t[42] = "SORIA", t[43] = "TARRAGONA", t[44] = "TERUEL", t[45] = "TOLEDO", t[46] = "VALENCIA", t[47] = "VALLADOLID", t[48] = "BIZKAIA/VIZCAYA", t[49] = "ZAMORA", t[50] = "ZARAGOZA", t[51] = "CEUTA", t[52] = "MELILLA", i = "", isNaN(n) || n > 0 && n < 53 && (r = new Number(n), i = t[r]), i
+function MaskDIN(n) {
+    if (n != null || n != undefined) {
+        var t = n.substring(2, n.length - 1).replace(/\w/g, "*");
+        return n.substring(0, 2) + t.substring(0, n.length - 1) + n.substring(n.length - 1)
+    }
+}
+
+function RestrictCharacters(n, t, i) {
+    var u = t.keyCode || t.which,
+        t, r;
+    if (u == 0 || u == 229) code = getKeyCode(n.value);
+    else {
+        if (t || (t = window.event), t.charCode == 0) return !0;
+        t.keyCode ? code = t.keyCode ? t.keyCode : t.charCode : t.which && (code = t.which)
+    }
+    return (r = String.fromCharCode(code), code == 27 || code == "₹") ? (this.blur(), !1) : t.ctrlKey || code == 9 || code == 8 || code == 36 || code == 37 || code == 38 || code == 39 && (code != 39 || r != "'") || code == 40 ? !1 : r.match(i) ? !0 : !1
+}
+
+function onKeyupRestrictCharacter(n) {
+    $(n).val($(n).val().replace(/[^0-9]/g, ""))
+}
+
+function getQueryString(n, t) {
+    var r = t ? t : window.location.href,
+        u = new RegExp("[?&]" + n + "=([^&#]*)", "i"),
+        i = u.exec(r);
+    return i ? i[1] : null
+}
+
+function toggleNextButtonTextForProtectionSystems(n) {
+    var t = !1,
+        i;
+    CommonData.AllProtectionSystems.forEach(function(n) {
+        var i = $("input[name=checkbox_" + n + "]:checked").val();
+        if (i) return t = !0, !1
+    });
+    n == "Windowgrilles1" ? document.getElementById("checkbox_Windowgrilles2").checked = !1 : n == "Windowgrilles2" && (document.getElementById("checkbox_Windowgrilles1").checked = !1);
+    n == "Safebox1" ? document.getElementById("checkbox_Safebox2").checked = !1 : n == "Safebox2" && (document.getElementById("checkbox_Safebox1").checked = !1);
+    n == "AlarmSystem1" ? document.getElementById("checkbox_AlarmSystem2").checked = !1 : n == "AlarmSystem2" && (document.getElementById("checkbox_AlarmSystem1").checked = !1);
+    i = HomeCommonService.isCJ ? "next" : "btnClose";
+    $("#" + i).text(t ? "Avanzar" : "No tengo ninguno")
+}
+
+function keyClickValidate(n) {
+    var u = this.id,
+        i = document.getElementById(n),
+        r = document.getElementById(n).value.substring(0, 2),
+        t;
+    return i.value.length == 1 ? (t = i.value.substring(0, 1), parseInt(t) != 6 && parseInt(t) != 7 && parseInt(t) != 8 && parseInt(t) != 9 ? (i.value = "", !1) : !0) : parseInt(r) == 99 || r == "₹" ? (i.value = "", !1) : !0
+}
+
+function getFormatedDate(n) {
+    if (n) {
+        if (n.indexOf("-") > -1) {
+            let t = n.split("-");
+            return t[2] + "/" + t[1] + "/" + t[0]
+        }
+        return n
+    }
+    return ""
 }
 var PreviousEmail = "",
-    Previousphone = "",
-    CommonService = {
+    PreviousPhone = "",
+    PreviousDIN = "",
+    HomeCommonService = {
+        IsRemainingSecsExpired: !1,
         isBrowserButtonClicked: !1,
+        isSessionCaptchaScoreSave: !1,
         maxQuestionReached: "",
         currentQuestion: {},
         questionMaster: {},
@@ -3899,20 +4658,19 @@ var PreviousEmail = "",
         selectedItem: {},
         activeSection: "",
         sectionModel: {},
+        telephoneQuestionVersion: "",
         isCJ: !1,
-        Counter: "",
+        driverPostCodeStatus: "No",
         noOfInsurer: 1,
         previousInsurerRendered: !1,
         isPreviouslyInsurerRendered: !1,
+        PreSelectedProtectionSystems: [],
+        PreSelectedInsurances: [],
         currentSection: "",
         previousSection: "",
-        nextResponseHandle: "",
-        isForward: !1,
-        isSectionOneIndexCounterInserted: !1,
-        driverPostCodeStatus: "No",
-        ButtonDefaultText: "Avanzar",
-        isCaptchaScoreInserted: !0,
+        dataLayerEvent: {},
         isIPTrackerExecuted: !1,
+        isCaptchaRequiredForAutomation: !1,
         getQuestion: function(n) {
             var t = "";
             return t = $.grep(this.questionMaster, function(t) {
@@ -3924,7 +4682,7 @@ var PreviousEmail = "",
             })
         },
         getQuestionKey: function(n) {
-            var t = $.grep(CommonService.questionMaster, function(t) {
+            var t = $.grep(HomeCommonService.questionMaster, function(t) {
                 return t.QuestionNumber == n
             });
             return t[0].QuestionKey
@@ -3935,272 +4693,588 @@ var PreviousEmail = "",
             })
         },
         getCurrentQuestionGroupKey: function(n) {
-            var t = $.grep(CommonService.questionMaster, function(t) {
+            var t = $.grep(HomeCommonService.questionMaster, function(t) {
                 return t.QuestionKey === n
             });
             return t[0].GroupKey
         },
         renderQuestion: function(n) {
-            this.loadTemplate(this.getQuestion(n))
+            n == "Question_HomeSection_PersonInHouse" && HomeCommonService.WebHTTPCall(CommonData.Urls.QuestionAPI + CommonData.Constants.IsRobotSessionHome, CommonData.Constants.IsRobotSessionHome, 14, !1, "", "");
+            n == "Question_HomeSection_Occupation" && HomeCommonService.isCJ ? (HomeCommonService.currentQuestion.QuestionNumber == 2 && (HomeCommonService.currentQuestion = HomeCommonService.questionMaster[0]), HomeCommonService.loadTemplate([HomeCommonService.currentQuestion])) : HomeCommonService.loadTemplate(HomeCommonService.getQuestion(n))
         },
+        editAnswer: function() {},
         loadTemplate: function(n) {
-            var t = n[0].TemplateName,
-                r = n[0].QuestionNumber,
-                i;
-            if ($("#PrivacyInfoDiv").addClass("hidden"), $("#prev").hide(), $(".divLegalText").hide(), $("#next").text("Avanzar").removeClass("optional"), !this.isSectionOneIndexCounterInserted) {
-                this.isSectionOneIndexCounterInserted = !0;
-                try {
-                    CommonService.GetCounterName(CommonData.Constants.InsuredSection);
-                    i = [CommonService.Counter];
-                    SaveTrackerMultiple(i)
-                } catch (u) {
-                    $.ajax({
-                        url: CommonService.getTrackerJSBaseUrl() + "/Scripts/V2/tracker.min.js",
-                        success: function() {
-                            CommonService.GetCounterName(CommonData.Constants.InsuredSection);
-                            SaveTracker([CommonService.Counter])
-                        },
-                        error: function() {
-                            var n = CommonService.getCJURL() + "/commonCallback.aspx?Option=CounterFail";
-                            $.post(n, function() {}, "jsonp")
-                        }
-                    })
-                }
-            }
-            localCache.exist(t) ? this.bindTemplate(n, localCache.get(t)) : $.get(CommonData.Urls.TemplateURL + t, function(t) {
-                CommonService.bindTemplate(n, t)
-            });
-            this.manageNavigationButtons(t, n[0].QuestionKey === CommonData.QuestionKeys.InsuredSection.InsurancePurpose);
-            CommonService.selectedItem = {};
-            this.currentQuestion = n[n.length - 1];
-            CommonService.isBrowserButtonClicked || cj.manageHash(r);
-            CommonService.ElementScrollIntoView("cj-wrapper")
-        },
-        bindTemplate: function(n, t) {
-            var f, r, i, e, u;
-            if (this.SaveSectionCounter(n), this.GetCounterName(n[0].QuestionKey).SaveCounter(), f = {
+            var s = "",
+                u = n[0].TemplateName,
+                a = n[0].QuestionNumber,
+                r = n[0].TemplateHtml,
+                c, t, f, h, it, rt, v, e, y, g, nt, tt, l, ut, ft, o;
+            if ($("#PrivacyInfoDiv").addClass("hidden"), $("#prev").hide(), $(".divLegalText").hide(), h = HomeCommonService.isCJ ? "next" : "btnClose", $("#" + h).text("Avanzar"), c = !1, (n[0].QuestionKey == CommonData.QuestionKeys.InsuranceSection.JewelsOutOfSafeBox || n[0].QuestionKey == CommonData.QuestionKeys.InsuranceSection.ValueOfAllSpecialObjects) && (c = !0), c || $("#" + CommonData.Constants.CJQuestionTemplateContainer).html(""), HomeCommonService.isCJ ? (HomeCommonService.currentSection = n[0].SectionName, HomeCommonService.previousSection !== HomeCommonService.currentSection && (n[0].QuestionKey === CommonData.QuestionKeys.InsuranceSection.Continent || n[0].QuestionKey === CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderDateofBirth || n[0].QuestionKey === CommonData.QuestionKeys.OtherSection.Email) && (HomeCommonService.previousSection = HomeCommonService.currentSection, s = HomeCommonService.getCounterName(HomeCommonService.currentSection), HomeCommonService.saveCounter(s)), upaCommonService.isUPAEnable && n[0].QuestionKey == CommonData.QuestionKeys.OtherSection.Email || (s = HomeCommonService.getCounterName(n[0].QuestionKey), HomeCommonService.saveCounter(s)), HomeCommonService.dataLayerEvent = {
                     event: "virtualpage",
                     virtualpage: "customerjourney",
                     categoryvp: "insurance",
-                    productvp: "life",
-                    sectionvp: CommonService.getSectionNumber(n[0].SectionName),
+                    productvp: "home",
+                    sectionvp: HomeCommonService.getSectionNumber(n[0].SectionName),
                     question: "q" + n[0].QuestionNumber,
                     questiontext: n[0].QuestionText,
-                    testversion: ""
-                }, setTimeout(function() {
-                    CommonService.pushDataLayerEvent(f)
-                }, 2e3), n[0].IsGrouped) i = "", $("#" + CommonData.Constants.CJQuestionTemplateContainer).html(""), r = {}, n[0].QuestionKey === CommonData.QuestionKeys.InsuredSection.Gender && (i = CommonService.getSelectedValueFromContract(n[0].RiskNode), n[0].Options = $.grep(n[0].Options, function(n) {
-                return n.IsSelected = n.RiskValue === i, n
-            }), r.questions = n, localCache.set(n[0].TemplateName, t), CommonService.appendTemplateTo(t, r, CommonData.Constants.CJQuestionTemplateContainer));
-            else {
-                $("#" + CommonData.Constants.CJQuestionTemplateContainer).html("");
-                i = "";
-                switch (n[0].QuestionKey) {
-                    case CommonData.QuestionKeys.InsuredSection.PostalCode:
-                        i = CommonService.getSelectedValueFromContract(n[0].RiskNode);
-                        n[0].SelectedValue = i;
-                        localCache.set(n[0].TemplateName, t);
-                        CommonService.appendTemplateTo(t, n, CommonData.Constants.CJQuestionTemplateContainer);
-                        i && (document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML = code2city(modifyPostalCode(i).substring(0, 2)));
-                        break;
-                    case CommonData.QuestionKeys.CapitalSection.Capital:
-                        CommonService.getSelectedValueFromContract(CommonData.RiskNodes.IsCapitalOther) === "Yes" && (i = CommonService.getSelectedValueFromContract(n[0].RiskNode));
-                        i && (i = CommonFunctionsModule.formatNumberWithSeperator(i, CommonData.Constants.Separator));
-                        n[0].SelectedValue = i;
-                        localCache.set(n[0].TemplateName, t);
-                        CommonService.appendTemplateTo(t, n, CommonData.Constants.CJQuestionTemplateContainer);
-                        CommonService.formatPrice(n[0].RiskNode);
-                        break;
-                    case CommonData.QuestionKeys.EmailSection.Phone:
-                        i = CommonService.getSelectedValueFromContract(n[0].RiskNode);
-                        Previousphone == "" && n[0].IsPrepopulatePhone == !0 && (Previousphone = n[0].SelectedValue);
-                        n[0].SelectedValue = Previousphone != "" && i == Previousphone || i == null ? MaskPhoneNumber(Previousphone, n[0].SelectedValue) : i;
-                        localCache.set(n[0].TemplateName, t);
-                        CommonService.appendTemplateTo(t, n, CommonData.Constants.CJQuestionTemplateContainer);
-                        CommonService.toggleButtonText(n[0].RiskNode, CommonData.Constants.PhoneClickedButtonDefaultText);
-                        CommonService.ButtonDefaultText = "Avanzar";
-                        !CommonService.isNullorUndefined(n[0].SelectedValue) && n[0].SelectedValue.toString().length > 0 && $("#next").html(CommonService.ButtonDefaultText);
-                        $("#next").addClass("optional");
-                        e = JSON.stringify(n[0].SelectedValue);
-                        document.getElementById("prefilledPhone").style.display = Previousphone !== "" && n[0].SelectedValue === MaskPhoneNumber(Previousphone, n[0].SelectedValue) && e.indexOf("●") >= 0 ? "" : "none";
-                        break;
-                    case CommonData.QuestionKeys.EmailSection.Email:
-                        u = $.trim($("#hidEmailIdFromSSO").val());
-                        u && (n[0].SelectedValue = u);
-                        n[0].SelectedValue && (n[0].SelectedValue.indexOf("*") < 0 && (PreviousEmail = n[0].SelectedValue), n[0].SelectedValue = EmailMask(n[0].SelectedValue), n[0].Title = " (Utilizaste éste en la anterior comparativa. Si quieres, puedes cambiarlo)");
-                        localCache.set(n[0].TemplateName, t);
-                        CommonService.appendTemplateTo(t, n, CommonData.Constants.CJQuestionTemplateContainer);
-                        $(".divLegalText").show();
-                        $("#next").text("Ver precios");
+                    testversion: "HomeSplitPriceVersion_" + n[0].CJVersion
+                }) : HomeCommonService.dataLayerEvent = {
+                    event: "virtualpage",
+                    virtualpage: "wise",
+                    categoryvp: "insurance",
+                    productvp: "home",
+                    sectionvp: HomeCommonService.getSectionNumber(n[0].SectionName),
+                    question: "q" + n[0].QuestionNumber,
+                    questiontext: n[0].QuestionText,
+                    testversion: "HomeSplitPriceVersion_" + n[0].CJVersion
+                }, n[0].IsGrouped) {
+                n.forEach(function(n) {
+                    var t = HomeCommonService.getSelectedValueFromContract(n.RiskNode);
+                    n.Options = $.grep(n.Options, function(n) {
+                        return n.IsSelected = n.RiskValue === t, n
+                    })
+                });
+                f = {};
+                f.questions = n;
+                switch (n[0].GroupKey) {
+                    case CommonData.GroupKeys.JewelsInSafeAndOutSafeBox:
+                        HomeCommonService.appendTemplateTo(r, f, CommonData.Constants.CJQuestionSafeBoxSubTemplateContainer + "1");
                         break;
                     default:
-                        i = CommonService.getSelectedValueFromContract(n[0].RiskNode);
-                        n[0].Options = $.grep(n[0].Options, function(n) {
-                            return n.IsSelected = n.RiskValue === i, n
+                        $("#" + CommonData.Constants.CJQuestionTemplateContainer).html("");
+                        HomeCommonService.appendTemplateTo(r, f, CommonData.Constants.CJQuestionTemplateContainer)
+                }
+                HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation)
+            } else {
+                t = "";
+                switch (n[0].QuestionKey) {
+                    case CommonData.QuestionKeys.InsuranceSection.ValueOfAllSpecialObjects:
+                        f = {};
+                        f.questions = n;
+                        HomeCommonService.appendTemplateTo(r, f, CommonData.Constants.CJQuestionSafeBoxSubTemplateContainer + "2");
+                        break;
+                    case CommonData.QuestionKeys.HouseSection.AllProtectionSystems:
+                        HomeCommonService.PreSelectedProtectionSystems && HomeCommonService.PreSelectedProtectionSystems.length > 0 && n[0].Options.forEach(function(n) {
+                            n.IsSelected = HomeCommonService.PreSelectedProtectionSystems.indexOf(n.Value) > -1 ? !0 : !1
                         });
-                        localCache.set(n[0].TemplateName, t);
-                        CommonService.appendTemplateTo(t, n, CommonData.Constants.CJQuestionTemplateContainer)
+                        n[0].Options.filter(function(n) {
+                            return n.IsSelected
+                        }).length == 0 && (h = HomeCommonService.isCJ ? "next" : "btnClose", $("#" + h).text("No tengo ninguno"));
+                        HomeCommonService.appendTemplateTo(r, n, CommonData.Constants.CJQuestionTemplateContainer);
+                        HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
+                        break;
+                    case CommonData.QuestionKeys.InsuranceSection.FavouriteKindInsurance:
+                        it = this.getQuestionsByGroupKey(CommonData.GroupKeys.JewelsInSafeAndOutSafeBox);
+                        rt = this.getQuestion(CommonData.QuestionKeys.InsuranceSection.ValueOfAllSpecialObjects);
+                        this.renameNextButton("No me interesa");
+                        v = !1;
+                        n[0].Options.forEach(function(n) {
+                            v = n.IsSelected;
+                            n.subQuestions = n.Value == "1" ? it : rt
+                        });
+                        v && this.renameNextButton("Avanzar");
+                        this.getQuestionsByGroupKey(CommonData.GroupKeys.JewelsInSafeAndOutSafeBox);
+                        HomeCommonService.appendTemplateTo(r, n, CommonData.Constants.CJQuestionTemplateContainer);
+                        HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
+                        break;
+                    case CommonData.QuestionKeys.InsuranceSection.InitialDateOfInsurance:
+                    case CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderDateofBirth:
+                        n[0].QuestionKey == CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderDateofBirth && !n[0].SelectedValue && upaAutoPopulateService.IsSignIn && upaAutoPopulateService.UPAData.dateOfBirth && (e = upaAutoPopulateService.UPAData.dateOfBirth.substring(0, 10).split("-"), n[0].Options.years[0].Value = e[0], n[0].Options.days[0].Value = e[2], n[0].Options.monthList.forEach(function(n) {
+                            n.IsSelected = n.RiskValue === e[1]
+                        }), n[0].SelectedValue = e[2] + "/" + e[1] + "/" + e[0]);
+                        HomeCommonService.appendTemplateTo(r, n, CommonData.Constants.CJQuestionTemplateContainer);
+                        HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
+                        break;
+                    case CommonData.QuestionKeys.HouseSection.PostalCode:
+                        t = HomeCommonService.getSelectedValueFromContract(n[0].RiskNode);
+                        !t && upaAutoPopulateService.IsSignIn && (t = upaAutoPopulateService.UPAData.province);
+                        n[0].SelectedValue = t;
+                        HomeCommonService.appendTemplateTo(r, n, CommonData.Constants.CJQuestionTemplateContainer);
+                        HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
+                        t && (document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML = code2city(modifyPostalCode(t).substring(0, 2)));
+                        break;
+                    case CommonData.QuestionKeys.PolicyHolderSection.HabitualPostalCode:
+                        t = HomeCommonService.getSelectedValueFromContract(n[0].RiskNode);
+                        n[0].SelectedValue = t;
+                        HomeCommonService.appendTemplateTo(r, n, CommonData.Constants.CJQuestionTemplateContainer);
+                        HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
+                        t && (document.getElementById("lblHabitualCity").innerHTML = code2city(modifyPostalCode(t).substring(0, 2)));
+                        break;
+                    case CommonData.QuestionKeys.PolicyHolderSection.DNI:
+                        t = HomeCommonService.getSelectedValueFromContract(n[0].RiskNode);
+                        !t && upaAutoPopulateService.IsSignIn && (t = upaAutoPopulateService.UPAData.dni);
+                        PreviousDIN == "" && (PreviousDIN = t);
+                        y = JSON.parse(JSON.stringify(n));
+                        y[0].SelectedValue = HomeCommonService.isCJ == !1 && MaskDIN(PreviousDIN) == MaskDIN(t) ? MaskDIN(t) : t;
+                        HomeCommonService.appendTemplateTo(r, y, CommonData.Constants.CJQuestionTemplateContainer);
+                        HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
+                        break;
+                    case CommonData.QuestionKeys.OtherSection.Phone:
+                        break;
+                    case CommonData.QuestionKeys.OtherSection.Email:
+                        var p = HomeCommonService.contractType.PolicyHolderBirthDate.split("-"),
+                            w = HomeCommonService.contractType.PolicyStartRealDate.split("-"),
+                            b = new Date(p[0], p[1] - 1, p[2], 0, 0, 0, 0),
+                            k = new Date(w[0], w[1] - 1, w[2], 0, 0, 0, 0),
+                            d = !1,
+                            i = CommonData.Urls.CaptchaRequiredCheckURL + $.trim($("#hidJourneyTime").val());
+                        i = i + "&hidPostalCode=" + HomeCommonService.contractType.HouseDetails.PostalCode;
+                        i = i + "&hidSelectedPolicyHolderDateofBirthDayValue=" + b.getDate().toString();
+                        i = i + "&hidSelectedPolicyHolderDateofBirthMonthValue=" + (b.getMonth() + 1).toString();
+                        i = i + "&hidSelectedPolicyHolderDateofBirthYearValue=" + b.getFullYear().toString();
+                        i = i + "&hidSelectedInsuranceStartDateDayValue=" + k.getDate().toString();
+                        i = i + "&hidSelectedInsuranceStartDateMonthValue=" + (k.getMonth() + 1).toString();
+                        i = i + "&hidSelectedInsuranceStartDateYearValue=" + k.getFullYear().toString();
+                        HomeCommonService.isCJ ? (d = HomeCommonService.captchaRequired(i), n[0].IsCaptchaRequired = d, HomeCommonService.isCaptchaRequiredForAutomation = d) : n[0].IsCaptchaRequired = !1;
+                        g = $.trim($("#hidEmailIdFromSSO").val());
+                        g && (n[0].SelectedValue = g);
+                        n[0].SelectedValue && (n[0].SelectedValue.indexOf("*") < 0 && (PreviousEmail = n[0].SelectedValue), nt = "", nt = EmailMask(n[0].SelectedValue), n[0].SelectedValue = nt, n[0].Title += " (Utilizaste éste en la anterior comparativa. Si quieres, puedes cambiarlo)");
+                        HomeCommonService.appendTemplateTo(r, n[0], CommonData.Constants.CJQuestionTemplateContainer);
+                        HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
+                        HomeCommonService.isCJ && upaCommonService.isUPAEnable && upaCommonService.showUpaComponent();
+                        n[1] !== null && n[1] !== undefined && n[1] !== "" && (!upaAutoPopulateService.IsSignIn && n[1].SelectedValue && n[1].IsMaskingEnable ? (HomeCommonService.isCJ && (n[1].Title = "Teléfono"), n[1].SelectedValue.indexOf("●") < 0 && (PreviousPhone = n[1].SelectedValue), tt = "", tt = HomeCommonService.isCJ ? MaskPhoneNumber(n[1].SelectedValue) : n[1].SelectedValue, n[1].SelectedValue = tt) : (t = HomeCommonService.getSelectedValueFromContract(n[1].RiskNode), l = upaAutoPopulateService.UPAData.mobileNumber, l && upaAutoPopulateService.IsSignIn ? (n[1].SelectedValue = MaskPhoneNumber(l), PreviousPhone = l) : n[1].SelectedValue = t), $.get(CommonData.Urls.TemplateURL + n[1].TemplateName, function(t) {
+                            upaCommonService.isUPAEnable ? (HomeCommonService.appendTemplateTo(t, n[1], "appendPhoneTemplate"), HomeCommonService.appendTemplateTo(t, n[1], "appendPhoneFailTemplate")) : (HomeCommonService.appendTemplateTo(t, n[1], "appendPhoneTemplate"), HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation));
+                            upaCommonService.isUPAEnable && !HomeCommonService.isCJ && $("#divEmail").hide()
+                        }));
+                        HomeCommonService.isCJ && ($(".divLegalText").show(), $("#next").text("Ver precios"));
+                        break;
+                    case CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderOriginCountry:
+                        t = HomeCommonService.getSelectedValueFromContract(n[0].RiskNode);
+                        !t && upaAutoPopulateService.IsSignIn && upaAutoPopulateService.UPAData.originCountry && (ut = n[0].Options.options.some(n => n.Text === upaAutoPopulateService.UPAData.originCountry), ut ? t = n[0].Options.options.filter(n => n.Text === upaAutoPopulateService.UPAData.originCountry)[0].RiskValue : (ft = n[0].Options.countryGroups.filter(n => n.Alphabet === upaAutoPopulateService.UPAData.originCountry[0])[0], t = ft.Options.filter(n => n.Text === upaAutoPopulateService.UPAData.originCountry)[0].RiskValue));
+                        t && (o = !1, n[0].Options.options.every(function(n) {
+                            return o = n.IsSelected = n.RiskValue === t, !o
+                        }), o || (n[0].Options.countryGroups.forEach(function(n) {
+                            n.Options && n.Options.forEach(function(n) {
+                                n.IsSelected = n.RiskValue === t
+                            })
+                        }), n[0].Options.topCountries.forEach(function(n) {
+                            n.IsSelected = n.RiskValue === t
+                        })));
+                        HomeCommonService.appendTemplateTo(r, n, CommonData.Constants.CJQuestionTemplateContainer);
+                        HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
+                        t && (o ? ($("#div_" + CommonData.RiskNodes.PolicyHolderOriginCountry).show(), $(".country-selector").addClass("hidden")) : ($("#div_" + CommonData.RiskNodes.PolicyHolderOriginCountry).hide(), $(".country-selector").removeClass("hidden"), HomeCommonService.ElementScrollIntoView(t)));
+                        break;
+                    default:
+                        t = HomeCommonService.getSelectedValueFromContract(n[0].RiskNode);
+                        n[0].Options = $.grep(n[0].Options, function(n) {
+                            return n.IsSelected = n.RiskValue === t, n
+                        });
+                        n[0].SelectedValue = t;
+                        HomeCommonService.appendTemplateTo(r, n, CommonData.Constants.CJQuestionTemplateContainer);
+                        HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation)
                 }
             }
-            CommonService.isForward = !1;
-            CommonService.isIPTrackerExecuted == !1 && IPTrackerService && (CommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-vida.rastreator.com", CommonData.Urls.GetIPTrackerModelApi));
-            //CommonService.isCaptchaScoreInserted == !1 && ReCaptchaV3Service && (CommonService.isCaptchaScoreInserted = !0, ReCaptchaV3Service.InitCaptcha("https://seguro-vida.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi))
+            HomeCommonService.dataLayerEvent = HomeCommonService.isCJ ? {
+                event: "virtualpage",
+                virtualpage: "customerjourney",
+                categoryvp: "insurance",
+                productvp: "home",
+                sectionvp: HomeCommonService.getSectionNumber(n[0].SectionName),
+                question: "q" + n[0].QuestionNumber,
+                questiontext: n[0].QuestionText,
+                testversion: "HomeSplitPriceVersion_" + n[0].CJVersion
+            } : {
+                event: "virtualpage",
+                virtualpage: "wise",
+                categoryvp: "insurance",
+                productvp: "home",
+                sectionvp: HomeCommonService.getSectionNumber(n[0].SectionName),
+                question: "q" + n[0].QuestionNumber,
+                questiontext: n[0].QuestionText,
+                testversion: "HomeSplitPriceVersion_" + n[0].CJVersion
+            };
+            n[0].QuestionNumber === 1 ? setTimeout(function() {
+                HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent)
+            }, 2e3) : HomeCommonService.isCJ && upaCommonService.isUPAEnable && n[0].QuestionKey != CommonData.QuestionKeys.OtherSection.Email ? HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent) : HomeCommonService.isCJ && !upaCommonService.isUPAEnable ? HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent) : HomeCommonService.isCJ || HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent);
+            HomeCommonService.selectedItem = {};
+            c || (this.currentQuestion = n[n.length - 1]);
+            HomeCommonService.isCJ && (HomeCommonService.isBrowserButtonClicked || cj.manageHash(a), progressBar.updateProgress(n[0].QuestionNumber), HomeCommonService.ElementScrollIntoView("cj-wrapper"), a === 1 && document.readyState === "interactive" && $("head").append('<link  href="' + CommonData.Urls.NEW_COOKIE_CSS + '" rel="stylesheet" type="text/css" />'), a === 2 && ReCaptchaV3Service && ReCaptchaV3Service.InitCaptcha("https://seguro-hogar.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi), HomeCommonService.isIPTrackerExecuted == !1 && IPTrackerService && (HomeCommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-hogar.rastreator.com", CommonData.Urls.GetIPTrackerModelApi)), upaCommonService.showHideUPALoginIcon());
+            maskingDob()
         },
-        manageNavigationButtons: function(n, t) {
-            switch (n) {
-                case CommonData.Templates.TwoListTemplate:
-                case CommonData.Templates.SingleListTemplate:
-                    $("#next").hide();
-                    break;
-                default:
-                    $("#next").show()
-            }
-            t || $("#prev").show()
-        },
+        answerQuestion: function() {},
+        moveNext: function() {},
         movePrevious: function() {
-            CommonService.isForward = !1;
-            window.history.back()
+            var n = document.querySelector("webc-login");
+            upaCommonService.isUPAEnable && upaCommonService.isUpaGoBackActive(n) ? n.vueComponent.goBack() : this.renderQuestion(HomeCommonService.currentQuestion.PreviousQuestionKey)
         },
         appendTemplateTo: function(n, t, i) {
-            CommonService.maxQuestionReached = this.currentQuestion.QuestionNumber;
+            HomeCommonService.maxQuestionReached = this.currentQuestion.QuestionNumber;
             $(n).tmpl(t).appendTo("#" + i)
         },
-        getSelectedValueFromContract: function(n) {
-            return CommonService.contractType[n]
+        removeInsurerSubTemplate: function() {},
+        resetAnswer: function() {},
+        manageNavigationButtons: function(n, t, i) {
+            if (t) {
+                switch (n) {
+                    case CommonData.Templates.TwoListTemplate:
+                    case CommonData.Templates.SingleListTemplate:
+                    case CommonData.Templates.PolicyHolderCountryTemplate:
+                        $("#next").hide();
+                        break;
+                    default:
+                        $("#next").show()
+                }
+                i || $("#prev").show()
+            }
         },
         saveAnswer: function(n) {
-
-            /*
-            if (CommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.InsuredSection.DOB && CommonFunctionsModule.checkBotSession("/api/cj/validatebrowsersession", function(n) {
-                    n == !0 && (CommonService.isInternalRedirect = !0, window.location.href = CommonFunctionsModule.getMaintenancePageURL())
-                }), !CommonService.isCJ) {
-                document.getElementById("btnSave").scrollIntoView();
-                CommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.CapitalSection.Capital && $("#txt_Capital").val("");
-                return
-            }
-
-            */
-
-
-            if (CommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.InsuredSection.DOB) {
-                document.getElementById("btnSave").scrollIntoView();
-                CommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.CapitalSection.Capital && $("#txt_Capital").val("");
-                return
-            }
-
-            CommonService.isBrowserButtonClicked = !1;
-            this.getSelectedValue(CommonService.currentQuestion.QuestionKey, CommonService.currentQuestion.GroupKey);
-            this.updateContract(CommonService.currentQuestion.QuestionKey, CommonService.currentQuestion.SectionName, CommonService.currentQuestion.RiskNode, CommonService.currentQuestion.GroupKey, n) && (CommonService.currentQuestion.HasDependents === !0 ? this.updateQuestionModelDependencies() : cj.moveNext(), CommonService.isForward = !0)
+            HomeCommonService.isBrowserButtonClicked = !1;
+            this.getSelectedValue(HomeCommonService.currentQuestion.QuestionKey, HomeCommonService.currentQuestion.GroupKey, n);
+            this.updateContract(HomeCommonService.currentQuestion.QuestionKey, HomeCommonService.currentQuestion.SectionName, HomeCommonService.currentQuestion.RiskNode, HomeCommonService.currentQuestion.QuestionNumber) && (HomeCommonService.currentQuestion.HasDependents === !0 ? this.updateQuestionModelDependencies() : cj.moveNext())
         },
-        updateContract: function(n, t, i, r, u, f) {
-            var e, o, s, h, c;
-            if (ValidationService.validateAnswer(n, i, r, u)) {
-                e = f ? CommonData.Constants.WsSaveAnswerDataLayerEvent : CommonData.Constants.CJSaveAnswerDataLayerEvent;
-                o = "q" + this.getQuestion(n)[0].QuestionNumber;
+        updateContract: function(n, t, i, r) {
+            var u, h, f, c, o, s, l, a, e;
+            if (HomeValidationService.validateAnswer(n, i)) {
+                u = [];
                 switch (n) {
-                    case CommonData.QuestionKeys.InsuredSection.InsurancePurpose:
-                    case CommonData.QuestionKeys.RisksSection.IsSmoke:
-                    case CommonData.QuestionKeys.RisksSection.IsRiskJob:
-                    case CommonData.QuestionKeys.RisksSection.ExtremeSport:
-                        CommonService.contractType[i] = CommonService.selectedItem.riskValue;
-                        CommonService.saveAnswerDataLayerEvent(e, o, CommonService.selectedItem.riskValue);
+                    case CommonData.QuestionKeys.HouseSection.Occupation:
+                    case CommonData.QuestionKeys.HouseSection.Utilization:
+                    case CommonData.QuestionKeys.HouseSection.HouseKind:
+                    case CommonData.QuestionKeys.HouseSection.Situation:
+                    case CommonData.QuestionKeys.HouseSection.RenewedAll:
+                        HomeCommonService.contractType.HouseDetails[i] = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.riskValue, "q" + r);
                         break;
-                    case CommonData.QuestionKeys.InsuredSection.Gender:
-                    case CommonData.QuestionKeys.InsuredSection.DOB:
-                        s = CommonService.selectedItem.DOB.year + "-" + CommonService.selectedItem.DOB.month + "-" + CommonService.selectedItem.DOB.day;
-                        CommonService.contractType[CommonData.RiskNodes.DOB] = s;
-                        CommonService.contractType[CommonData.RiskNodes.Gender] = CommonService.selectedItem.Gender;
-                        h = CommonFunctionsModule.getAgeUsingDateOfBirth(s);
-                        CommonService.saveAnswerDataLayerEvent(e, o, h + "-" + CommonService.selectedItem.Gender);
+                    case CommonData.QuestionKeys.HouseSection.PersonInHouse:
+                        HomeCommonService.contractType[i] = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.currentQuestion.SelectedValue = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.riskValue, "q" + r);
                         break;
-                    case CommonData.QuestionKeys.InsuredSection.PostalCode:
-                        CommonService.contractType[i] = CommonService.selectedItem.riskValue;
-                        CommonService.saveAnswerDataLayerEvent(e, o, CommonService.selectedItem.province);
+                    case CommonData.QuestionKeys.HouseSection.IsHouseInsured:
+                    case CommonData.QuestionKeys.HouseSection.IsHouseMortgage:
+                        HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.IsHouseInsured] = HomeCommonService.selectedItem.FirstQuestion;
+                        HomeCommonService.contractType.PolicyStartRealDate = "";
+                        HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.IsHouseMortgage] = HomeCommonService.selectedItem.SecondQuestion;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.FirstQuestion + "-" + HomeCommonService.selectedItem.SecondQuestion, "q" + r);
                         break;
-                    case CommonData.QuestionKeys.CapitalSection.Capital:
-                        u ? u.text === "Avanzar" || CommonService.selectedItem.Capital.InputValue && u.text === "Guardar" ? (CommonService.contractType[CommonData.RiskNodes.IsCapitalOther] = "Yes", CommonService.contractType[i] = CommonService.selectedItem.Capital.InputValue) : (CommonService.contractType[CommonData.RiskNodes.IsCapitalOther] = "No", CommonService.contractType[i] = CommonService.selectedItem.Capital.ListValue) : (CommonService.contractType[CommonData.RiskNodes.IsCapitalOther] = "No", CommonService.contractType[i] = CommonService.selectedItem.Capital.ListValue);
-                        CommonService.saveAnswerDataLayerEvent(e, o, CommonService.contractType[i]);
+                    case CommonData.QuestionKeys.HouseSection.PostalCode:
+                        HomeCommonService.contractType.HouseDetails[i] = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.province, "q" + r);
                         break;
-                    case CommonData.QuestionKeys.EmailSection.Phone:
-                        c = isNaN(parseInt(CommonService.selectedItem.phone)) ? "" : parseInt(CommonService.selectedItem.phone);
-                        CommonService.contractType[i] = c;
-                        CommonService.saveAnswerDataLayerEvent(e, o, "phone");
+                    case CommonData.QuestionKeys.HouseSection.ConstructionYear:
+                    case CommonData.QuestionKeys.HouseSection.RenewalYear:
+                        HomeCommonService.contractType.HouseDetails[i] = new Date(parseInt(HomeCommonService.selectedItem.riskValue), 1, 1);
+                        HomeCommonService.currentQuestion.SelectedValue = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.riskValue, "q" + r);
                         break;
-                    case CommonData.QuestionKeys.EmailSection.Email:
-                        CommonService.contractType[i] = CommonService.selectedItem.riskValue;
-                        CommonService.saveAnswerDataLayerEvent(e, o, "email")
+                    case CommonData.QuestionKeys.HouseSection.LandArea:
+                    case CommonData.QuestionKeys.HouseSection.HouseArea:
+                        HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.HouseArea] = parseInt(HomeCommonService.selectedItem.FirstQuestion).toString();
+                        HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.LandArea] = HomeCommonService.selectedItem.SecondQuestion === undefined ? null : parseInt(HomeCommonService.selectedItem.SecondQuestion).toString();
+                        u = this.getQuestionsByGroupKey(HomeCommonService.currentQuestion.GroupKey);
+                        u.forEach(function(n) {
+                            n.SelectedValue = HomeCommonService.getSelectedValueFromContract(n.RiskNode)
+                        });
+                        h = HomeCommonService.selectedItem.SecondQuestion === undefined ? "0" : parseInt(HomeCommonService.selectedItem.SecondQuestion).toString();
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, parseInt(HomeCommonService.selectedItem.FirstQuestion).toString() + "-" + h, "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.HouseSection.NumberOfRooms:
+                    case CommonData.QuestionKeys.HouseSection.NumberOfRestRooms:
+                        HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.NumberOfRooms] = HomeCommonService.selectedItem.FirstQuestion;
+                        HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.NumberOfBathrooms] = HomeCommonService.selectedItem.SecondQuestion;
+                        u = this.getQuestionsByGroupKey(HomeCommonService.currentQuestion.GroupKey);
+                        u.forEach(function(n) {
+                            n.SelectedValue = HomeCommonService.getSelectedValueFromContract(n.RiskNode)
+                        });
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.FirstQuestion + "-" + HomeCommonService.selectedItem.SecondQuestion, "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.InsuranceSection.Continent:
+                        HomeCommonService.contractType[CommonData.RiskNodes.Container] = parseInt(HomeCommonService.selectedItem.riskValue).toString();
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.riskValue, "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.InsuranceSection.Content:
+                        HomeCommonService.contractType[CommonData.RiskNodes.Content] = parseInt(HomeCommonService.selectedItem.riskValue).toString();
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.riskValue, "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.HouseSection.ConstructionQuality:
+                    case CommonData.QuestionKeys.HouseSection.ConstructionMaterial:
+                        HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.ConstructionQuality] = HomeCommonService.selectedItem.FirstQuestion;
+                        HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.ConstructionMaterial] = HomeCommonService.selectedItem.SecondQuestion;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.FirstQuestion + "-" + HomeCommonService.selectedItem.SecondQuestion, "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.InsuranceSection.FavouriteKindInsurance:
+                        HomeCommonService.contractType[CommonData.RiskNodes.JewelsOutOfSafeBox] = HomeCommonService.selectedItem.JewelsOutOfSafeBox ? parseInt(HomeCommonService.selectedItem.JewelsOutOfSafeBox).toString() : null;
+                        HomeCommonService.contractType[CommonData.RiskNodes.JewelsInSafeBox] = HomeCommonService.selectedItem.JewelsInSafeBox ? parseInt(HomeCommonService.selectedItem.JewelsInSafeBox).toString() : null;
+                        HomeCommonService.contractType[CommonData.RiskNodes.ValueOfAllSpecialObjects] = HomeCommonService.selectedItem.SpecialObject ? parseInt(HomeCommonService.selectedItem.SpecialObject).toString() : null;
+                        HomeCommonService.currentQuestion.SelectedValue = HomeCommonService.selectedItem.SpecialObject ? parseInt(HomeCommonService.selectedItem.SpecialObject).toString() : "";
+                        f = "";
+                        f += HomeCommonService.selectedItem.JewelsOutOfSafeBox || HomeCommonService.selectedItem.JewelsInSafeBox ? "Jewels -" + (HomeCommonService.selectedItem.JewelsOutOfSafeBox ? HomeCommonService.selectedItem.JewelsOutOfSafeBox : "") + " - " + (HomeCommonService.selectedItem.JewelsInSafeBox ? HomeCommonService.selectedItem.JewelsInSafeBox : "") : null;
+                        f += HomeCommonService.selectedItem.SpecialObject ? (f ? ", " : "") + "SpecialValueObjects - " + HomeCommonService.selectedItem.SpecialObject : "";
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, f, "q" + this.currentQuestion.QuestionNumber);
+                        break;
+                    case CommonData.QuestionKeys.InsuranceSection.JewelsInSafeBox:
+                    case CommonData.QuestionKeys.InsuranceSection.JewelsOutOfSafeBox:
+                        HomeCommonService.contractType[CommonData.RiskNodes.JewelsOutOfSafeBox] = parseInt(HomeCommonService.selectedItem.FirstQuestion).toString();
+                        HomeCommonService.contractType[CommonData.RiskNodes.JewelsInSafeBox] = HomeCommonService.selectedItem.SecondQuestion === undefined ? "0" : parseInt(HomeCommonService.selectedItem.SecondQuestion).toString();
+                        u = this.getQuestionsByGroupKey(HomeCommonService.currentQuestion.GroupKey);
+                        u.forEach(function(n) {
+                            n.SelectedValue = HomeCommonService.getSelectedValueFromContract(n.RiskNode)
+                        });
+                        c = HomeCommonService.selectedItem.SecondQuestion === undefined ? "0" : parseInt(HomeCommonService.selectedItem.SecondQuestion).toString();
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.FirstQuestion + "-" + c, "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.InsuranceSection.ValueOfAllSpecialObjects:
+                        HomeCommonService.contractType[i] = parseInt(HomeCommonService.selectedItem.riskValue).toString();
+                        HomeCommonService.currentQuestion.SelectedValue = parseInt(HomeCommonService.selectedItem.riskValue).toString();
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.riskValue, "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.HouseSection.AllProtectionSystems:
+                        o = [];
+                        for (s in HomeCommonService.selectedItem.riskValue) HomeCommonService.contractType[s] = HomeCommonService.selectedItem.riskValue[s];
+                        HomeCommonService.PreSelectedProtectionSystems.forEach(function(n) {
+                            n && $("#checkbox_" + n).is(":checked") && o.push($("#Selected" + n)[0].innerText)
+                        });
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, o.join(" - "), "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderDateofBirth:
+                        l = HomeCommonService.selectedItem.year + "-" + HomeCommonService.selectedItem.month + "-" + HomeCommonService.selectedItem.day;
+                        HomeCommonService.contractType[CommonData.RiskNodes.PolicyHolderBirthDate] = l;
+                        HomeCommonService.currentQuestion.Options.years[0].Value = HomeCommonService.selectedItem.year;
+                        HomeCommonService.currentQuestion.Options.days[0].Value = HomeCommonService.selectedItem.day;
+                        HomeCommonService.currentQuestion.Options.monthList.forEach(function(n) {
+                            n.IsSelected = n.RiskValue === HomeCommonService.selectedItem.month
+                        });
+                        HomeCommonService.currentQuestion.SelectedValue = HomeCommonService.selectedItem.day + "/" + HomeCommonService.selectedItem.month + "/" + HomeCommonService.selectedItem.year;
+                        a = (new Date).getFullYear() - parseInt(HomeCommonService.selectedItem.year);
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, a, "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.InsuranceSection.InitialDateOfInsurance:
+                        e = HomeCommonService.selectedItem.year + "-" + HomeCommonService.selectedItem.month + "-" + HomeCommonService.selectedItem.day;
+                        HomeCommonService.contractType[CommonData.RiskNodes.PolicyStartRealDate] = e;
+                        HomeCommonService.currentQuestion.Options.days.forEach(function(n) {
+                            n.IsSelected = n.RiskValue === HomeCommonService.selectedItem.day
+                        });
+                        HomeCommonService.currentQuestion.Options.years.forEach(function(n) {
+                            n.IsSelected = n.RiskValue === HomeCommonService.selectedItem.year
+                        });
+                        HomeCommonService.currentQuestion.Options.monthList.forEach(function(n) {
+                            n.IsSelected = n.RiskValue === HomeCommonService.selectedItem.month
+                        });
+                        HomeCommonService.currentQuestion.SelectedValue = e;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, e, "q" + r);
+                        HomeCommonService.contractType.HouseDetails.IsHouseInsured == "No" && (HomeCommonService.getQuestion("Question_CapitalSection_PolicyHolderDateofBirth")[0].SelectedValue = "");
+                        break;
+                    case CommonData.QuestionKeys.PolicyHolderSection.DNI:
+                        HomeCommonService.contractType[i] = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, "dni", "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.PolicyHolderSection.HabitualPostalCode:
+                        HomeCommonService.contractType[i] = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.HabitualProvince, "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.OtherSection.Phone:
+                        HomeCommonService.contractType[i] = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, "email", "q" + r);
+                        HomeCommonService.contractType.Email = HomeCommonService.selectedItem.email;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, "email", "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.OtherSection.Email:
+                        HomeCommonService.contractType[i] = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, "email", "q" + r);
+                        break;
+                    case CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderOriginCountry:
+                        HomeCommonService.contractType[i] = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.text, "q" + r);
+                        break;
+                    default:
+                        HomeCommonService.contractType[i] = HomeCommonService.selectedItem.riskValue;
+                        HomeCommonService.saveAnswerDataLayerEvent(CommonData.Constants.CJSaveAnswerDataLayerEvent, HomeCommonService.selectedItem.riskValue, "q" + r)
                 }
                 return !0
             }
             return !1
         },
-        getSelectedValue: function(n) {
-            var i, t;
+        getSelectedValue: function(n, t, i) {
+            var u, c, f, e, a, o, l, s, v, h, r;
+            HomeCommonService.isCJ || document.getElementById("btnClose").scrollIntoView();
+            u = selectedSQAnswer = selectedValue = "";
             switch (n) {
-                case CommonData.QuestionKeys.InsuredSection.PostalCode:
-                    CommonService.selectedItem.riskValue = CommonService.selectedItem.selectedText = CommonService.selectedItem.value = this.getValueByControlId("txt_PostalCode");
-                    CommonService.selectedItem.province = $("#lblCity").html();
+                case CommonData.QuestionKeys.HouseSection.IsHouseInsured:
+                case CommonData.QuestionKeys.HouseSection.IsHouseMortgage:
+                    u = $("input[name=radio_Question_HomeSection_IsHouseInsured]:checked").val();
+                    selectedSQAnswer = $("input[name=radio_Question_HomeSection_IsHouseMortgage]:checked").val();
+                    u && selectedSQAnswer && (HomeCommonService.selectedItem.FirstQuestion = u, HomeCommonService.selectedItem.SecondQuestion = selectedSQAnswer, HomeCommonService.selectedItem.riskValue = {
+                        FirstQuestion: HomeCommonService.selectedItem.FirstQuestion,
+                        SecondQuestion: HomeCommonService.selectedItem.SecondQuestion
+                    });
+                    HomeCommonService.QuestionScrollIntoView(n);
                     break;
-                case CommonData.QuestionKeys.InsuredSection.Gender:
-                case CommonData.QuestionKeys.InsuredSection.DOB:
-                    CommonService.selectedItem.Gender = this.getValueByControlId("PolicyHolderSection_Gender_option");
-                    CommonService.selectedItem.DOB = {};
-                    CommonService.selectedItem.DOB.day = $("#day_BirthDate").val();
-                    CommonService.selectedItem.DOB.month = $("#month_BirthDate").val();
-                    CommonService.selectedItem.DOB.year = $("#year_BirthDate").val();
-                    CommonService.QuestionScrollIntoView(n);
+                case CommonData.QuestionKeys.HouseSection.PersonInHouse:
+                    selectedValue = this.getValueByControlId("HouseSection_PersonInHouse_option");
+                    HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = selectedValue;
                     break;
-                case CommonData.QuestionKeys.CapitalSection.Capital:
-                    CommonService.selectedItem.Capital = {};
-                    CommonService.selectedItem.Capital.ListValue = $("input[name=radio_singlelist]:checked").length > 0 ? $("input[name=radio_singlelist]:checked")[0].value : null;
-                    this.setValueByControlId("txt_Capital", this.getValueByControlId("txt_Capital").replace(/[^0-9]/g, ""));
-                    CommonService.selectedItem.Capital.InputValue = this.getValueByControlId("txt_Capital");
-                    CommonService.selectedItem.Capital.InputValue = CommonService.selectedItem.Capital.InputValue.replace(/\./g, "");
+                case CommonData.QuestionKeys.HouseSection.ConstructionYear:
+                    selectedValue = this.getValueByControlId("HouseSection_ContructionYear_option");
+                    HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = selectedValue;
                     break;
-                case CommonData.QuestionKeys.EmailSection.Phone:
-                    i = $("#txt_Phone").val();
-                    CommonService.selectedItem.phone = Previousphone !== "" && i === MaskPhoneNumber(Previousphone, i) && i.indexOf("●") >= 0 ? CommonService.selectedItem.riskValue = Previousphone : CommonService.selectedItem.riskValue = i;
+                case CommonData.QuestionKeys.HouseSection.PostalCode:
+                    HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.selectedText = HomeCommonService.selectedItem.value = $("#txt_PostalCode").val();
+                    HomeCommonService.selectedItem.province = $("#lblCity").html();
                     break;
-                case CommonData.QuestionKeys.EmailSection.Email:
-                    CommonService.selectedItem.politica = $("input[name=checkBox_Email]:checked").val();
-                    t = $("#txt_Email").val();
-                    t = t.replace("á", "a");
-                    t = t.replace("Á", "A");
-                    t = t.replace("é", "e");
-                    t = t.replace("É", "E");
-                    t = t.replace("í", "i");
-                    t = t.replace("Í", "I");
-                    t = t.replace("ó", "o");
-                    t = t.replace("Ó", "O");
-                    t = t.replace("ú", "u");
-                    t = t.replace("Ú", "U");
-                    $("#txt_Email").val(t);
-                    CommonService.selectedItem.email = PreviousEmail !== "" && t === EmailMask(PreviousEmail) && t.indexOf("*") >= 0 ? CommonService.selectedItem.riskValue = PreviousEmail : CommonService.selectedItem.riskValue = $("#txt_Email").val();
+                case CommonData.QuestionKeys.HouseSection.HouseArea:
+                case CommonData.QuestionKeys.HouseSection.LandArea:
+                    c = this.getQuestionsByGroupKey(t);
+                    c && c.length > 1 ? (u = $("#txt_HouseArea").val(), selectedSQAnswer = $("#txt_LandArea").val(), HomeCommonService.selectedItem.FirstQuestion = u, HomeCommonService.selectedItem.SecondQuestion = selectedSQAnswer, u && selectedSQAnswer && (HomeCommonService.selectedItem.riskValue = {
+                        FirstQuestion: HomeCommonService.selectedItem.FirstQuestion,
+                        SecondQuestion: HomeCommonService.selectedItem.SecondQuestion
+                    })) : (u = $("#txt_HouseArea").val(), HomeCommonService.selectedItem.FirstQuestion = u);
+                    break;
+                case CommonData.QuestionKeys.HouseSection.NumberOfRooms:
+                case CommonData.QuestionKeys.HouseSection.NumberOfRestRooms:
+                    u = this.getValueByControlId("HouseSection_NumberOfRooms_option");
+                    HomeCommonService.selectedItem.FirstQuestion = u;
+                    selectedSQAnswer = this.getValueByControlId("HouseSection_NumberOfBathrooms_option");
+                    HomeCommonService.selectedItem.SecondQuestion = selectedSQAnswer;
+                    u && selectedSQAnswer && (HomeCommonService.selectedItem.riskValue = {
+                        FirstQuestion: HomeCommonService.selectedItem.FirstQuestion,
+                        SecondQuestion: HomeCommonService.selectedItem.SecondQuestion
+                    });
+                    u && HomeCommonService.QuestionScrollIntoView(n);
+                    break;
+                case CommonData.QuestionKeys.HouseSection.ConstructionQuality:
+                case CommonData.QuestionKeys.HouseSection.ConstructionMaterial:
+                    u = $("input[name=radio_Question_HomeSection_ConstructionQuality]:checked").val();
+                    selectedSQAnswer = $("input[name=radio_Question_HomeSection_ConstructionMaterial]:checked").val();
+                    u && selectedSQAnswer && (HomeCommonService.selectedItem.FirstQuestion = u, HomeCommonService.selectedItem.SecondQuestion = selectedSQAnswer, HomeCommonService.selectedItem.riskValue = {
+                        FirstQuestion: HomeCommonService.selectedItem.FirstQuestion,
+                        SecondQuestion: HomeCommonService.selectedItem.SecondQuestion
+                    });
+                    HomeCommonService.QuestionScrollIntoView(n);
+                    break;
+                case CommonData.QuestionKeys.HouseSection.RenewalYear:
+                    selectedValue = this.getValueByControlId("HouseSection_RenewalYear_option");
+                    HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = selectedValue;
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.Continent:
+                    HomeCommonService.selectedItem.riskValue = $("#txt_Container").val();
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.Content:
+                    HomeCommonService.selectedItem.riskValue = $("#txt_Content").val();
+                    break;
+                case CommonData.QuestionKeys.HouseSection.AllProtectionSystems:
+                    HomeCommonService.selectedItem.riskValue = {};
+                    f = [];
+                    CommonData.AllProtectionSystems.forEach(function(n) {
+                        var t = $("input[name=checkbox_" + n + "]:checked").val();
+                        t ? f.push(n) : f.push("")
+                    });
+                    HomeCommonService.PreSelectedProtectionSystems = f;
+                    HomeCommonService.selectedItem.riskValue[CommonData.RiskNodes.Windowgrilles] = f[0] ? CommonData.HouseWindowGrilles.EveryDoorsWindows : f[1] ? CommonData.HouseWindowGrilles.OnlyGroundFloor : CommonData.HouseWindowGrilles.No;
+                    HomeCommonService.selectedItem.riskValue[CommonData.RiskNodes.AlarmSystem] = f[6] ? CommonData.AlarmSystems.InEveryAccess : f[7] ? CommonData.AlarmSystems.OnlyOnGroundFloor : CommonData.AlarmSystems.No;
+                    HomeCommonService.selectedItem.riskValue[CommonData.RiskNodes.Safebox] = f[2] ? CommonData.Safeboxes.Fitted : f[5] ? CommonData.Safeboxes.NotFitted : CommonData.Safeboxes.No;
+                    [3, 4, 8, 9].forEach(function(n) {
+                        HomeCommonService.selectedItem.riskValue[CommonData.AllProtectionSystems[n]] = f[n] ? "Yes" : "No"
+                    });
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.FavouriteKindInsurance:
+                    e = [];
+                    a = [1, 2];
+                    a.forEach(function(n) {
+                        var t = $("input[name=checkbox_" + n + "]:checked").val();
+                        t == "on" && e.push(n)
+                    });
+                    e.length > 0 && (HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = e.join(";"));
+                    o = $("input[name=checkbox_1]:checked").val();
+                    o ? (HomeCommonService.selectedItem.JewelsOutOfSafeBox = $("#txt_JewelsOutOfSafeBox").val(), HomeCommonService.selectedItem.JewelsInSafeBox = $("#txt_JewelsInSafeBox").val()) : (HomeCommonService.selectedItem.JewelsOutOfSafeBox = undefined, HomeCommonService.selectedItem.JewelsInSafeBox = undefined);
+                    o = $("input[name=checkbox_2]:checked").val();
+                    o ? (selectedValue = this.getValueByControlId("txt_ValueOfAllSpecialObjects"), HomeCommonService.selectedItem.SpecialObject = this.getValueByControlId("txt_ValueOfAllSpecialObjects")) : HomeCommonService.selectedItem.SpecialObject = undefined;
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.JewelsInSafeBox:
+                case CommonData.QuestionKeys.InsuranceSection.JewelsOutOfSafeBox:
+                    l = this.getQuestionsByGroupKey(t);
+                    l && l.length > 1 ? (u = $("#txt_JewelsOutOfSafeBox").val(), selectedSQAnswer = $("#txt_JewelsInSafeBox").val(), HomeCommonService.selectedItem.FirstQuestion = u, HomeCommonService.selectedItem.SecondQuestion = selectedSQAnswer, u && selectedSQAnswer && (HomeCommonService.selectedItem.riskValue = {
+                        FirstQuestion: HomeCommonService.selectedItem.FirstQuestion,
+                        SecondQuestion: HomeCommonService.selectedItem.SecondQuestion
+                    })) : (u = $("#txt_JewelsOutOfSafeBox").val(), HomeCommonService.selectedItem.FirstQuestion = u);
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.ValueOfAllSpecialObjects:
+                    selectedValue = this.getValueByControlId("txt_ValueOfAllSpecialObjects");
+                    HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = selectedValue;
+                    break;
+                case CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderDateofBirth:
+                    let y = $("#txt_dob").val();
+                    if (y) {
+                        let n = y.split("/");
+                        HomeCommonService.selectedItem.day = n[0];
+                        HomeCommonService.selectedItem.month = n[1];
+                        HomeCommonService.selectedItem.year = n[2]
+                    }
+                    HomeCommonService.selectedItem.minYear = HomeCommonService.currentQuestion.Options.years[0].MinYear;
+                    HomeCommonService.selectedItem.maxYear = HomeCommonService.currentQuestion.Options.years[0].MaxYear;
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.InitialDateOfInsurance:
+                    let p = $("#txt_initial_date_insurance").val();
+                    if (p) {
+                        let n = p.split("/");
+                        HomeCommonService.selectedItem.day = n[0];
+                        HomeCommonService.selectedItem.month = n[1];
+                        HomeCommonService.selectedItem.year = n[2]
+                    }
+                    break;
+                case CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderOriginCountry:
+                    i && i === "000" ? ($("#div_" + CommonData.RiskNodes.PolicyHolderOriginCountry).hide(), $(".country-selector").removeClass("hidden")) : i != undefined ? ($("li").removeClass("selected"), $("#" + i).addClass("selected"), HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = i, HomeCommonService.selectedItem.text = $("#div_" + CommonData.RiskNodes.PolicyHolderOriginCountry).css("display") == "none" ? $("#" + i).attr("data-text") : $("#radio_" + i).attr("data-text")) : $("#div_" + CommonData.RiskNodes.PolicyHolderOriginCountry).css("display") == "none" ? $("li.selected").length > 0 && (HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = $("li.selected").attr("id")) : $("input[type=radio]:checked").length > 0 && (HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = $("input[type=radio]:checked").val());
+                    break;
+                case CommonData.QuestionKeys.PolicyHolderSection.DNI:
+                    s = $("#txt_NIF").val();
+                    HomeCommonService.selectedItem.riskValue = PreviousDIN !== "" && s === MaskDIN(PreviousDIN) && s.indexOf("*") >= 0 ? HomeCommonService.selectedItem.value = HomeCommonService.selectedItem.riskValue = PreviousDIN : HomeCommonService.selectedItem.value = HomeCommonService.selectedItem.riskValue = s;
+                    break;
+                case CommonData.QuestionKeys.PolicyHolderSection.HabitualPostalCode:
+                    v = $("#txt_HabitualPostalCode").val();
+                    HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = v;
+                    HomeCommonService.selectedItem.HabitualProvince = $("#lblHabitualCity").html();
+                    break;
+                case CommonData.QuestionKeys.OtherSection.Phone:
+                    HomeCommonService.selectedItem.politica = $("input[name=checkBox_Email]:checked").val();
+                    r = $("#txt_Email").val();
+                    r = r.replace("á", "a");
+                    r = r.replace("Á", "A");
+                    r = r.replace("é", "e");
+                    r = r.replace("É", "E");
+                    r = r.replace("í", "i");
+                    r = r.replace("Í", "I");
+                    r = r.replace("ó", "o");
+                    r = r.replace("Ó", "O");
+                    r = r.replace("ú", "u");
+                    r = r.replace("Ú", "U");
+                    $("#txt_Email").val(r);
+                    HomeCommonService.selectedItem.email = PreviousEmail !== "" && r === EmailMask(PreviousEmail) && r.indexOf("*") >= 0 ? HomeCommonService.selectedItem.riskValue = PreviousEmail : HomeCommonService.selectedItem.riskValue = $("#txt_Email").val();
+                    h = $("#txt_Phone").val();
+                    HomeCommonService.selectedItem.phone = PreviousPhone !== "" && h === MaskPhoneNumber(PreviousPhone) && h.indexOf("●") >= 0 ? HomeCommonService.selectedItem.riskValue = PreviousPhone : HomeCommonService.selectedItem.riskValue = h;
+                    break;
+                case CommonData.QuestionKeys.OtherSection.Email:
+                    HomeCommonService.selectedItem.politica = $("input[name=checkBox_Email]:checked").val();
+                    r = $("#txt_Email").val();
+                    r = r.replace("á", "a");
+                    r = r.replace("Á", "A");
+                    r = r.replace("é", "e");
+                    r = r.replace("É", "E");
+                    r = r.replace("í", "i");
+                    r = r.replace("Í", "I");
+                    r = r.replace("ó", "o");
+                    r = r.replace("Ó", "O");
+                    r = r.replace("ú", "u");
+                    r = r.replace("Ú", "U");
+                    $("#txt_Email").val(r);
+                    HomeCommonService.selectedItem.email = PreviousEmail !== "" && r === EmailMask(PreviousEmail) && r.indexOf("*") >= 0 ? HomeCommonService.selectedItem.riskValue = PreviousEmail : HomeCommonService.selectedItem.riskValue = $("#txt_Email").val();
                     break;
                 default:
-                    CommonService.selectedItem.riskValue = CommonService.selectedItem.value = $("input[name=radio_singlelist]:checked").length > 0 ? $("input[name=radio_singlelist]:checked")[0].value : null
+                    HomeCommonService.selectedItem.riskValue = HomeCommonService.selectedItem.value = $("input[name=radio_singlelist]:checked").length > 0 ? $("input[name=radio_singlelist]:checked")[0].value : null
             }
         },
-        SaveSectionCounter: function(n) {
-            var t = n[0].QuestionKey.substring(n[0].QuestionKey.indexOf("_") + 1);
-            CommonService.currentSection = t.substring(0, t.indexOf("_"));
-            CommonService.previousSection !== CommonService.currentSection && (n[0].QuestionKey === CommonData.QuestionKeys.RisksSection.IsSmoke || n[0].QuestionKey === CommonData.QuestionKeys.CapitalSection.Capital || n[0].QuestionKey === CommonData.QuestionKeys.EmailSection.Phone) && CommonService.isForward === !0 && (CommonService.previousSection = CommonService.currentSection, CommonService.GetCounterName(CommonService.currentSection).SaveCounter())
-        },
-        GetCounterName: function(n) {
-            CommonService.Counter = "";
-            for (var t = 0; t < CommonData.Counters.length; t++)
+        getCounterName: function(n) {
+            for (var i = "", t = 0; t < CommonData.Counters.length; t++)
                 if (CommonData.Counters[t][0] === n) {
-                    CommonService.Counter = CommonData.Counters[t][1];
+                    i = CommonData.Counters[t][1];
                     break
-                } return this
+                } return i
         },
-        SaveCounter: function() {
-            if (CommonService.Counter) {
-                var n = CommonData.Urls.SaveCounterURL + CommonService.Counter;
+        saveCounter: function(n) {
+            if (n) {
+                var t = CommonData.Urls.SaveCounterURL + n;
                 $.ajax({
                     type: "POST",
-                    url: n,
-                    async: !0,
+                    url: t,
+                    async: !1,
                     cache: !1,
                     contentType: "application/x-www-form-urlencoded",
                     success: function() {}
@@ -4209,10 +5283,14 @@ var PreviousEmail = "",
         },
         getSectionNumber: function(n) {
             switch (n) {
-                case CommonData.Constants.InsuranceSection:
+                case CommonData.Constants.HouseSection:
                     return "section1";
+                case CommonData.Constants.InsuranceSection:
+                    return "section2";
                 case CommonData.Constants.PolicyHolderSection:
-                    return "section2"
+                    return "section3";
+                case CommonData.Constants.OtherSection:
+                    return "section4"
             }
         },
         pushDataLayerEvent: function(n) {
@@ -4222,15 +5300,18 @@ var PreviousEmail = "",
             var r = {
                 event: n,
                 cjcategory: "insurance",
-                cjproduct: "life",
-                questionanswer: t,
-                answer: i
+                cjproduct: "home",
+                answer: t,
+                questionanswer: i
             };
-            CommonService.pushDataLayerEvent(r)
+            HomeCommonService.pushDataLayerEvent(r)
         },
+        getRiskNodeByQuestionKey: function() {},
+        spamEmailCheck: function() {},
+        changeIsInsured: function() {},
         QuestionScrollIntoView: function(n) {
             CommonData.QuestionsScrollKeyList.forEach(function(t) {
-                t[0] === n && CommonService.ElementScrollIntoView(t[1])
+                t[0] === n && HomeCommonService.ElementScrollIntoView(t[1])
             })
         },
         ElementScrollIntoView: function(n) {
@@ -4245,13 +5326,10 @@ var PreviousEmail = "",
         getValueByControlId: function(n) {
             return $("#" + n).val()
         },
-        setValueByControlId: function(n, t) {
-            $("#" + n).val(t)
-        },
         WebHTTPCall: function(n, t, i, r, u, f) {
             u = u === undefined || u === "" ? "GET" : u;
             this.createXmlHttp();
-            checkSessionTimeout();
+            CheckSessionTimeout();
             XmlHttp && (this.setNextResponseHandle(t), XmlHttp.onreadystatechange = HandleResponse, XmlHttp.open(u, n, !0), u === "POST" && XmlHttp.setRequestHeader("Content-Type", "application/json; charset=utf-8"), XmlHttp.send(f))
         },
         createXmlHttp: function() {
@@ -4267,23 +5345,34 @@ var PreviousEmail = "",
             XmlHttp || typeof XMLHttpRequest == "undefined" || (XmlHttp = new XMLHttpRequest)
         },
         getResponseHandle: function() {
-            return this.nextResponseHandle
+            return "" + $("#hidNextQuestionHandle").val()
         },
         setNextResponseHandle: function(n) {
-            this.nextResponseHandle = n
+            $("#hidNextQuestionHandle").val(n)
+        },
+        getSelectedValueFromContract: function(n) {
+            var t = HomeCommonService.contractType[n] !== undefined ? HomeCommonService.contractType : HomeCommonService.contractType.HouseDetails;
+            switch (n) {
+                case CommonData.Constants.ContructionYear:
+                case CommonData.Constants.RenewalYear:
+                    return new Date(t[n]).getFullYear().toString();
+                default:
+                    return t[n]
+            }
         },
         updateQuestionModelDependencies: function() {
-            var n = JSON.stringify(CommonService.contractType);
-            CommonService.WebHTTPCall(CommonData.Urls.QuestionAPI + CommonData.Constants.CJQuestionAPIKey, CommonData.Constants.CJQuestionAPIKey, 14, !1, "POST", n)
+            var n = JSON.stringify(HomeCommonService.contractType);
+            HomeCommonService.WebHTTPCall(CommonData.Urls.QuestionAPI + CommonData.Constants.CJQuestionAPIKey, CommonData.Constants.CJQuestionAPIKey, 14, !1, "POST", n)
         },
         setCDN: function(n) {
-            n && (CommonData.Urls.JS_CDN = n.BaseJsUrl, CommonData.Urls.Image_CDN = n.BaseImageUrl, CommonData.Urls.CSS_CDN = n.BaseCssUrl, this.manageHelpWindowButtons(n))
+            n && (CommonData.Urls.JS_CDN = n.BaseJsUrl, CommonData.Urls.Image_CDN = n.BaseImageUrl, CommonData.Urls.CSS_CDN = n.BaseCssUrl, CommonData.Urls.NEW_COOKIE_CSS = n.NewCookieCssUrl, CommonData.Urls.NEW_COOKIE_JS = n.NewCookieJsUrl, this.manageHelpWindowButtons(n))
         },
         getImageCDN: function() {
             return CommonData.Urls.Image_CDN
         },
         manageHelpWindowButtons: function(n) {
-            if (n.IsEmailEnabled === !1 && n.IsCMBEnabled === !1 && n.IsChatWindowEnabled === !1) {
+            var t = getQueryString("isAutomation");
+            if (t == "true" || n.IsEmailEnabled === !1 && n.IsCMBEnabled === !1 && n.IsChatWindowEnabled === !1) {
                 $("#helpMenu").hide();
                 return
             }
@@ -4292,16 +5381,28 @@ var PreviousEmail = "",
             n.IsChatWindowEnabled === !0 ? $("#ctrlHelpSection_chat").show() : $("#ctrlHelpSection_chat").hide();
             n.IsEmailEnabled === !0 ? $("#ctrlHelpSection_email").show() : $("#ctrlHelpSection_email").hide()
         },
-        IsSpamEmail: function(n) {
+        captchaRequired: function(n) {
+            var t = !1;
+            return document.getElementById("captchaText") == null && $.ajax({
+                type: "Get",
+                url: n,
+                async: !1,
+                cache: !1,
+                success: function(n) {
+                    n === CommonData.ErrorMessages.SessionExpired ? (HomeCommonService.isInternalRedirect = !0, window.location.href = window.location.origin + CommonData.Urls.CJ_Default_URL) : n !== null && (n = JSON.parse(n), t = n.IsCaptchaRequired)
+                },
+                error: function(n) {
+                    console.log(n)
+                }
+            }), t
+        },
+        checkSpamEmail: function(n) {
             var t = !1;
             return $.ajax({
                 type: "Get",
-                url: CommonData.Urls.CheckEmailSpamApi,
+                url: n,
                 async: !1,
                 cache: !1,
-                data: {
-                    EmailAddress: n
-                },
                 success: function(n) {
                     n !== null && (n = JSON.parse(n), t = n.IsSpamEmail)
                 },
@@ -4309,6 +5410,9 @@ var PreviousEmail = "",
                     console.log(n)
                 }
             }), t
+        },
+        refreshPromotionPageCaptchaImage: function() {
+            document.getElementById("ImageCaptcha").src = "captchaImage.aspx?v=" + Math.random()
         },
         setFocus: function(n) {
             setTimeout(function() {
@@ -4320,337 +5424,259 @@ var PreviousEmail = "",
             return n != "" && (t = JSON.parse(n)), t
         },
         hightlightOnSelection: function(n) {
-            n && (n.value ? $("#" + n.id).attr("style", "color: rgb(1, 83, 104);") : $("#" + n.id).attr("style", ""))
+            n && (n.value ? $("#" + n.id).attr("style", "color: rgb(1, 83, 104);") : $("#" + n.id).attr("style", ""));
+            HomeCommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.HouseSection.NumberOfRestRooms && HomeCommonService.QuestionScrollIntoView(HomeCommonService.currentQuestion.QuestionKey)
         },
-        toggleButtonText: function(n, t) {
-            $("#next").html(t);
-            $("#txt_" + n).off("keyup change paste");
-            $("#txt_" + n).on("keyup change paste", function() {
-                $(this).val() ? $("#next").html(CommonService.ButtonDefaultText) : $("#next").html(t)
-            })
-        },
-        getCJURL: function() {
-            return document.URL.indexOf("rastreatorlocal") >= 0 ? CommonData.Urls.CJUrlLocalEnvironment : document.URL.indexOf("rastreator.com") >= 0 ? CommonData.Urls.CJUrlProductionEnvironment : document.URL.indexOf("rastreatortest.com") >= 0 ? CommonData.Urls.CJUrlTestEnvironment : document.URL.indexOf("rastreatordev.com") >= 0 ? CommonData.Urls.CJUrlDevEnvironment : void 0
-        },
-        getCmsUrl: function() {
-            var n = document.URL;
-            return n.indexOf("localhost") >= 0 || n.indexOf("rastreatortest.com") >= 0 || n.indexOf("rastreatorlocal.com") >= 0 || n.indexOf("rastreatordev.com") >= 0 ? CommonData.Urls.CmsUrlTestEnvironment : n.indexOf("rastreator.com") >= 0 ? CommonData.Urls.CmsUrlProdctionEnvironment : void 0
+        validateCaptcha: function(n) {
+            var t = !1;
+            return $.ajax({
+                type: "Get",
+                url: CommonData.Urls.QuestionAPI + CommonData.Constants.CaptchaValidationKey,
+                async: !1,
+                cache: !1,
+                data: {
+                    captcha: n
+                },
+                success: function(n) {
+                    n !== null && (n = JSON.parse(n), t = n.IsCaptchaValid)
+                },
+                error: function(n) {
+                    console.log(n)
+                }
+            }), t
         },
         getCurrentEnvCMSUrl: function() {
             return CommonFunctionsModule.getCurrentEnvCMSUrl(CommonData.Urls.CmsUrlTestEnvironment, CommonData.Urls.CmsUrlProdctionEnvironment, CommonData.Urls.SegurosCmsUrlTestEnvironment, CommonData.Urls.SegurosCJUrlProductionEnvironment)
         },
-        getTrackerJSBaseUrl: function() {
-            var n = document.URL;
-            return n.indexOf("localhost") >= 0 || n.indexOf("rastreatorlocal.com") >= 0 || n.indexOf("rastreatordev.com") >= 0 ? CommonData.Urls.TrackerJSLocalEnv : n.indexOf("rastreatortest.com") >= 0 ? CommonData.Urls.TrackerJSTestEnv : n.indexOf("rastreator.com") >= 0 ? CommonData.Urls.TrackerJSProdEnv : void 0
+        onFavouriteInsuranceChange: function(n) {
+            var t = $("input[name=checkbox_" + n + "]:checked").val();
+            t ? $("#subTemplate_" + n).removeClass("hidden") : $("#subTemplate_" + n).addClass("hidden");
+            $("input[name=checkbox_1]:checked").val() || $("input[name=checkbox_2]:checked").val() ? this.renameNextButton("Avanzar") : this.renameNextButton("No me interesa")
         },
-        isNullorUndefined: function(n) {
-            return n == null || n == undefined ? !0 : !1
-        },
-        formatPrice: function(n) {
-            $("#txt_" + n).off("keyup change paste");
-            $("#txt_" + n).on("keyup change paste", function() {
-                var n = $(this);
-                n.val() && n.val(CommonFunctionsModule.formatNumberWithSeperator(n.val(), CommonData.Constants.Separator))
-            })
+        renameNextButton: function(n) {
+            $("#next").text(n)
         }
     };
 
 function initCJ() {
+    IsSessionAvailable();
     whiteLabelUrl = document.location.href;
-    flagWhiteLabel = whiteLabelUrl.indexOf(CommonData.Constants.WhiteLabelString) > -1;
-    CommonService.WebHTTPCall(CommonData.Urls.QuestionAPI + CommonData.Constants.CJQuestionAPIKey, CommonData.Constants.CJQuestionAPIKey, 14, !1, "POST", "");
-    cj.loadPrefilledContactDetails()
+    whiteLabelUrl.indexOf(CommonData.Constants.WhiteLabelString) > -1 && (flagWhiteLabel = !0);
+    HomeCommonService.WebHTTPCall(CommonData.Urls.QuestionAPI + CommonData.Constants.GetFirstQuestionDetailsCJ, CommonData.Constants.GetFirstQuestionDetailsCJ, 14, !1, "POST", "")
 }
 
 function HandleResponse() {
-    var t, i, n;
+    var n, i, t, u, r;
     if (XmlHttp.readyState == 4)
         if (XmlHttp.status == 200) {
-            if (t = XmlHttp.responseText, JSON.parse(t).IsSessionExpired == !0) return CommonService.isInternalRedirect = !0, flagWhiteLabel == !0 ? window.top.location.href = window.location.origin : window.location.href = CommonService.getCurrentEnvCMSUrl(), !1;
-            if (t.indexOf("SpamSuspected") >= 0) return CommonService.isInternalRedirect = !0, window.location.href = window.location.origin + CommonData.Urls.CJ_Default_URL, !1;
-            switch (CommonService.getResponseHandle()) {
-                case CommonData.Constants.CJQuestionAPIKey:
-                    i = JSON.parse(t);
-                    cj.questionMaster = i.questionModel;
-                    localCache.set(cj.questionMaster[0].Template, i.template);
-                    CommonService.isCJ = !0;
-                    cj.contractType = i.contract;
-                    CommonService.setCDN(i.resourceModel);
-                    cj.renderQuestion(cj.questionMaster[0].PageNo);
+            if (n = XmlHttp.responseText, JSON.parse(n).RobotSessionHome == !0) return $(window).unbind("beforeunload"), i = window.location.href, i.indexOf("localhost") >= 0 || i.indexOf("rastreatortest.com") >= 0 || i.indexOf("rastreatorlocal.com") >= 0 || i.indexOf("rastreatordev.com") >= 0 ? window.location.href = CommonData.Urls.RobotRedirectionPage : i.indexOf("rastreator.com") >= 0 && (window.location.href = CommonData.Urls.RobotRedirectionPage), !1;
+            if (JSON.parse(n).IsBlockedDNI == !0 && (HomeCommonService.isInternalRedirect = !0, window.location.href = CommonData.Urls.RobotRedirectionPage), JSON.parse(n).IsSessionExpired == !0) return HomeCommonService.isInternalRedirect = !0, flagWhiteLabel == !0 ? window.top.location.href = window.location.origin : window.location.href = CommonData.Urls.CmsUrlProdctionEnvironment, !1;
+            if (n.indexOf("SpamSuspected") >= 0) return HomeCommonService.isInternalRedirect = !0, window.location.href = window.location.origin + CommonData.Urls.CJ_Default_URL, !1;
+            switch (getResponseHandle()) {
+                case CommonData.Constants.GetFirstQuestionDetailsCJ:
+                    t = JSON.parse(n);
+                    HomeCommonService.questionMaster = t.questionModel;
+                    HomeCommonService.isCJ = !0;
+                    HomeCommonService.contractType = t.contract;
+                    HomeCommonService.setCDN(t.resourceModel);
+                    HomeCommonService.currentQuestion = t.questionModel;
+                    SkipQuestionOne();
                     break;
-                case CommonData.Constants.QuotePage:
-                    if (n = [], n = JSON.parse(JSON.parse(t)), CommonService.isInternalRedirect = !0, n && n.option.length > 0) switch (n.option[0]) {
-                        case "200":
-                            window.location = CommonData.Urls.ProgressPageUrl + "&c-sig=" + n.cSig;
-                            break;
-                        case "600":
-                            window.location = "https://elmundo.es";
-                            break;
-                        case "422":
-                            //window.location = CommonService.getCmsUrl();
-                            window.location = "https://abc.es";
-
-                            break;
-                        case "500":
-                            //window.location = CommonService.getCmsUrl();
-                            window.location = CommonData.Urls.ProgressPageUrl + "&c-sig=" + n.cSig;
-                            break;
-                        default:
-                            //window.location = CommonService.getCmsUrl()
-                            window.location = "https://yahoo.es";
-
-                    } else window.location = CommonService.getCmsUrl()
+                case CommonData.Constants.CJQuestionAPIKey:
+                    t = JSON.parse(n);
+                    HomeCommonService.questionMaster = t.questionModel;
+                    HomeCommonService.isCJ = !0;
+                    HomeCommonService.contractType = t.contract;
+                    HomeCommonService.setCDN(t.resourceModel);
+                    HomeCommonService.questionMaster = HomeCommonService.questionMaster;
+                    HomeCommonService.currentQuestion && HomeCommonService.currentQuestion.HasDependents ? (u = $.grep(HomeCommonService.questionMaster, function(n) {
+                        return n.QuestionKey === HomeCommonService.currentQuestion.QuestionKey
+                    }), HomeCommonService.currentQuestion = u[0], HomeCommonService.renderQuestion(HomeCommonService.currentQuestion.NextQuestionKey)) : HomeCommonService.renderQuestion(HomeCommonService.questionMaster[questionIndex].QuestionKey);
+                    break;
+                case "SubmitRisk":
+                    console.log("submitted");
+                    break;
+                case "QuotePage":
+                    r = [];
+                    r = JSON.parse(n);
+                    HomeCommonService.isInternalRedirect = !0;
+                    window.location = r && r.option.length > 1 ? "https://seguro-hogar.rastreator.com/progress.aspx?c-sig=" + r.option[1] : CommonData.Urls.CJ_Default_URL;
+                    break;
+                case "SpamEmailCheck":
+                    n == "SpamSuspected" && (window.location = CommonData.Urls.CmsUrlProdctionEnvironment)
             }
-        } else console.log(XmlHttp.status)
+        } else console.log(XmlHttp.status), XmlHttp.status === 302 && (window.location.href = CommonData.Urls.CmsUrlProdctionEnvironment)
+}
+
+function SkipQuestionOne() {
+    var n = GetParamsFromUrl("HouseOccupation"),
+        t;
+    n != null ? (t = GetMatchedParams(HomeCommonService.questionMaster.Options, n), t && (HomeCommonService.contractType.HouseDetails.HouseOccupation = n, HomeCommonService.updateQuestionModelDependencies(), questionIndex = 1)) : HomeCommonService.renderQuestion(HomeCommonService.currentQuestion.QuestionKey)
+}
+
+function GetMatchedParams(n, t) {
+    for (var r = null, i = 0; i < n.length; i++)
+        if (t == n[i].RiskValue) {
+            r = n[i].RiskValue;
+            break
+        } return r
+}
+
+function GetParamsFromUrl(n) {
+    var t = new RegExp("[?&]" + n + "=([^&#]*)").exec(document.location.href);
+    return t == null ? null : decodeURI(t[1]) || 0
+}
+
+function CreateXmlHttp() {
+    try {
+        XmlHttp = new ActiveXObject("Msxml2.XMLHTTP")
+    } catch (n) {
+        try {
+            XmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+        } catch (t) {
+            XmlHttp = null
+        }
+    }
+    XmlHttp || typeof XMLHttpRequest == "undefined" || (XmlHttp = new XMLHttpRequest)
+}
+
+function getResponseHandle() {
+    return "" + $("#hidNextQuestionHandle").val()
+}
+
+function setNextResponseHandle(n) {
+    $("#hidNextQuestionHandle").val(n)
 }
 
 function CreateDivsForButtonNavigation(n) {
-    var t, i;
-    CommonService.currentQuestion.PageNo !== parseInt(n) && (CommonService.isBrowserButtonClicked = !0, t = cj.getPageNo(n), CommonService.currentQuestion.PageNo < parseInt(n) ? (i = cj.getPageNo(parseInt(n) - 1), cj.getSelectedValue(i), ValidationService.validateAnswersCJ(i) ? (CommonService.isForward = !0, cj.renderQuestion(t), CommonService.GetCounterName(t).SaveCounter(), cj.addEventDataLayer(t)) : (cj.insertCounter = !1, window.history.back())) : (cj.renderQuestion(t), cj.insertCounter ? (CommonService.GetCounterName(t).SaveCounter(), cj.addEventDataLayer(t)) : cj.insertCounter = !0))
+    var t, i, r;
+    HomeCommonService.currentQuestion.QuestionNumber !== parseInt(n) && (HomeCommonService.isBrowserButtonClicked = !0, t = HomeCommonService.getQuestionKey(n), HomeCommonService.currentQuestion.QuestionNumber < parseInt(n) ? (i = HomeCommonService.getQuestionKey(parseInt(n) - 1), r = HomeCommonService.getCurrentQuestionGroupKey(i), HomeCommonService.getSelectedValue(i, r), HomeValidationService.validateAnswer(HomeCommonService.getQuestionKey(parseInt(n) - 1)) ? HomeCommonService.renderQuestion(t) : window.history.back()) : HomeCommonService.renderQuestion(t))
+}
+
+function IsSessionAvailable() {
+    var n = CommonData.Urls.QuestionAPI + CommonData.Constants.IsSessionAvailableApiKey;
+    $.ajax({
+        type: "GET",
+        url: n,
+        async: !1,
+        cache: !1,
+        contentType: "application/x-www-form-urlencoded",
+        success: function(n) {
+            n && InsertFirstCounter()
+        }
+    })
+}
+
+function InsertFirstCounter() {
+    try {
+        SaveTrackerMultiple(["rs.hogar.house.index"])
+    } catch (n) {
+        $.ajax({
+            url: '<%= ConfigurationManager.AppSettings["TrackerJsBaseUrl"] %>/Scripts/V2/tracker.min.js',
+            success: function() {
+                SaveTracker(["rs.hogar.house.index"])
+            },
+            error: function() {
+                $.post("/commonCallback.aspx?Option=CounterFail", function() {}, "jsonp")
+            }
+        })
+    }
 }
 var whiteLabelUrl, flagWhiteLabel = !1,
+    questionIndex = 1,
     cj = {
-        questionMaster: {},
-        displayOtherCapitalError1: !1,
-        displayOtherCapitalError2: !1,
-        ageRangeError: !1,
-        contractType: {},
-        insertCounter: !0,
         moveNext: function() {
-            if (CommonService.currentQuestion.PageNo === "2") this.submitRisk();
-            else {
-                let n = CommonService.currentQuestion.Next;
-                this.renderQuestion(n)
-            }
+            HomeCommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.OtherSection.Email || HomeCommonService.currentQuestion.QuestionKey === CommonData.QuestionKeys.OtherSection.Phone ? cj.submitRisk() : HomeCommonService.renderQuestion(HomeCommonService.currentQuestion.NextQuestionKey)
         },
         movePrevious: function() {
-            CommonService.isBrowserButtonClicked = !1;
+            HomeCommonService.isBrowserButtonClicked = !1;
             history.back()
         },
         submitRisk: function() {
-            var n = JSON.stringify(this.contractType);
-            CommonService.WebHTTPCall(CommonData.Urls.QuestionAPI + CommonData.Constants.SubmitRisk, CommonData.Constants.QuotePage, 14, !1, "POST", n)
+            var n = JSON.stringify(HomeCommonService.contractType);
+            HomeCommonService.WebHTTPCall(CommonData.Urls.QuestionAPI + CommonData.Constants.SubmitRisk, CommonData.Constants.QuotePage, 14, !1, "POST", n)
         },
         manageHash: function(n) {
             window.location.hash = "Q" + n
-        },
-        updateProgress: function(n) {
-            $(".progress").css("width", "");
-            n == "1" && ($(".cj-progress-bar li").removeClass("activeli"), $(".progress").eq(0).css("width", "calc(80% + 20px)"));
-            n == "2" && ($(".cj-progress-bar li").eq(0).addClass("completed"), $(".progress").eq(1).css("width", "calc(60% + 20px)"));
-            $(".cj-progress-bar li").eq(parseInt(n) - 1).addClass("activeli")
-        },
-        renderQuestion: function(n) {
-            var t = $.grep(this.questionMaster, function(t) {
-                return t.PageNo === n
-            });
-            this.loadTemplate(t[0]);
-            this.updateProgress(n)
-        },
-        loadTemplate: function(n) {
-            if (localCache.exist(n.Template) ? this.bindTemplate(n, localCache.get(n.Template)) : $.get(CommonData.Urls.TemplateURL + "CJ/" + n.Template, function(t) {
-                    cj.bindTemplate(n, t)
-                }), !CommonService.isSectionOneIndexCounterInserted) {
-                CommonService.isSectionOneIndexCounterInserted = !0;
-                cj.insertCounter = window.location.hash == "#Q1";
-                cj.addEventDataLayer(n.PageNo);
-                try {
-                    CommonService.GetCounterName("1");
-                    var t = [CommonService.Counter];
-                    SaveTrackerMultiple(t)
-                } catch (i) {
-                    $.ajax({
-                        url: CommonService.getTrackerJSBaseUrl() + "/Scripts/V2/tracker.min.js",
-                        success: function() {
-                            CommonService.GetCounterName(CommonData.Constants.InsuredSection);
-                            SaveTracker([CommonService.Counter])
-                        },
-                        error: function() {
-                            var n = CommonService.getCJURL() + "/commonCallback.aspx?Option=CounterFail";
-                            $.post(n, function() {}, "jsonp")
-                        }
-                    })
-                }
-            }
-            this.manageNavigationButtons(n.PageNo);
-            CommonService.selectedItem = {};
-            CommonService.currentQuestion = n;
-            CommonService.isBrowserButtonClicked || cj.manageHash(n.PageNo)
-        },
-        bindTemplate: function(n, t) {
-            $("#" + CommonData.Constants.CJQuestionTemplateContainer).html("");
-            localCache.set(n.Template, t);
-            CommonService.appendTemplateTo(t, n, CommonData.Constants.CJQuestionTemplateContainer);
-            CommonService.isForward = !1;
-            CommonService.isIPTrackerExecuted == !1 && IPTrackerService && (CommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-vida.rastreator.com", CommonData.Urls.GetIPTrackerModelApi));
-            //CommonService.isCaptchaScoreInserted == !1 && ReCaptchaV3Service && (CommonService.isCaptchaScoreInserted = !0, ReCaptchaV3Service.InitCaptcha("https://seguro-vida.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi));
-            CommonService.formatPrice(this.questionMaster[0].Questions[1].RiskNode);
-            maskingDob()
-        },
-        onCapitalChange: function(n) {
-            n.style = "color: rgb(1, 83, 104);";
-            $(n).parent().parent().removeClass("error");
-            n.selectedIndex == 5 ? $(".form-control.input").removeClass("hidden") : $(".form-control.input").addClass("hidden")
-        },
-        manageNavigationButtons: function(n) {
-            switch (n) {
-                case "1":
-                    $(".divLegalText").hide();
-                    $("#prev").addClass("opacity-0");
-                    $("#next").text("Avanzar");
-                    break;
-                case "2":
-                    $(".divLegalText").show();
-                    $("#prev").removeClass("opacity-0");
-                    $("#next").text("VER OFERTAS")
-            }
-        },
-        saveAnswer: function() {
-            CommonService.isBrowserButtonClicked = !1;
-            this.getSelectedValue(CommonService.currentQuestion.PageNo);
-            ValidationService.validateAnswersCJ(CommonService.currentQuestion.PageNo) ? (this.addAnswersDataLayer(CommonService.currentQuestion.PageNo), cj.moveNext(), CommonService.isForward = !0) : this.renderQuestion(CommonService.currentQuestion.PageNo)
-        },
-        getSelectedValue: function(n) {
-            var r, u, i, t;
-            switch (n) {
-                case "1":
-                    this.contractType.InsurancePurpose = $("input[name='radio-" + this.questionMaster[0].Questions[0].RiskNode + "']:checked").val();
-                    $.each(cj.questionMaster[0].Questions[0].Options, function(n, t) {
-                        t.Selected = !1;
-                        t.RiskValue === cj.contractType.InsurancePurpose && (t.Selected = !0)
-                    });
-                    this.contractType.Capital = $("#ddl_" + this.questionMaster[0].Questions[1].RiskNode).val();
-                    $.each(cj.questionMaster[0].Questions[1].Options, function(n, t) {
-                        t.Selected = !1;
-                        t.RiskValue === cj.contractType.Capital && (t.Selected = !0)
-                    });
-                    this.contractType.IsCapitalOther = "No";
-                    this.contractType.Capital == "-1" && (this.contractType.Capital = $("#txt_" + this.questionMaster[0].Questions[1].RiskNode).val().replace(/\./g, ""), this.contractType.IsCapitalOther = "Yes");
-                    break;
-                case "2":
-                    this.contractType.Gender = $("input[name='radio-" + this.questionMaster[1].Questions[0].RiskNode + "']:checked").val();
-                    $.each(this.questionMaster[1].Questions[0].Options, function(n, t) {
-                        t.Selected = !1;
-                        t.RiskValue === cj.contractType.Gender && (t.Selected = !0)
-                    });
-                    r = $("#txt_" + this.questionMaster[1].Questions[1].RiskNode).val();
-                    CommonFunctionsModule.isValidDateFormatDDMMYYYY(r) && (this.questionMaster[1].Questions[1].SelectedValue = r, u = r.split("/"), this.contractType.BirthDate = u[1] + "/" + u[0] + "/" + u[2]);
-                    this.contractType.PostalCode = this.questionMaster[1].Questions[2].SelectedValue = modifyPostalCode($("#txt_" + this.questionMaster[1].Questions[2].RiskNode).val());
-                    i = $("#txt_" + this.questionMaster[1].Questions[3].RiskNode).val();
-                    this.contractType.Phone = Previousphone !== "" && i === MaskPhoneNumber(Previousphone, i) && i.indexOf("●") >= 0 ? Previousphone : i;
-                    this.questionMaster[1].Questions[3].SelectedValue = i;
-                    t = $("#txt_" + this.questionMaster[1].Questions[4].RiskNode).val();
-                    t = t.replace("á", "a");
-                    t = t.replace("Á", "A");
-                    t = t.replace("é", "e");
-                    t = t.replace("É", "E");
-                    t = t.replace("í", "i");
-                    t = t.replace("Í", "I");
-                    t = t.replace("ó", "o");
-                    t = t.replace("Ó", "O");
-                    t = t.replace("ú", "u");
-                    t = t.replace("Ú", "U");
-                    $("#txt_" + this.questionMaster[1].Questions[4].RiskNode).val(t);
-                    this.contractType.Email = isValidString(PreviousEmail) && t === EmailMask(PreviousEmail) && t.indexOf("*") >= 0 ? PreviousEmail : t;
-                    this.questionMaster[1].Questions[4].SelectedValue = t
-            }
-        },
-        getPageNo: function(n) {
-            var t = $.grep(cj.questionMaster, function(t) {
-                return t.PageNo == n
-            });
-            return t[0].PageNo
-        },
-        validatePostalCode: function(n) {
-            $(n).removeClass("error");
-            String.prototype.trim = function() {
-                return this.replace(/^\s*/, "").replace(/\s*$/, "")
-            };
-            var t = new String(n.value);
-            t = t.trim().replace(".", "");
-            n.value = t;
-            t = modifyPostalCode(t);
-            t.trim().length == 5 && (parseInt(t.substring(0, 2)) > 52 || !this.callServerToValidatePostalCode(t)) && $(n).addClass("error")
-        },
-        callServerToValidatePostalCode: function(n) {
-            var t = !1,
-                i = "/LifeCallbacks.aspx?Option=GetPostCodeValidation&PostCode=" + n;
-            return $.ajax({
-                type: "POST",
-                url: i,
-                async: !1,
-                cache: !1,
-                contentType: "application/x-www-form-urlencoded",
-                success: function(n) {
-                    t = n != "SessionExpired" && n != "SpamSuspected" && n != "" && n.toString().split("|")[2] == "Yes"
-                }
-            }), t
-        },
-        addEventDataLayer: function(n) {
-            let t = n == "1" ? cj.questionMaster[0].Questions[0].QuestionText + "-" + cj.questionMaster[0].Questions[1].QuestionText : cj.questionMaster[1].Questions[0].QuestionText + "-" + cj.questionMaster[1].Questions[1].QuestionText + "-" + cj.questionMaster[1].Questions[2].QuestionText + "-" + cj.questionMaster[1].Questions[3].QuestionText + "-" + cj.questionMaster[1].Questions[4].QuestionText;
-            var i = {
-                event: "virtualpage",
-                virtualpage: "customerjourney",
-                categoryvp: "insurance",
-                productvp: "life",
-                sectionvp: "section" + n,
-                question: "q" + n,
-                questiontext: t,
-                testversion: ""
-            };
-            setTimeout(function() {
-                CommonService.pushDataLayerEvent(i)
-            }, 2e3)
-        },
-        addAnswersDataLayer: function(n) {
-            let t = n == "1" ? this.contractType.InsurancePurpose + "-" + this.contractType.Capital : this.contractType.Gender + "-" + this.contractType.BirthDate + "-" + code2city(this.contractType.PostalCode.substring(0, 2)) + "-telephone-email";
-            var i = {
-                answer: t,
-                cjcategory: "insurance",
-                cjproduct: "life",
-                event: "cjanswer",
-                questionanswer: "q" + n
-            };
-            setTimeout(function() {
-                CommonService.pushDataLayerEvent(i)
-            }, 2e3)
-        },
-        loadPrefilledContactDetails: function() {
-            $.get(CommonData.Urls.GetPrefilledContactModel, "", function(n) {
-                if (n && n.phoneNumber) {
-                    let t = n.phoneNumber;
-                    Previousphone == "" && (Previousphone = t);
-                    cj.questionMaster[1].Questions[3].SelectedValue = MaskPhoneNumber(Previousphone, t)
-                }
-                if (n && n.recoveredEmail) {
-                    let t = n.recoveredEmail;
-                    t && (t.indexOf("*") < 0 && (PreviousEmail = t), cj.questionMaster[1].Questions[4].SelectedValue = EmailMask(t))
-                }
-            })
-        },
-        changeInsurancePurpose: function(n) {
-            let t = $("input[name='radio-" + this.questionMaster[0].Questions[0].RiskNode + "']:checked").val();
-            isValidString(t) && (this.contractType.InsurancePurpose = t, $.each(cj.questionMaster[0].Questions[0].Options, function(n, t) {
-                t.Selected = !1;
-                t.RiskValue === cj.contractType.InsurancePurpose && (t.Selected = !0)
-            }), $("input[name='radio-" + this.questionMaster[0].Questions[0].RiskNode + "']").removeClass("error"), $(n).parent().find(".radio-error").addClass("hidden"))
-        },
-        changeGender: function(n) {
-            let t = $("input[name='radio-" + this.questionMaster[1].Questions[0].RiskNode + "']:checked").val();
-            isValidString(t) && (this.contractType.Gender = t, $.each(this.questionMaster[1].Questions[0].Options, function(n, t) {
-                t.Selected = !1;
-                t.RiskValue === cj.contractType.Gender && (t.Selected = !0)
-            }), $(".normal-radio-container").removeClass("error"), $(n).parent().next().addClass("hidden"), this.questionMaster[1].Questions[0].IsError = !1)
         }
     };
+$(document).ready(function() {
+    function i(t) {
+        (n = JSON.parse(t), n || n.UpaSettings) && n.UpaSettings.IsUPAEnable && ($("#seo-title-id").html(""), $("#cj-header").addClass("upa-header"), HomeCommonService.isInternalRedirect = !0, u(n.UpaSettings.UPALoginTriggerUrl), f(n.UpaSettings.UPALoginUrl), n.UpaSettings.IsMobileDevice ? upaCommonService.appendMobileLoginTriggerInHeader() : upaCommonService.appendLoginTriggerInHeader(), upaCommonService.showHideUPALoginIcon(), upaCommonService.addTriggerEventListiner())
+    }
+
+    function r(n) {
+        console.log("UPA JS CONFIGURATION : FAIL.. && response:" + n)
+    }
+
+    function u(n) {
+        return new Promise(function(t, i) {
+            const r = document.createElement("script");
+            r.innerHTML = "";
+            r.src = n;
+            r.async = !0;
+            r.defer = !0;
+            r.onload = function() {
+                t("success - postload")
+            };
+            r.onerror = function() {
+                i("error")
+            };
+            document.head.appendChild(r)
+        })
+    }
+
+    function f(n) {
+        return new Promise(function(t, i) {
+            const r = document.createElement("script");
+            r.innerHTML = "";
+            r.src = n;
+            r.async = !0;
+            r.defer = !0;
+            r.onload = function() {
+                t("success - postload")
+            };
+            r.onerror = function() {
+                i("error")
+            };
+            document.head.appendChild(r)
+        })
+    }
+    console.log("UPA JS LOADING : SUCCESSFULLY...");
+    var n, t = "https://seguro-hogar.rastreator.com" + CommonData.Urls.UPASettingsApi;
+    $.ajax({
+        type: "GET",
+        async: !1,
+        url: t,
+        contentType: "application/json",
+        dataType: "json",
+        success: i,
+        failure: r
+    });
+    $("#upa-login-trigger").click(function() {
+        upaCommonService.pushPopupEvent()
+    });
+    $("#upa-login-trigger-mobile").click(function() {
+        upaCommonService.pushPopupEvent()
+    })
+});
 
 function GetCityByPostCode(n) {
     var t, i;
-    if (ValidationService.hideError(CommonData.Constants.PostalCodeControlId), String.prototype.trim = function() {
+    if (HomeValidationService.hideError(CommonData.Constants.PostalCodeControlId), String.prototype.trim = function() {
             return this.replace(/^\s*/, "").replace(/\s*$/, "")
-        }, t = new String(n.value), t = t.trim().replace(".", ""), n.value = t, t = modifyPostalCode(t), postcodeValidation(t, "/LifeCallbacks.aspx")) {
-        if (document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML = code2city(t.substring(0, 2)), $("#" + CommonData.Constants.PostalCodeResultControlId).removeClass("hidden"), CommonService.driverPostCodeStatus != null && (i = CommonService.driverPostCodeStatus, i === "No")) return document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML = "", ValidationService.showError(CommonData.ErrorMessages.PostalCode, CommonData.Constants.PostalCodeControlId), !1
+        }, t = new String(n.value), t = t.trim().replace(".", ""), n.value = t, t = modifyPostalCode(t), postcodeValidation(t, "/HomeCallbacks.aspx")) {
+        if (document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML = code2city(t.substring(0, 2)), $("#" + CommonData.Constants.PostalCodeResultControlId).removeClass("hidden"), HomeCommonService.driverPostCodeStatus != null && (i = HomeCommonService.driverPostCodeStatus, i === "No")) return document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML = "", HomeValidationService.showError(CommonData.ErrorMessages.PostalCode, CommonData.Constants.PostalCodeControlId), !1
     } else document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML = ""
+}
+
+function GetCityByHabitualPostCode(n) {
+    var t, i;
+    if (HomeValidationService.hideError("txt_HabitualPostalCode"), String.prototype.trim = function() {
+            return this.replace(/^\s*/, "").replace(/\s*$/, "")
+        }, t = new String(n.value), t = t.trim().replace(".", ""), n.value = t, t = modifyPostalCode(t), postcodeValidation(t, "/HomeCallbacks.aspx")) {
+        if (document.getElementById("lblHabitualCity").innerHTML = code2city(t.substring(0, 2)), $("#lblHabitualCity").removeClass("hidden"), HomeCommonService.driverPostCodeStatus != null && (i = HomeCommonService.driverPostCodeStatus, i === "No")) return document.getElementById("lblHabitualCity").innerHTML = "", !1
+    } else document.getElementById("lblHabitualCity").innerHTML = ""
 }
 
 function modifyPostalCode(n) {
@@ -4674,8 +5700,8 @@ function getPostValidation(n, t) {
         success: function(t) {
             if (t == "SessionExpired" || t == "SpamSuspected" || t == "") return !1;
             arrResponseSplit = t.toString().split("|");
-            arrResponseSplit[2] != null && (CommonService.driverPostCodeStatus = arrResponseSplit[2]);
-            arrResponseSplit[2] == "Yes" && (document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML = code2city(n.substring(0, 2)), document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML != "" && (CommonService.contractType.PostalCode = n))
+            arrResponseSplit[2] != null && (HomeCommonService.driverPostCodeStatus = arrResponseSplit[2]);
+            arrResponseSplit[2] == "Yes" && (document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML = code2city(n.substring(0, 2)), document.getElementById(CommonData.Constants.PostalCodeResultControlId).innerHTML != "" && (HomeCommonService.contractType.HouseDetails.PostalCode = n))
         }
     })
 }
@@ -4684,16 +5710,11 @@ function NumericKeyCode(n) {
     var t = n.which ? n.which : event.keyCode;
     return (!(t >= 48) || !(t <= 57)) && t != 8 ? (n.keycode = 0, !1) : !0
 }
-
-function isValidString(n) {
-    return n ? !0 : !1
-}
 var digitsOnly = /[1234567890]/g,
     integerOnly = /[0-9\.]/g,
     alphaOnly = /[A-Z]/g,
     alphaNumericOnly = /[a-zA-Z0-9]/g,
-    ValidationService = {
-        errorMessages: [],
+    HomeValidationService = {
         showError: function(n, t) {
             t && $("#" + t).addClass("error");
             $(".error").removeClass("hidden");
@@ -4704,99 +5725,80 @@ var digitsOnly = /[1234567890]/g,
             $("#errorContainer").text("");
             $(".error").addClass("hidden")
         },
-        validateAnswersCJ: function(n) {
-            var t = !0;
-            this.errorMessages = [];
+        validateAnswer: function(n, t) {
+            var i = !0;
             switch (n) {
-                case "1":
-                    let f = isValidString(cj.contractType.InsurancePurpose) && cj.contractType.InsurancePurpose != "None";
-                    cj.questionMaster[0].Questions[0].IsError = !f;
-                    this.pushErrorToDatalayer(f, cj.questionMaster[0].Questions[0].ErrorMessage);
-                    let n = cj.contractType.Capital != null;
-                    cj.questionMaster[0].Questions[1].IsError = !n;
-                    this.pushErrorToDatalayer(n, cj.questionMaster[0].Questions[1].ErrorMessage);
-                    cj.contractType.IsCapitalOther == "Yes" && (n = cj.contractType.Capital != "", cj.displayOtherCapitalError1 = !n, this.pushErrorToDatalayer(n, cj.questionMaster[0].Questions[1].ExtraInfo[0]), n && (n = parseInt(cj.contractType.Capital) <= 1e7 && parseInt(cj.contractType.Capital) >= 12e3, this.pushErrorToDatalayer(n, cj.questionMaster[0].Questions[1].ExtraInfo[1])), cj.displayOtherCapitalError2 = !n);
-                    t = f && n;
+                case CommonData.QuestionKeys.HouseSection.IsHouseInsured:
+                case CommonData.QuestionKeys.HouseSection.IsHouseMortgage:
+                case CommonData.QuestionKeys.HouseSection.ConstructionQuality:
+                case CommonData.QuestionKeys.HouseSection.ConstructionMaterial:
+                    i = HomeValidationService.validateTwoListAnswer("");
                     break;
-                case "2":
-                    let e = isValidString(cj.contractType.Gender) && cj.contractType.Gender != "None";
-                    if (cj.questionMaster[1].Questions[0].IsError = !e, this.pushErrorToDatalayer(e, cj.questionMaster[1].Questions[0].ErrorMessage), validBirthDate = isValidString(cj.contractType.BirthDate) && cj.contractType.BirthDate != "0001-01-01T00:00:00", cj.questionMaster[1].Questions[1].IsError = !validBirthDate, this.pushErrorToDatalayer(validBirthDate, cj.questionMaster[1].Questions[1].ErrorMessage), validBirthDate) {
-                        let n = new Date,
-                            t = new Date(n.getFullYear() - 74, n.getMonth(), n.getDate()),
-                            i = new Date(n.getFullYear() - 18, n.getMonth(), n.getDate());
-                        validBirthDate = t <= new Date(cj.contractType.BirthDate) && i >= new Date(cj.contractType.BirthDate);
-                        cj.ageRangeError = !validBirthDate;
-                        this.pushErrorToDatalayer(validBirthDate, cj.questionMaster[1].Questions[1].ExtraInfo[0])
-                    }
-                    let i = isValidString(cj.contractType.PostalCode);
-                    if (i) {
-                        let n = modifyPostalCode(cj.contractType.PostalCode);
-                        i = n.trim().length == 5 && parseInt(n.substring(0, 2)) <= 52 && cj.callServerToValidatePostalCode(n)
-                    }
-                    cj.questionMaster[1].Questions[2].IsError = !i;
-                    this.pushErrorToDatalayer(i, cj.questionMaster[1].Questions[2].ErrorMessage);
-                    let c = cj.contractType.Phone,
-                        h = parseInt(cj.contractType.Phone.substring(0, 1)),
-                        o = isNaN(h) || c.length == 9 && [6, 7, 8, 9].indexOf(h) > -1;
-                    cj.questionMaster[1].Questions[3].IsError = !o;
-                    this.pushErrorToDatalayer(o, cj.questionMaster[1].Questions[3].ErrorMessage);
-                    let r = cj.contractType.Email;
-                    CommonService.selectedItem.email = r;
-                    let s = isValidString(r) && r.indexOf("@") > -1 && r.indexOf(".") > -1 && this.IsValidEmail("txt_" + cj.questionMaster[1].Questions[3].RiskNode);
-                    cj.questionMaster[1].Questions[4].IsError = !s;
-                    this.pushErrorToDatalayer(s, cj.questionMaster[1].Questions[4].ErrorMessage);
-                    let u = $("#chk_" + cj.questionMaster[1].Questions[5].RiskNode).is(":checked");
-                    cj.questionMaster[1].Questions[5].IsError = !u;
-                    cj.questionMaster[1].Questions[5].SelectedValue = u;
-                    this.pushErrorToDatalayer(u, cj.questionMaster[1].Questions[5].ErrorMessage);
-                    t = e && validBirthDate && i && o && s && u;
-                    //t && CommonService.IsSpamEmail(r) && (t = !1, CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl())
-                    //t && (t = !1, CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl())
-
+                case CommonData.QuestionKeys.HouseSection.PersonInHouse:
+                    i = HomeValidationService.validateSingleDropDownAnswer(CommonData.ErrorMessages.InvalidDropDownSelection, "div_" + t);
+                    break;
+                case CommonData.QuestionKeys.HouseSection.PostalCode:
+                    i = HomeValidationService.validatePostalCode(t);
+                    break;
+                case CommonData.QuestionKeys.HouseSection.Occupation:
+                case CommonData.QuestionKeys.HouseSection.Utilization:
+                case CommonData.QuestionKeys.HouseSection.HouseKind:
+                case CommonData.QuestionKeys.HouseSection.Situation:
+                case CommonData.QuestionKeys.HouseSection.RenewedAll:
+                case CommonData.QuestionKeys.HouseSection.IsAlarmConnectedCentral:
+                case CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderOriginCountry:
+                case CommonData.QuestionKeys.PolicyHolderSection.Defaulter:
+                    i = HomeValidationService.validateSingleListAnswer(CommonData.ErrorMessages.Options);
+                    break;
+                case CommonData.QuestionKeys.HouseSection.ConstructionYear:
+                    i = HomeValidationService.validateSingleDropDownAnswer(CommonData.ErrorMessages.InvalidDropDownSelection, "div_" + t);
+                    break;
+                case CommonData.QuestionKeys.HouseSection.HouseArea:
+                case CommonData.QuestionKeys.HouseSection.LandArea:
+                    i = HomeValidationService.validateHouseandLandAreaQuestion();
+                    break;
+                case CommonData.QuestionKeys.HouseSection.NumberOfRooms:
+                case CommonData.QuestionKeys.HouseSection.NumberOfRestRooms:
+                    i = HomeValidationService.validateRoomsandRestRoomsQuestion();
+                    break;
+                case CommonData.QuestionKeys.HouseSection.RenewalYear:
+                    i = HomeValidationService.validateSingleDropDownAnswer(CommonData.ErrorMessages.InvalidDropDownSelection, "div_" + t);
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.Content:
+                    i = HomeValidationService.validateContentQuestion();
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.Continent:
+                    i = HomeValidationService.validateContinentQuestion();
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.JewelsInSafeBox:
+                case CommonData.QuestionKeys.InsuranceSection.JewelsOutOfSafeBox:
+                    i = HomeValidationService.validateSafeboxQuestion();
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.ValueOfAllSpecialObjects:
+                    i = HomeValidationService.validateSingleInputBoxQuestion(CommonData.ErrorMessages.InvalidValueofSpecialObjects, "txt_" + t);
+                    break;
+                case CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderDateofBirth:
+                    i = HomeValidationService.validatePolicyHolderDOB(t);
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.InitialDateOfInsurance:
+                    i = HomeValidationService.validateInitialDateOfInsurance(t);
+                    break;
+                case CommonData.QuestionKeys.InsuranceSection.FavouriteKindInsurance:
+                    i = HomeValidationService.validateFavouriteKindInsurance(CommonData.ErrorMessages.FavouriteKindInsurance, t);
+                    break;
+                case CommonData.QuestionKeys.PolicyHolderSection.DNI:
+                    i = HomeValidationService.validateDNI(t);
+                    break;
+                case CommonData.QuestionKeys.PolicyHolderSection.HabitualPostalCode:
+                    i = HomeValidationService.validateHabitualPostalCode(t);
+                    break;
+                case CommonData.QuestionKeys.OtherSection.Email:
+                    i = HomeValidationService.validateVCEmailQuestion(t);
+                    break;
+                case CommonData.QuestionKeys.OtherSection.Phone:
+                    i = HomeValidationService.validatePhone(t)
             }
-            return t || this.saveErrorDataLayerEventCJ(n, this.errorMessages), t
-        },
-        validateAnswer: function(n, t, i, r) {
-            var u = !0;
-            switch (n) {
-                case CommonData.QuestionKeys.InsuredSection.InsurancePurpose:
-                case CommonData.QuestionKeys.RisksSection.IsSmoke:
-                case CommonData.QuestionKeys.RisksSection.IsRiskJob:
-                case CommonData.QuestionKeys.RisksSection.ExtremeSport:
-                    u = ValidationService.validateSingleListAnswer(CommonData.ErrorMessages.Options);
-                    break;
-                case CommonData.QuestionKeys.InsuredSection.PostalCode:
-                    u = ValidationService.validatePostalCode(t);
-                    break;
-                case CommonData.QuestionKeys.CapitalSection.Capital:
-                    u = ValidationService.validateCapital(t, r);
-                    break;
-                case CommonData.QuestionKeys.EmailSection.Phone:
-                    u = ValidationService.validatePhone(t);
-                    break;
-                case CommonData.QuestionKeys.EmailSection.Email:
-                    u = ValidationService.validateEmailQuestion(t);
-                    break;
-                case CommonData.QuestionKeys.InsuredSection.Gender:
-                case CommonData.QuestionKeys.InsuredSection.DOB:
-                    u = ValidationService.validatePersonalData(t)
-            }
-            return u
-        },
-        pushErrorToDatalayer: function(n, t) {
-            n || this.errorMessages.push(t)
-        },
-        saveErrorDataLayerEventCJ: function(n, t) {
-            var i = {
-                event: "virtualpage",
-                virtualpage: "customerjourneyerror",
-                categoryvp: "insurance",
-                productvp: "life",
-                sectionvp: "section" + n,
-                question: "q" + n,
-                cjerrormessage: t.join(" - ")
-            };
-            CommonService.pushDataLayerEvent(i)
+            return i
         },
         saveErrorDataLayerEvent: function(n, t) {
             if (!n) {
@@ -4804,121 +5806,217 @@ var digitsOnly = /[1234567890]/g,
                     event: "virtualpage",
                     virtualpage: "customerjourneyerror",
                     categoryvp: "insurance",
-                    productvp: "life",
-                    sectionvp: CommonService.getSectionNumber(CommonService.currentQuestion.SectionName),
-                    question: "q" + CommonService.currentQuestion.QuestionNumber,
+                    productvp: "home",
+                    sectionvp: HomeCommonService.getSectionNumber(HomeCommonService.currentQuestion.SectionName),
+                    question: "q" + HomeCommonService.currentQuestion.QuestionNumber,
                     cjerrormessage: t.join(" - ")
                 };
-                CommonService.pushDataLayerEvent(i)
+                HomeCommonService.pushDataLayerEvent(i)
             }
         },
-        validatePersonalData: function() {
-            var n = !1,
-                i = !1,
+        validateTwoListAnswer: function(n) {
+            return HomeCommonService.selectedItem.FirstQuestion && HomeCommonService.selectedItem.SecondQuestion ? (this.hideError(), !0) : (this.showError(n), !1)
+        },
+        validateSingleDropDownAnswer: function(n, t) {
+            return HomeCommonService.selectedItem.value ? (this.hideError(t), !0) : (this.showError(n, t), HomeValidationService.saveErrorDataLayerEvent(!1, [n]), !1)
+        },
+        validatePostalCode: function(n) {
+            this.hideError("txt_" + n);
+            var t = $("#" + CommonData.Constants.PostalCodeResultControlId).text();
+            return t ? !0 : (this.showError(CommonData.ErrorMessages.PostalCode, "txt_" + n), $("#txt_" + n).addClass("error"), $("#" + CommonData.Constants.PostalCodeResultControlId).text(""), HomeValidationService.saveErrorDataLayerEvent(!1, [CommonData.ErrorMessages.PostalCode]), !1)
+        },
+        validateHabitualPostalCode: function(n) {
+            this.hideError("txt_" + n);
+            var t = $("#lblHabitualCity").html();
+            return t ? !0 : (this.showError(CommonData.ErrorMessages.HabitualPostalCode, "txt_" + n), $("#txt_" + n).addClass("error"), HomeValidationService.saveErrorDataLayerEvent(!1, [CommonData.ErrorMessages.HabitualPostalCode]), !1)
+        },
+        validateSingleListAnswer: function(n) {
+            return HomeCommonService.selectedItem.value ? (this.hideError(), !0) : (this.showError(n, "errorContainer"), !1)
+        },
+        validateHouseandLandAreaQuestion: function() {
+            $("#txt_HouseArea").removeClass("error");
+            $("#errorContainer_HouseArea").text("");
+            $("#txt_LandArea").removeClass("error");
+            $("#errorContainer_LandArea").text("");
+            var t = !0,
+                n = [],
+                i = HomeCommonService.getQuestionsByGroupKey(HomeCommonService.currentQuestion.GroupKey);
+            if (i && i.length > 1) {
+                if (!HomeCommonService.selectedItem.FirstQuestion && !HomeCommonService.selectedItem.SecondQuestion) return $("#txt_HouseArea").addClass("error"), $("#errorContainer_HouseArea").text(CommonData.ErrorMessages.InvalidHouseArea), $("#txt_LandArea").addClass("error"), $("#errorContainer_LandArea").text(CommonData.ErrorMessages.InvalidLandArea), t = !1, n.push(CommonData.ErrorMessages.InvalidHouseArea), n.push(CommonData.ErrorMessages.InvalidLandArea), HomeValidationService.saveErrorDataLayerEvent(!1, n), HomeCommonService.QuestionScrollIntoView(CommonData.QuestionKeys.HouseSection.HouseArea), t;
+                HomeCommonService.selectedItem.FirstQuestion ? HomeCommonService.selectedItem.FirstQuestion < 20 && ($("#txt_HouseArea").addClass("error"), $("#errorContainer_HouseArea").text(CommonData.ErrorMessages.HouseAreaLessThan20NotAllowed), t = !1, n.push(CommonData.ErrorMessages.HouseAreaLessThan20NotAllowed), HomeCommonService.QuestionScrollIntoView(CommonData.QuestionKeys.HouseSection.HouseArea)) : ($("#txt_HouseArea").addClass("error"), $("#errorContainer_HouseArea").text(CommonData.ErrorMessages.InvalidHouseArea), t = !1, n.push(CommonData.ErrorMessages.InvalidHouseArea), HomeCommonService.QuestionScrollIntoView(CommonData.QuestionKeys.HouseSection.HouseArea));
+                HomeCommonService.selectedItem.SecondQuestion || ($("#txt_LandArea").addClass("error"), $("#errorContainer_LandArea").text(CommonData.ErrorMessages.InvalidLandArea), t = !1, n.push(CommonData.ErrorMessages.InvalidLandArea))
+            } else i && i.length === 1 && (HomeCommonService.selectedItem.FirstQuestion ? HomeCommonService.selectedItem.FirstQuestion < 20 && ($("#txt_HouseArea").addClass("error"), $("#errorContainer_HouseArea").text(CommonData.ErrorMessages.HouseAreaLessThan20NotAllowed), t = !1, n.push(CommonData.ErrorMessages.HouseAreaLessThan20NotAllowed)) : ($("#txt_HouseArea").addClass("error"), $("#errorContainer_HouseArea").text(CommonData.ErrorMessages.InvalidHouseArea), t = !1, n.push(CommonData.ErrorMessages.InvalidHouseArea), HomeCommonService.QuestionScrollIntoView(HomeCommonService.currentQuestion.QuestionKey)));
+            return t ? !0 : (HomeValidationService.saveErrorDataLayerEvent(!1, n), !1)
+        },
+        validateRoomsandRestRoomsQuestion: function() {
+            $("#div_NumberOfRooms").removeClass("error");
+            $("#errorContainer_NumberOfRooms").find("p").text("");
+            $("#div_NumberOfBathrooms").removeClass("error");
+            $("#errorContainer_NumberOfBathrooms").find("p").text("");
+            var n = [],
+                t = !0;
+            return !HomeCommonService.selectedItem.FirstQuestion && !HomeCommonService.selectedItem.SecondQuestion ? ($("#div_NumberOfRooms").addClass("error"), $("#errorContainer_NumberOfRooms").find("p").text(CommonData.ErrorMessages.NumberOfRooms), $("#div_NumberOfBathrooms").addClass("error"), $("#errorContainer_NumberOfBathrooms").find("p").text(CommonData.ErrorMessages.NumberOfRestRooms), t = !1, n.push(CommonData.ErrorMessages.NumberOfRooms), n.push(CommonData.ErrorMessages.NumberOfRestRooms), HomeValidationService.saveErrorDataLayerEvent(!1, n), HomeCommonService.QuestionScrollIntoView(CommonData.QuestionKeys.HouseSection.NumberOfRooms), t) : (HomeCommonService.selectedItem.FirstQuestion || ($("#div_NumberOfRooms").addClass("error"), $("#errorContainer_NumberOfRooms").find("p").text(CommonData.ErrorMessages.NumberOfRooms), t = !1, n.push(CommonData.ErrorMessages.NumberOfRooms), HomeCommonService.QuestionScrollIntoView(CommonData.QuestionKeys.HouseSection.NumberOfRooms)), HomeCommonService.selectedItem.SecondQuestion || ($("#div_NumberOfBathrooms").addClass("error"), $("#errorContainer_NumberOfBathrooms").find("p").text(CommonData.ErrorMessages.NumberOfRestRooms), t = !1, n.push(CommonData.ErrorMessages.NumberOfRestRooms)), t ? !0 : (HomeValidationService.saveErrorDataLayerEvent(!1, n), !1))
+        },
+        validateContinentAndContentQuestion: function() {
+            $("#txt_Container").removeClass("error");
+            $("#errorContainer_Container").text("");
+            $("#txt_Content").removeClass("error");
+            $("#errorContainer_Content").text("");
+            var t = !0,
+                n = [],
+                i = HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.HouseOccupation];
+            return i !== "Tenant" && !HomeCommonService.selectedItem.FirstQuestion && !HomeCommonService.selectedItem.SecondQuestion ? ($("#txt_Container").addClass("error"), $("#errorContainer_Container").text(CommonData.ErrorMessages.ContinentRequired), $("#txt_Content").addClass("error"), $("#errorContainer_Content").text(CommonData.ErrorMessages.InvalidContent), t = !1, n.push(CommonData.ErrorMessages.ContinentRequired), n.push(CommonData.ErrorMessages.InvalidContent), HomeValidationService.saveErrorDataLayerEvent(!1, n), t) : i === "Tenant" && !HomeCommonService.selectedItem.FirstQuestion && !HomeCommonService.selectedItem.SecondQuestion ? ($("#txt_Container").addClass("error"), $("#errorContainer_Container").text(CommonData.ErrorMessages.InvalidContinent), $("#txt_Content").addClass("error"), $("#errorContainer_Content").text(CommonData.ErrorMessages.InvalidContent), t = !1, n.push(CommonData.ErrorMessages.InvalidContinent), n.push(CommonData.ErrorMessages.InvalidContent), HomeValidationService.saveErrorDataLayerEvent(!1, n), t) : (i === "Tenant" || HomeCommonService.selectedItem.FirstQuestion ? i !== "Tenant" || HomeCommonService.selectedItem.FirstQuestion ? i === "Tenant" && parseInt(HomeCommonService.selectedItem.FirstQuestion) > 12e3 ? ($("#txt_Container").addClass("error"), $("#errorContainer_Container").text(CommonData.ErrorMessages.InvalidContinent), t = !1, n.push(CommonData.ErrorMessages.InvalidContinent)) : i !== "Tenant" && parseInt(HomeCommonService.selectedItem.FirstQuestion).toString() === "0" && ($("#txt_Container").val(""), $("#txt_Container").addClass("error"), $("#errorContainer_Container").text(CommonData.ErrorMessages.InvalidContinentWithZero), t = !1, n.push(CommonData.ErrorMessages.InvalidContinentWithZero)) : ($("#txt_Container").addClass("error"), $("#errorContainer_Container").text(CommonData.ErrorMessages.InvalidContinent), t = !1, n.push(CommonData.ErrorMessages.InvalidContinent), HomeCommonService.QuestionScrollIntoView(CommonData.QuestionKeys.InsuranceSection.Continent)) : ($("#txt_Container").addClass("error"), $("#errorContainer_Container").text(CommonData.ErrorMessages.ContinentRequired), t = !1, n.push(CommonData.ErrorMessages.ContinentRequired), HomeCommonService.QuestionScrollIntoView(CommonData.QuestionKeys.InsuranceSection.Continent)), HomeCommonService.selectedItem.SecondQuestion ? i === "Tenant" && parseInt(HomeCommonService.selectedItem.SecondQuestion).toString() === "0" && ($("#txt_Content").addClass("error"), $("#errorContainer_Content").text(CommonData.ErrorMessages.InvalidContent), t = !1, n.push(CommonData.ErrorMessages.InvalidContent)) : ($("#txt_Content").addClass("error"), $("#errorContainer_Content").text(CommonData.ErrorMessages.InvalidContent), t = !1, n.push(CommonData.ErrorMessages.InvalidContent), HomeCommonService.QuestionScrollIntoView(HomeCommonService.currentQuestion.QuestionKey)), t ? !0 : (HomeValidationService.saveErrorDataLayerEvent(!1, n), !1))
+        },
+        validateContinentQuestion: function() {
+            $("#txt_Container").removeClass("error");
+            $("#errorContainer").text("");
+            var n = !0,
+                t = [],
+                i = HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.HouseOccupation];
+            if (HomeCommonService.selectedItem.riskValue) i === "Tenant" && parseInt(HomeCommonService.selectedItem.riskValue) > 12e3 ? ($("#txt_Container").addClass("error"), $("#errorContainer").text(CommonData.ErrorMessages.InvalidContinent), n = !1, t.push(CommonData.ErrorMessages.InvalidContinent)) : i !== "Tenant" && parseInt(HomeCommonService.selectedItem.riskValue).toString() === "0" && ($("#txt_Container").val(""), $("#txt_Container").addClass("error"), $("#errorContainer").text(CommonData.ErrorMessages.InvalidContinentWithZero), n = !1, t.push(CommonData.ErrorMessages.InvalidContinentWithZero));
+            else return $("#txt_Container").addClass("error"), $("#errorContainer").text(CommonData.ErrorMessages.ContinentRequired), n = !1, t.push(CommonData.ErrorMessages.ContinentRequired), HomeValidationService.saveErrorDataLayerEvent(!1, t), n;
+            return n ? !0 : (HomeValidationService.saveErrorDataLayerEvent(!1, t), !1)
+        },
+        validateContentQuestion: function() {
+            var t = HomeCommonService.contractType.HouseDetails[CommonData.RiskNodes.HouseOccupation],
+                n = !0;
+            return HomeCommonService.selectedItem.riskValue ? parseInt(HomeCommonService.selectedItem.riskValue).toString() === "0" && ($("#txt_Content").addClass("error"), $("#errorContainer").text(CommonData.ErrorMessages.InvalidContent), n = !1, errorMessages.push(CommonData.ErrorMessages.InvalidContent)) : ($("#txt_Content").addClass("error"), $("#errorContainer").text(CommonData.ErrorMessages.InvalidContent), n = !1, errorMessages.push(CommonData.ErrorMessages.InvalidContent), HomeCommonService.QuestionScrollIntoView(HomeCommonService.currentQuestion.QuestionKey)), n ? !0 : (HomeValidationService.saveErrorDataLayerEvent(!1, errorMessages), !1)
+        },
+        validateSafeboxQuestion: function() {
+            $("#txt_JewelsOutOfSafeBox").removeClass("error");
+            $("#errorContainer_JewelsOutOfSafeBox").text("");
+            $("#txt_JewelsInSafeBox").removeClass("error");
+            $("#errorContainer_JewelsInSafeBox").text("");
+            var n = !0,
                 t = [];
-            if (this.resetDOBErrorFields(CommonData.RiskNodes.DOB), CommonService.selectedItem.Gender ? ($("#div_Gender").removeClass("error"), $("#errorGender").text(""), i = !0) : ($("#div_Gender").addClass("error"), $("#errorGender").text(CommonData.ErrorMessages.InvalidDropDownSelection), i = !1, t.push(CommonData.ErrorMessages.InvalidDropDownSelection), this.saveErrorDataLayerEvent(n, t), CommonService.ElementScrollIntoView("div_Gender")), CommonService.selectedItem.DOB.day || CommonService.selectedItem.DOB.month || CommonService.selectedItem.DOB.year) $("#errorDate_" + CommonData.RiskNodes.DOB).removeClass("error"), $("#errorDate_" + CommonData.RiskNodes.DOB).find("p").text(""), $("#div_day_" + CommonData.RiskNodes.DOB).removeClass("error"), $("#div_month_" + CommonData.RiskNodes.DOB).removeClass("error"), $("#div_year_" + CommonData.RiskNodes.DOB).removeClass("error"), n = !0;
-            else return $("#errorDate_" + CommonData.RiskNodes.DOB).addClass("error"), $("#errorDate_" + CommonData.RiskNodes.DOB).find("p").text(CommonData.ErrorMessages.DateInvalid), $("#div_day_" + CommonData.RiskNodes.DOB).addClass("error"), $("#div_month_" + CommonData.RiskNodes.DOB).addClass("error"), $("#div_year_" + CommonData.RiskNodes.DOB).addClass("error"), n = !1, t.push(CommonData.ErrorMessages.DateInvalid), this.saveErrorDataLayerEvent(n, t), CommonService.ElementScrollIntoView("div_BirthDate"), n;
-            if (t = [], CommonService.selectedItem.DOB.day || ($("#div_day_" + CommonData.RiskNodes.DOB).addClass("error"), $("#errorDay_" + CommonData.RiskNodes.DOB).text(CommonData.ErrorMessages.Day), n = !1, t.push(CommonData.ErrorMessages.Day)), CommonService.selectedItem.DOB.month || ($("#div_month_" + CommonData.RiskNodes.DOB).addClass("error"), $("#errorMonth_" + CommonData.RiskNodes.DOB).text(CommonData.ErrorMessages.Month), n = !1, t.push(CommonData.ErrorMessages.Month)), CommonService.selectedItem.DOB.year || ($("#div_year_" + CommonData.RiskNodes.DOB).addClass("error"), $("#errorYear_" + CommonData.RiskNodes.DOB).text(CommonData.ErrorMessages.Year), n = !1, t.push(CommonData.ErrorMessages.Year)), CommonService.selectedItem.DOB.day && CommonService.selectedItem.DOB.month && CommonService.selectedItem.DOB.year) {
-                this.resetDOBErrorFields(CommonData.RiskNodes.DOB);
-                t = [];
-                var r = parseInt(CommonService.selectedItem.DOB.day),
-                    u = parseInt(CommonService.selectedItem.DOB.month),
-                    f = parseInt(CommonService.selectedItem.DOB.year);
-                if (this.IsValidDate(r, u, f))
-                    if (this.IsAge18Years(f, u, r)) n = !0;
-                    else return $("#errorDate_" + CommonData.RiskNodes.DOB).addClass("error"), $("#errorDate_" + CommonData.RiskNodes.DOB).find("p").text(CommonData.ErrorMessages.DateInvalid), $("#div_day_" + CommonData.RiskNodes.DOB).addClass("error"), $("#div_month_" + CommonData.RiskNodes.DOB).addClass("error"), $("#div_year_" + CommonData.RiskNodes.DOB).addClass("error"), n = !1, t.push(CommonData.ErrorMessages.DateInvalid), this.saveErrorDataLayerEvent(n, t), n;
-                else $("#errorDate_" + CommonData.RiskNodes.DOB).addClass("error"), $("#errorDate_" + CommonData.RiskNodes.DOB).find("p").text(CommonData.ErrorMessages.DateInvalid), $("#div_day_" + CommonData.RiskNodes.DOB).addClass("error"), $("#div_month_" + CommonData.RiskNodes.DOB).addClass("error"), $("#div_year_" + CommonData.RiskNodes.DOB).addClass("error"), n = !1, t.push(CommonData.ErrorMessages.DateInvalid)
-            }
-            return this.saveErrorDataLayerEvent(n, t), n && i
+            return HomeCommonService.selectedItem.JewelsOutOfSafeBox == undefined || this.isNumber(HomeCommonService.selectedItem.JewelsOutOfSafeBox) || ($("#txt_JewelsOutOfSafeBox").addClass("error"), $("#errorContainer_JewelsOutOfSafeBox").text(CommonData.ErrorMessages.InvalidSafeBox), n = !1, t.push(CommonData.ErrorMessages.InvalidSafeBox), HomeCommonService.QuestionScrollIntoView(HomeCommonService.currentQuestion.QuestionKey)), HomeCommonService.selectedItem.JewelsInSafeBox == undefined || this.isNumber(HomeCommonService.selectedItem.JewelsInSafeBox) || ($("#txt_JewelsInSafeBox").addClass("error"), $("#errorContainer_JewelsInSafeBox").text(CommonData.ErrorMessages.InvalidSafeBox), n = !1, t.push(CommonData.ErrorMessages.InvalidSafeBox)), n ? !0 : (HomeValidationService.saveErrorDataLayerEvent(n, t), !1)
+        },
+        validateSpecialObject: function() {
+            var n = "txt_" + CommonData.RiskNodes.ValueOfAllSpecialObjects;
+            return ($("#" + n).removeClass("error"), $("#errorContainer_" + CommonData.RiskNodes.ValueOfAllSpecialObjects).text(""), HomeCommonService.selectedItem.SpecialObject != undefined && !this.isNumber(HomeCommonService.selectedItem.SpecialObject)) ? ($("#" + n).addClass("error"), $("#errorContainer_" + CommonData.RiskNodes.ValueOfAllSpecialObjects).text(CommonData.ErrorMessages.InvalidValueofSpecialObjects), !1) : !0
+        },
+        validateSingleInputBoxQuestion: function(n, t) {
+            return HomeCommonService.selectedItem.value ? (this.hideError(t), !0) : (this.showError(n, t), HomeValidationService.saveErrorDataLayerEvent(!1, [n]), !1)
         },
         resetDOBErrorFields: function(n) {
+            $("#errorDate_" + n).removeClass("error");
+            $("#errorDate_" + n).find("p").text("");
+            $("#day_" + n).removeClass("error");
+            $("#div_" + n).removeClass("error");
+            $("#year_" + n).removeClass("error");
+            $("#errorDay_" + n).find("p").text("");
+            $("#errorMonth_" + n).find("p").text("");
+            $("#errorYear_" + n).find("p").text("")
+        },
+        validatePolicyHolderDOB: function(n) {
+            var i = [],
+                t;
+            if (HomeValidationService.resetDOBErrorFields(n), t = !1, HomeCommonService.selectedItem.day || HomeCommonService.selectedItem.month || HomeCommonService.selectedItem.year) $("#txt_dob").removeClass("error"), t = !0;
+            else return $("#txt_dob").addClass("error"), $("#errorText").text(CommonData.ErrorMessages.DateInvalid), t = !1, i.push(CommonData.ErrorMessages.DateInvalid), HomeValidationService.saveErrorDataLayerEvent(t, i), t;
+            if (i = [], HomeCommonService.selectedItem.day && HomeCommonService.selectedItem.month && HomeCommonService.selectedItem.year) {
+                HomeValidationService.resetDOBErrorFields(n);
+                i = [];
+                var r = parseInt(HomeCommonService.selectedItem.day),
+                    u = parseInt(HomeCommonService.selectedItem.month),
+                    f = parseInt(HomeCommonService.selectedItem.year);
+                if (HomeValidationService.IsValidDate(r, u, f)) {
+                    if (HomeValidationService.IsAge18Years(f, u, r)) t = !0;
+                    else return $("#txt_dob").addClass("error"), $("#errorText").text(CommonData.ErrorMessages.PolicyHolderLegalAge), t = !1, i.push(CommonData.ErrorMessages.PolicyHolderLegalAge), HomeValidationService.saveErrorDataLayerEvent(t, i), t;
+                    if (HomeValidationService.ValidateYearInRange(HomeCommonService.selectedItem.year, HomeCommonService.selectedItem.minYear, HomeCommonService.selectedItem.maxYear)) t = !0;
+                    else return $("#txt_dob").addClass("error"), $("#errorText").text(CommonData.ErrorMessages.DateInvalid), t = !1, i.push(CommonData.ErrorMessages.DateInvalid), HomeValidationService.saveErrorDataLayerEvent(t, i), t
+                } else $("#txt_dob").addClass("error"), $("#errorText").text(CommonData.ErrorMessages.DateInvalid), t = !1, i.push(CommonData.ErrorMessages.PolicyHolderLegalAge)
+            }
+            return HomeValidationService.saveErrorDataLayerEvent(t, i), t
+        },
+        resetInitialDateErrorFields: function(n) {
             $("#errorDate_" + n).removeClass("error");
             $("#errorDate_" + n).find("p").text("");
             $("#div_day_" + n).removeClass("error");
             $("#div_month_" + n).removeClass("error");
             $("#div_year_" + n).removeClass("error");
-            $("#errorDay_" + n).text("");
-            $("#errorMonth_" + n).text("");
-            $("#errorYear_" + n).text("")
+            $("#errorDay_" + n).find("p").text("");
+            $("#errorMonth_" + n).find("p").text("");
+            $("#errorYear_" + n).find("p").text("")
         },
-        validateSingleListAnswer: function(n) {
-            var t = [];
-            return CommonService.selectedItem.value ? (this.hideError(), !0) : (this.showError(n, "errorContainer"), t.push(n), ValidationService.saveErrorDataLayerEvent(!1, t), !1)
+        validateInitialDateOfInsurance: function(n) {
+            var t, i, r;
+            if (HomeValidationService.resetInitialDateErrorFields(n), t = !1, i = [], HomeCommonService.selectedItem.day || HomeCommonService.selectedItem.month || HomeCommonService.selectedItem.year) $("#txt_initial_date_insurance").removeClass("error"), t = !0;
+            else return $("#txt_initial_date_insurance").addClass("error"), $("#errorText").text(CommonData.ErrorMessages.DateInvalid), t = !1, i.push(CommonData.ErrorMessages.DateInvalid), HomeValidationService.saveErrorDataLayerEvent(t, i), t;
+            if (i = [], HomeCommonService.selectedItem.day && HomeCommonService.selectedItem.month && HomeCommonService.selectedItem.year) {
+                HomeValidationService.resetInitialDateErrorFields(n);
+                i = [];
+                var u = parseInt(HomeCommonService.selectedItem.day),
+                    f = parseInt(HomeCommonService.selectedItem.month),
+                    e = parseInt(HomeCommonService.selectedItem.year);
+                HomeValidationService.IsValidDate(u, f, e) ? (t = !0, r = HomeValidationService.IsPolicyStartDateValid(e, f, u), r !== "" ? ($("#txt_initial_date_insurance").addClass("error"), $("#errorText").text(r), t = !1, i.push(r)) : t = !0) : ($("#txt_initial_date_insurance").addClass("error"), $("#errorText").text(CommonData.ErrorMessages.DateInvalid), t = !1, i.push(CommonData.ErrorMessages.DateInvalid))
+            }
+            return HomeValidationService.saveErrorDataLayerEvent(t, i), t
         },
-        validatePostalCode: function(n) {
-            this.hideError("txt_" + n);
-            var t = $("#" + CommonData.Constants.PostalCodeResultControlId).text();
-            return t ? !0 : (this.showError(CommonData.ErrorMessages.PostalCode, "txt_" + n), $("#txt_" + n).addClass("error"), $("#" + CommonData.Constants.PostalCodeResultControlId).text(""), ValidationService.saveErrorDataLayerEvent(!1, [CommonData.ErrorMessages.PostalCode]), !1)
-        },
-        validateCapital: function(n, t) {
-            $("#txt_" + n).removeClass("error");
-            $("#errorContainer").find("p").text("");
-            var i = [],
-                r = "";
-            if (t != undefined && (r = t.text), !CommonService.selectedItem.Capital.ListValue && !CommonService.selectedItem.Capital.InputValue || CommonService.selectedItem.Capital.InputValue === "" && r === "Avanzar") return $("#txt_" + n).addClass("error"), $("#errorContainer").find("p").text(CommonData.ErrorMessages.InvalidCapital), i.push(CommonData.ErrorMessages.InvalidCapital), ValidationService.saveErrorDataLayerEvent(!1, i), !1;
-            if (t) {
-                if (CommonService.selectedItem.Capital.InputValue && CommonService.selectedItem.Capital.InputValue < 12e3) return $("#txt_" + n).addClass("error"), $("#errorContainer").find("p").text(CommonData.ErrorMessages.CapitalLessThan12K), i.push(CommonData.ErrorMessages.CapitalLessThan12K), ValidationService.saveErrorDataLayerEvent(!1, i), !1;
-                if (CommonService.selectedItem.Capital.InputValue && CommonService.selectedItem.Capital.InputValue > 1e7) return $("#txt_" + n).addClass("error"), $("#errorContainer").find("p").text(CommonData.ErrorMessages.CapitalGreaterThan1bn), i.push(CommonData.ErrorMessages.CapitalGreaterThan1bn), ValidationService.saveErrorDataLayerEvent(!1, i), !1
+        validateFavouriteKindInsurance: function() {
+            if (HomeCommonService.selectedItem.riskValue) {
+                var n = !0,
+                    t = !0;
+                return HomeCommonService.selectedItem.riskValue.indexOf("1") > -1 && (n = this.validateSafeboxQuestion()), HomeCommonService.selectedItem.riskValue.indexOf("2") > -1 && (t = this.validateSpecialObject()), n && t
             }
             return !0
+        },
+        validateDNI: function(n) {
+            var e = [],
+                t, i, r, u, f;
+            if ($("#txt_" + n).removeClass("error"), $("#errorContainer_" + n).text(""), t = HomeCommonService.selectedItem.value, t = t.replace(/\s\s+/g, "").replace(/[^\w\s]/gi, "").replace(/[^0-9a-zA-Z]/g, ""), i = !1, t.length > 0 && t.length === 9 && (r = t.charAt(0), r.toLowerCase() === "x" && (t = t.indexOf("x") === 0 || t.indexOf("X") === 0 ? t.replace("X", 0).replace("x", 0) : 0), r.toLowerCase() === "y" && (t = t.indexOf("y") === 0 || t.indexOf("Y") === 0 ? t.replace("y", 1).replace("Y", 1) : 1), r.toLowerCase() === "z" && (t = t.indexOf("z") === 0 || t.indexOf("Z") === 0 ? t.replace("Z", 2).replace("z", 2) : 2), u = "TRWAGMYFPDXBNJZSQVHLCKE", f = t.substring(t.length - 1, t.length).toUpperCase(), u.indexOf(f) !== -1)) {
+                var s = t.substring(0, t.length - 1),
+                    o = s % 23,
+                    h = u.substring(o, o + 1);
+                h === f && (i = !0)
+            }
+            return i || ($("#txt_" + n).addClass("error"), $("#errorContainer_" + n).text(CommonData.ErrorMessages.Dni), e.push(CommonData.ErrorMessages.Dni), HomeValidationService.saveErrorDataLayerEvent(i, e)), i
         },
         validatePhone: function(n) {
-            $("#txt_" + n).removeClass("error");
-            $("#errorContainer").text("");
-            var t = [];
-            return CommonService.selectedItem.phone && (CommonService.selectedItem.phone.length < 9 || parseInt(CommonService.selectedItem.phone.substring(0, 1)) != 6 && parseInt(CommonService.selectedItem.phone.substring(0, 1)) != 7 && parseInt(CommonService.selectedItem.phone.substring(0, 1)) != 8 && parseInt(CommonService.selectedItem.phone.substring(0, 1)) != 9) ? ($("#txt_" + n).addClass("error"), $("#errorContainer").text(CommonData.ErrorMessages.InvalidPhone), t.push(CommonData.ErrorMessages.InvalidPhone), ValidationService.saveErrorDataLayerEvent(!1, t), !1) : !0
+            var t = !1,
+                i = [],
+                r, u, f;
+            if (!HomeValidationService.validateEmailQuestion("")) return t;
+            if (($("#txt_" + n).removeClass("error"), $("#error_Phone").text(""), $("#label_" + n).removeClass("error"), r = HomeCommonService.selectedItem.phone, u = ["6", "7", "8", "9"], r.trim().length > 1 && r.trim().length < 9) || r.trim().length > 1 && $.inArray(r.trim().split("")[0], u) === -1) return $("#txt_" + n).addClass("error"), $("#error_Phone").text(CommonData.ErrorMessages.Phone), t = !1, i.push(CommonData.ErrorMessages.Phone), HomeValidationService.saveErrorDataLayerEvent(t, i), t;
+            if (t = r.indexOf("●") >= 0 ? !0 : !0, HomeCommonService.isCJ && !HomeCommonService.selectedItem.politica && ($("#label_" + n).addClass("error"), $("#errorPolitica").text(CommonData.ErrorMessages.TermCondition), t = !1, i.push(CommonData.ErrorMessages.TermCondition), HomeValidationService.saveErrorDataLayerEvent(t, i)), HomeCommonService.isCJ && t) {
+                if (i = [], f = "https://seguro-hogar.rastreator.com/HomeCallbacks.aspx?Option=EmailSpamCheck&hidEmail=" + $("#txt_Email").val(), HomeCommonService.checkSpamEmail(f)) return HomeCommonService.isInternalRedirect = !0, window.location.href = flagWhiteLabel == !0 ? whiteLabelUrl : HomeCommonService.getCurrentEnvCMSUrl(), !1;
+                HomeValidationService.IsCaptchaValidated() ? ($("#captchaText").removeClass("error"), $("#captchaerrordiv").text(""), HomeValidationService.CaptchaVerify() ? (HomeValidationService.SubmitCaptcha(), t = !0) : ($("#captchaText").addClass("error"), $("#captchaerrordiv").text(CommonData.ErrorMessages.InvalidCaptchaOperation), t = !1, i.push(CommonData.ErrorMessages.InvalidCaptchaOperation), HomeValidationService.saveErrorDataLayerEvent(t, i))) : ($("#captchaText").addClass("error"), $("#captchaerrordiv").text(CommonData.ErrorMessages.InvalidCaptchaOperation), t = !1, i.push(CommonData.ErrorMessages.InvalidCaptchaOperation), HomeValidationService.saveErrorDataLayerEvent(t, i))
+            }
+            return t
         },
         validateEmailQuestion: function(n) {
+            n = "Email";
             var t = !1,
                 i = [];
-            if ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), $("#label_" + n).removeClass("error"), $("#errorPolitica").text(""), !CommonService.isCJ && !CommonService.selectedItem.email) return $("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email), ValidationService.saveErrorDataLayerEvent(t, i), t;
-            if (!CommonService.isCJ || CommonService.selectedItem.email || CommonService.selectedItem.politica) $("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), $("#label_" + n).removeClass("error"), $("#errorPolitica").text(""), t = !0;
-            else return $("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), $("#label_" + n).addClass("error"), $("#errorPolitica").text(CommonData.ErrorMessages.TermCondition), t = !1, i.push(CommonData.ErrorMessages.Email), i.push(CommonData.ErrorMessages.TermCondition), ValidationService.saveErrorDataLayerEvent(t, i), t;
-            
-            //return (i = [], CommonService.selectedItem.email ? CommonService.selectedItem.email.indexOf("@") === -1 || CommonService.selectedItem.email.indexOf(".") === -1 ? ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ValidationService.IsValidEmail("txt_" + n) ? ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), t = !0) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)), CommonService.isCJ && !CommonService.selectedItem.politica) ? ($("#label_" + n).addClass("error"), $("#errorPolitica").text(CommonData.ErrorMessages.TermCondition), t = !1, i.push(CommonData.ErrorMessages.TermCondition), ValidationService.saveErrorDataLayerEvent(t, i), t) : (CommonService.selectedItem.email && CommonService.IsSpamEmail(CommonService.selectedItem.email) && (t = !1, i.push(CommonData.ErrorMessages.SpamEmail), ValidationService.saveErrorDataLayerEvent(t, i), CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl()), ValidationService.saveErrorDataLayerEvent(t, i), t)
-
-            return (i = [], CommonService.selectedItem.email ? CommonService.selectedItem.email.indexOf("@") === -1 || CommonService.selectedItem.email.indexOf(".") === -1 ? ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ValidationService.IsValidEmail("txt_" + n) ? ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), t = !0) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)), CommonService.isCJ && !CommonService.selectedItem.politica) ? ($("#label_" + n).addClass("error"), $("#errorPolitica").text(CommonData.ErrorMessages.TermCondition), t = !1, i.push(CommonData.ErrorMessages.TermCondition), ValidationService.saveErrorDataLayerEvent(t, i), t) : (CommonService.selectedItem.email && (t = !1, i.push(CommonData.ErrorMessages.SpamEmail), ValidationService.saveErrorDataLayerEvent(t, i), CommonService.isInternalRedirect = !0, window.location = CommonService.getCmsUrl()), ValidationService.saveErrorDataLayerEvent(t, i), t)
+            if ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), $("#label_" + n).removeClass("error"), $("#errorPolitica").text(""), HomeCommonService.isCJ || HomeCommonService.selectedItem.email)
+                if (HomeCommonService.selectedItem.email) $("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), $("#label_" + n).removeClass("error"), $("#errorPolitica").text(""), t = !0;
+                else return $("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), $("#label_" + n).addClass("error"), t = !1, i.push(CommonData.ErrorMessages.Email), HomeValidationService.saveErrorDataLayerEvent(t, i), t;
+            else return $("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email), HomeValidationService.saveErrorDataLayerEvent(t, i), t;
+            return i = [], HomeCommonService.selectedItem.email ? HomeCommonService.selectedItem.email.indexOf("@") === -1 || HomeCommonService.selectedItem.email.indexOf(".") === -1 ? ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : HomeValidationService.IsValidEmail("txt_" + n) ? ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), t = !0) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)), t
         },
-        IsValidEmail: function(n) {
-            var r, u, f, i;
-            if (CommonService.selectedItem.email = $.trim(CommonService.selectedItem.email), CommonService.selectedItem.email == "") return !1;
-            var t = CommonService.selectedItem.email,
-                h = t.substr(t.lastIndexOf(".") + 1);
-            if (h.length > 5) return !1;
-            if (t.match(/@+/) == null || (r = t.split("@"), u = r[0], u.match(/\.$/) != null || t.match(/\.\./) != null) || (f = t.match(/^[A-Za-z0-9]+[A-Za-z0-9_\.-]+@[A-Za-z0-9]+([\.-]?[A-Za-z0-9]+)*(\.[A-Za-z0-9]{2,5})+$/), f == null)) return document.getElementById(n).focus(), !1;
-            var e = document.getElementById(n).value,
-                o = e.substring(e.lastIndexOf("@") + 1),
-                s;
-            for (i = 0; i < o.length; i++)
-                if (s = o.substring(i, i + 1), "(~`!#$%^&*_+|=}{'?/)".indexOf(s) >= 0) return document.getElementById(n).focus(), !1;
-            return !0
+        validateVCEmailQuestion: function(n) {
+            var t = !1,
+                i = [],
+                r;
+            if ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), $("#label_" + n).removeClass("error"), $("#errorPolitica").text(""), HomeCommonService.isCJ || HomeCommonService.selectedItem.email)
+                if (HomeCommonService.selectedItem.email) $("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), $("#label_" + n).removeClass("error"), $("#errorPolitica").text(""), t = !0;
+                else return $("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), $("#label_" + n).addClass("error"), t = !1, i.push(CommonData.ErrorMessages.Email), HomeValidationService.saveErrorDataLayerEvent(t, i), t;
+            else return $("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email), HomeValidationService.saveErrorDataLayerEvent(t, i), t;
+            if (i = [], HomeCommonService.selectedItem.email ? HomeCommonService.selectedItem.email.indexOf("@") === -1 || HomeCommonService.selectedItem.email.indexOf(".") === -1 ? ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : HomeValidationService.IsValidEmail("txt_" + n) ? ($("#txt_" + n).removeClass("error"), $("#errorEmail").text(""), t = !0) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)) : ($("#txt_" + n).addClass("error"), $("#errorEmail").text(CommonData.ErrorMessages.Email), t = !1, i.push(CommonData.ErrorMessages.Email)), HomeCommonService.isCJ && !HomeCommonService.selectedItem.politica && ($("#label_" + n).addClass("error"), $("#errorPolitica").text(CommonData.ErrorMessages.TermCondition), t = !1, i.push(CommonData.ErrorMessages.TermCondition)), HomeCommonService.isCJ && t) {
+                if (i = [], r = "https://seguro-hogar.rastreator.com/HomeCallbacks.aspx?Option=EmailSpamCheck&hidEmail=" + $("#txt_Email").val(), HomeCommonService.checkSpamEmail(r)) return HomeCommonService.isInternalRedirect = !0, window.location.href = flagWhiteLabel == !0 ? whiteLabelUrl : HomeCommonService.getCurrentEnvCMSUrl(), !1;
+                HomeValidationService.IsCaptchaValidated() ? ($("#captchaText").removeClass("error"), $("#captchaerrordiv").text(""), HomeValidationService.CaptchaVerify() ? (HomeValidationService.SubmitCaptcha(), t = !0) : ($("#captchaText").addClass("error"), $("#captchaerrordiv").text(CommonData.ErrorMessages.InvalidCaptchaOperation), t = !1, i.push(CommonData.ErrorMessages.InvalidCaptchaOperation))) : ($("#captchaText").addClass("error"), $("#captchaerrordiv").text(CommonData.ErrorMessages.InvalidCaptchaOperation), t = !1, i.push(CommonData.ErrorMessages.InvalidCaptchaOperation))
+            }
+            return HomeValidationService.saveErrorDataLayerEvent(t, i), t
         },
         restrictCharacters: function(n, t, i) {
-            var u = t.keyCode || t.which,
-                t, r;
-            if (u == 0 || u == 229) code = GetKeyCode(n.value);
-            else {
-                if (t || (t = window.event), t.charCode == 0) return !0;
-                t.keyCode ? code = t.keyCode ? t.keyCode : t.charCode : t.which && (code = t.which)
-            }
-            return (r = String.fromCharCode(code), code == 27 || code == "₹") ? (this.blur(), !1) : t.ctrlKey || code == 9 || code == 8 || code == 36 || code == 37 || code == 38 || code == 39 && (code != 39 || r != "'") || code == 40 ? !1 : r.match(i) ? !0 : !1
+            var t, r;
+            return n.value.length > n.maxLength ? !1 : (t || (t = window.event), t.charCode == 0) ? !0 : (t.keyCode ? code = t.keyCode ? t.keyCode : t.charCode : t.which && (code = t.which), r = String.fromCharCode(code), code == 27) ? (this.blur(), !1) : t.ctrlKey || code == 9 || code == 8 || code == 36 || code == 37 || code == 38 || code == 39 && (code != 39 || r != "'") || code == 40 ? !1 : r.match(i) ? !0 : !1
         },
         blockSpecialCharacters: function(n) {
             var t = n.keyCode ? event.keyCode : event.charCode;
             return t > 64 && t < 91 || t > 96 && t < 123 || t == 8 || t >= 48 && t <= 57
         },
-        validatePartialContractModal: function() {
-            let n = !0;
-            $("#ddlOperator").closest(".form-control").removeClass("error");
-            $("#txtTelephone").removeClass("error");
-            $("#errorTelephone").removeClass("hidden");
-            $("#errorOperator").removeClass("hidden");
-            let t = $("#ddlOperator").val().trim(),
-                i = $("#txtTelephone").val().trim();
-            return t && t !== "" ? i && i !== "" || ($("#txtTelephone").addClass("error"), n = !1) : ($("#ddlOperator").closest(".form-control").addClass("error"), n = !1), n
-        },
-        allowNumbersOnly: function(n) {
-            $(n).val($(n).val().replace(/[^0-9]/g, ""))
+        ValidateYearInRange: function(n, t, i) {
+            return (n = parseInt(n), n >= t && n <= i) ? !0 : !1
         },
         IsValidDate: function(n, t, i) {
             var u = 0,
@@ -4930,24 +6028,91 @@ var digitsOnly = /[1234567890]/g,
                 u = new Date("" + r + "/" + t + "/" + i + ""),
                 f = new Date;
             return u <= f ? !0 : !1
+        },
+        IsDateLessThenToday: function(n, t) {
+            var r = n.split("-"),
+                u = parseInt(r[0]),
+                i, f;
+            return (t && (u += 18), i = new Date, f = i.getFullYear(), u < i.getFullYear()) ? !0 : u <= i.getFullYear() && r[1] < i.getMonth() + 1 ? !0 : u <= i.getFullYear() && r[1] <= i.getMonth() + 1 && r[2] <= i.getDate() ? !0 : !1
+        },
+        IsPolicyStartDateValid: function(n, t, i) {
+            var r = new Date((new Date).toDateString()),
+                u = new Date(n, t - 1, i),
+                f = new Date(r.getFullYear(), r.getMonth() + 6, r.getDate());
+            return u < r ? CommonData.ErrorMessages.DateInvalid : u > f ? CommonData.ErrorMessages.DateInvalidNotWithinSixMonths : ""
+        },
+        IsValidEmail: function(n) {
+            var r, u, f, i;
+            if (HomeCommonService.selectedItem.email = $.trim(HomeCommonService.selectedItem.email), HomeCommonService.selectedItem.email == "") return !1;
+            var t = HomeCommonService.selectedItem.email,
+                h = t.substr(t.lastIndexOf(".") + 1);
+            if (h.length > 5) return !1;
+            if (t.match(/@+/) == null || (r = t.split("@"), u = r[0], u.match(/\.$/) != null || t.match(/\.\./) != null) || (f = t.match(/^[A-Za-z0-9]+[A-Za-z0-9_\.-]+@[A-Za-z0-9]+([\.-]?[A-Za-z0-9]+)*(\.[A-Za-z0-9]{2,5})+$/), f == null)) return document.getElementById(n).focus(), !1;
+            var e = document.getElementById(n).value,
+                o = e.substring(e.lastIndexOf("@") + 1),
+                s;
+            for (i = 0; i < o.length; i++)
+                if (s = o.substring(i, i + 1), "(~`!#$%^&*_+|=}{'?/)".indexOf(s) >= 0) return document.getElementById(n).focus(), !1;
+            return !0
+        },
+        IsCaptchaValidated: function() {
+            return document.getElementById("captchaText") != null ? (document.getElementById("captchaText").value = $.trim(document.getElementById("captchaText").value), document.getElementById("captchaText").value == "") ? !1 : !0 : !0
+        },
+        CaptchaVerify: function() {
+            var n = !1,
+                t;
+            return document.getElementById("captchaText") != null ? (t = "https://seguro-hogar.rastreator.com/HomeCallbacks.aspx?Option=CaptchaVerify&value=" + $.trim(document.getElementById("captchaText").value), $.ajax({
+                type: "Get",
+                url: t,
+                async: !1,
+                cache: !1,
+                success: function(t) {
+                    if (t != null) {
+                        if (t == "SessionExpired") {
+                            if (flagWhiteLabel == !0) {
+                                window.location.href = whiteLabelUrl;
+                                return
+                            }
+                            window.location.href = "https://rastreator.com";
+                            return
+                        }
+                        arrResponseSplit1 = HomeCommonService.ConvertFromJsonString(t);
+                        arrResponseSplit1.option[0] == "1" && (n = !0)
+                    }
+                },
+                error: function(n) {
+                    console.log(n)
+                }
+            })) : n = !0, n
+        },
+        SubmitCaptcha: function() {
+            if (document.getElementById("captchaText") != null) {
+                var n = "https://seguro-hogar.rastreator.com/HomeCallbacks.aspx?Option=CaptchaSubmit&submittedvalue=" + $.trim(document.getElementById("captchaText").value);
+                $.post(n, function(n) {
+                    if (n == "SessionExpired") return window.location.href = flagWhiteLabel == !0 ? whiteLabelUrl : "https://rastreator.com", !1
+                })
+            }
+        },
+        isNumber: function(n) {
+            return n == "" ? !1 : !isNaN(n)
         }
     };
 var progressBar = {
     init: function() {
         this.grouptitle = $(".cj-group-title");
-        this.liInsured = "li#li-insured";
-        this.liRisks = "li#li-risks";
+        this.liHome = "li#li-home";
+        this.liProtection = "li#li-protection";
         this.liCapital = "li#li-capital";
-        this.liEmail = "li#li-email";
+        this.liOthers = "li#li-others";
         this.completed = 10;
         this.current = 20;
-        this.insuredSectionQuestionsCount = 3;
-        this.risksSectionQuestionsCount = 3;
-        this.capitalSectionQuestionsCount = 1;
-        this.emailSectionQuestionsCount = 2
+        this.homeSectionQuestionsCount = 15;
+        this.protSectionQuestionsCount = 4;
+        this.capitalSectionQuestionsCount = 4;
+        this.othersSectionQuestionsCount = 2
     },
     resetSection: function(n) {
-        n ? n > 3 && n <= 6 ? this.moveLandbackProgress("insured", this.liInsured) : n > 6 && n <= 7 ? (this.moveLandbackProgress("insured", this.liInsured), this.moveLandbackProgress("risks", this.liRisks)) : n > 7 && n <= 9 && (this.moveLandbackProgress("insured", this.liInsured), this.moveLandbackProgress("risks", this.liRisks), this.moveLandbackProgress("other", this.liCapital)) : ($(this.liInsured).removeClass("active"), $(this.liInsured).removeClass("completed"), $(this.liRisks).removeClass("active"), $(this.liRisks).removeClass("completed"), $(this.liCapital).removeClass("active"), $(this.liCapital).removeClass("completed"), $(this.liEmail).removeClass("active"), $(this.liEmail).removeClass("completed"), $(this.liInsured + " .progress").css("width", this.completed + "%"), $(this.liInsured + " .circle").css("left", this.current + "px"), $(this.liRisks + " .progress").css("width", this.completed + "%"), $(this.liRisks + " .circle").css("left", this.current + "px"), $(this.liCapital + " .progress").css("width", this.completed + "%"), $(window).width() >= 768 ? $(this.liCapital + " .circle").css("left", this.current + "px") : $(this.liCapital + " .circle").css("left", "50%"), $(this.liEmail + " .progress").css("width", this.completed + "%"), $(window).width() >= 768 ? $(this.liEmail + " .circle").css("left", this.current + "px") : $(this.liEmail + " .circle").css("left", "50%"))
+        n ? n > 15 && n <= 19 ? this.moveLandbackProgress("home", this.liHome) : n > 19 && n <= 23 ? (this.moveLandbackProgress("home", this.liHome), this.moveLandbackProgress("protection", this.liProtection)) : n > 24 && n <= 25 && (this.moveLandbackProgress("home", this.liHome), this.moveLandbackProgress("protection", this.liProtection), this.moveLandbackProgress("capital", this.liCapital)) : ($(this.liHome).removeClass("active"), $(this.liHome).removeClass("completed"), $(this.liProtection).removeClass("active"), $(this.liProtection).removeClass("completed"), $(this.liCapital).removeClass("active"), $(this.liCapital).removeClass("completed"), $(this.liOthers).removeClass("active"), $(this.liOthers).removeClass("completed"), $("li#li-home .progress").css("width", this.completed + "%"), $("li#li-home .circle").css("left", this.current + "px"), $("li#li-protection .progress").css("width", this.completed + "%"), $("li#li-protection .circle").css("left", this.current + "px"), $("li#li-capital .progress").css("width", this.completed + "%"), $(window).width() >= 768 ? $("li#li-capital .circle").css("left", this.current + "px") : $("li#li-capital .circle").css("left", "50%"), $("li#li-others .progress").css("width", this.completed + "%"), $(window).width() >= 768 ? $("li#li-others .circle").css("left", this.current + "px") : $("li#li-others .circle").css("left", "50%"))
     },
     moveLandbackProgress: function(n, t) {
         var r, i;
@@ -4966,8 +6131,8 @@ var progressBar = {
         $(window).width() >= 768 ? $(t).css("left", this.current + "px") : $(t).css("left", "50%")
     },
     updateProgress: function(n) {
-        n <= 3 ? ($(this.liInsured).addClass("active"), $(this.liInsured).removeClass("completed"), $(this.liRisks).removeClass("active"), this.completed = 90 / this.insuredSectionQuestionsCount * n + 10, this.current = 92 / this.insuredSectionQuestionsCount * n + 20, this.moveProgress("insured"), this.grouptitle.text("El asegurado"), this.initSectionProgress("risks")) : n <= 6 ? (this.completeProgress("insured"), $(this.liRisks).addClass("active"), $(this.liRisks).removeClass("completed"), $(this.liInsured).addClass("completed"), $(this.liCapital).removeClass("active"), this.completed = 90 / this.risksSectionQuestionsCount * (n - 3) + 10, this.current = 92 / this.risksSectionQuestionsCount * (n - 3) + 20, this.moveProgress("risks"), this.grouptitle.text("Riesgos"), this.initSectionProgress("capital")) : n <= 7 ? (this.completeProgress("insured"), this.completeProgress("risks"), $(this.liCapital).addClass("active"), $(this.liCapital).removeClass("completed"), $(this.liRisks).addClass("completed"), $(this.liEmail).removeClass("active"), $(this.liEmail).removeClass("completed"), this.completed = 90 / this.capitalSectionQuestionsCount * (n - 6) + 10, this.current = 92 / this.capitalSectionQuestionsCount * (n - 6) + 20, this.moveProgress("capital"), this.grouptitle.text("CAPITAL"), this.initSectionProgress("email")) : n <= 9 && (this.completeProgress("insured"), this.completeProgress("risks"), this.completeProgress("capital"), $(this.liEmail).addClass("active"), $(this.liEmail).removeClass("completed"), $(this.liCapital).addClass("completed"), this.completed = 90 / this.emailSectionQuestionsCount * (n - 7) + 10, this.current = 92 / this.emailSectionQuestionsCount * (n - 7) + 20, this.moveProgress("email"), this.grouptitle.text("YA CASI ESTÁ"));
-        n == 9 && ($(this.liEmail).addClass("completed"), this.completeProgress("insured"), this.completeProgress("risks"), this.completeProgress("capital"), this.completeProgress("email"))
+        n <= 15 ? ($(this.liHome).addClass("active"), $(this.liHome).removeClass("completed"), $(this.liProtection).removeClass("active"), this.completed = 90 / this.homeSectionQuestionsCount * n + 10, this.current = 92 / this.homeSectionQuestionsCount * n + 20, this.moveProgress("home"), this.initSectionProgress("protection")) : n <= 19 ? (this.completeProgress("home"), $(this.liProtection).addClass("active"), $(this.liProtection).removeClass("completed"), $(this.liHome).addClass("completed"), $(this.liCapital).removeClass("active"), this.completed = 90 / this.protSectionQuestionsCount * (n - 15) + 10, this.current = 92 / this.protSectionQuestionsCount * (n - 15) + 20, this.moveProgress("protection"), this.grouptitle.text("SEGURO"), this.initSectionProgress("capital")) : n <= 23 ? (this.completeProgress("home"), this.completeProgress("protection"), $(this.liCapital).addClass("active"), $(this.liCapital).removeClass("completed"), $(this.liProtection).addClass("completed"), $(this.liOthers).removeClass("active"), $(this.liOthers).removeClass("completed"), this.completed = 90 / this.capitalSectionQuestionsCount * (n - 19) + 10, this.current = 92 / this.capitalSectionQuestionsCount * (n - 19) + 20, this.moveProgress("capital"), this.grouptitle.text("TOMADOR"), this.initSectionProgress("others")) : n <= 24 && (this.completeProgress("home"), this.completeProgress("protection"), this.completeProgress("capital"), $(this.liOthers).addClass("active"), $(this.liOthers).removeClass("completed"), $(this.liCapital).addClass("completed"), this.completed = 90 / this.othersSectionQuestionsCount * (n - 23) + 10, this.current = 92 / this.othersSectionQuestionsCount * (n - 23) + 20, this.moveProgress("others"), this.grouptitle.text("YA CASI ESTÁ"));
+        n == 25 && ($(this.liOthers).addClass("completed"), this.completeProgress("home"), this.completeProgress("protection"), this.completeProgress("capital"), this.completeProgress("others"))
     },
     completeProgress: function(n) {
         var i = "li#li-" + n + ".active .progress",
@@ -5072,7 +6237,8 @@ window.dhtmlHistory = {
                 if (n == "" && (window.history.back(), window.location.hash = "Q1", n = "Q1"), this.ieAtomicLocationChange = !0, this.isInternetExplorer() && this.getIFrameHash() != n) this.iframe.src = "/LiveChatLocation.html?" + n;
                 else if (this.isInternetExplorer()) return;
                 this.currentLocation = n;
-                n.substring(1) >= 1 && (this.ieAtomicLocationChange = !1);
+                n.substring(1) >= 1 && progressBar.updateProgress(parseInt(n.substring(1)));
+                this.ieAtomicLocationChange = !1;
                 this.fireHistoryEvent(n)
             }
         }
@@ -5236,10 +6402,7 @@ var stickydiv = $(".help-button sticky"),
         this.moveLeftButton = function(n) {
             if (n > 992) {
                 var t = $(".cj-logo").offset();
-                $(".help-button").css("left", t.left).addClass("sticky");
-                this.positionLeftHelp();
-                this.positionTopHelp();
-                this.calculateMaxHeight()
+                t && ($(".help-button").css("left", t.left).addClass("sticky"), this.positionLeftHelp(), this.positionTopHelp(), this.calculateMaxHeight())
             } else $(".help-button").removeClass("sticky").removeAttr("style")
         };
         this.positionLeftHelp = function() {
@@ -5247,16 +6410,20 @@ var stickydiv = $(".help-button sticky"),
             $(".help-wrapper").css("left", n.left)
         };
         this.positionTopHelp = function() {
-            var n = $(".card-wrapper").offset().top,
-                t = $(".card-wrapper").height(),
-                r = $(".help-wrapper").offset().top,
-                u = $(".help-wrapper").height(),
-                i;
-            n + t <= r + u ? (i = n + t - window.innerHeight, $(".help-wrapper").css("bottom", Math.abs(i))) : $(".help-wrapper").css("bottom", 36)
+            var i;
+            if ($(".help-wrapper").length > 0) {
+                var n = $(".card-wrapper").offset().top,
+                    t = $(".card-wrapper").height(),
+                    r = $(".help-wrapper").offset().top,
+                    u = $(".help-wrapper").height();
+                n + t <= r + u ? (i = n + t - window.innerHeight, $(".help-wrapper").css("bottom", Math.abs(i))) : $(".help-wrapper").css("bottom", 36)
+            }
         };
         this.calculateMaxHeight = function() {
-            var n = $(window).height() - $("h1").offset().top - 36;
-            $(".help-wrapper").css("max-height", n)
+            if ($(".help-wrapper").length > 0) {
+                var n = $(window).height() - $("h1").offset().top - 36;
+                $(".help-wrapper").css("max-height", n)
+            }
         };
         this.clickMenuItemButton = function() {
             var n = this;
@@ -5345,7 +6512,7 @@ var stickydiv = $(".help-button sticky"),
                             actionform: "submit",
                             form: "ayuda",
                             ayuda: "tellamamos",
-                            productform: "insurance life"
+                            productform: "home"
                         };
                         break;
                     case "thanksEmail":
@@ -5358,7 +6525,7 @@ var stickydiv = $(".help-button sticky"),
                             actionform: "submit",
                             form: "ayuda",
                             ayuda: "email",
-                            productform: "insurance life"
+                            productform: "home"
                         }
                 }
                 n.pushDatalayerEvent(r);
@@ -5380,12 +6547,12 @@ var stickydiv = $(".help-button sticky"),
         this.DoValidate = function(n) {
             switch (n) {
                 case "callmeback":
-                    if ($("#txtCmbNombre").val().trim() != "" && $("#txtTelephone").val().trim() != "" && $("input[name=radio-time]").is(":checked") && $("#chkPolicy").is(":checked") != !1) {
+                    if ($("#txtCmbNombre").val() != "" && $("#txtTelephone").val() != "" && $("input[name=radio-time]").is(":checked") && $("#chkPolicy").is(":checked") != !1) {
                         if ($("#txtTelephone").val().length < 9 || parseInt($("#txtTelephone").val().substring(0, 1)) != 6 && parseInt($("#txtTelephone").val().substring(0, 1)) != 7 && parseInt($("#txtTelephone").val().substring(0, 1)) != 8 && parseInt($("#txtTelephone").val().substring(0, 1)) != 9) return validationMessage = "Por favor, rellena todos los campos correctamente", !1
                     } else return validationMessage = "Por favor, rellena todos los campos correctamente", !1;
                     return !0;
                 case "email":
-                    return $("#txtEmailNombre").val().trim() == "" || $("#chkEmailPolicy").is(":checked") == !1 || $("#txtEmail").val().trim() == "" || $("#txtMessage").val().trim() == "" ? (validationMessage = "Por favor, rellena todos los campos correctamente", !1) : this.emailValid("txtEmail") ? !0 : (validationMessage = "Por favor, introduce un email correcto", !1)
+                    return $("#txtEmailNombre").val() == "" || $("#chkEmailPolicy").is(":checked") == !1 || $("#txtEmail").val() == "" || $("#txtMessage").val() == "" ? (validationMessage = "Por favor, rellena todos los campos correctamente", !1) : this.emailValid("txtEmail") ? !0 : (validationMessage = "Por favor, introduce un email correcto", !1)
             }
         };
         this.emailValid = function(n) {
@@ -5403,33 +6570,45 @@ var stickydiv = $(".help-button sticky"),
             return !0
         };
         this.SaveValues = function(n) {
-            var i = "",
+            var t = "",
                 r = "",
                 u = "",
-                l = CommonData.Constants.ProductNameForHelpModule,
+                s = CommonData.Constants.ProductNameForHelpModule,
                 f = "",
                 e = "",
                 o = "",
-                s = window.location.href.substring(window.location.href.lastIndexOf("datos-comparativa")).split("#"),
-                t, h, c;
-            s.length > 1 && (o = typeof $("#referenceUrl").val() == "undefined" ? s.join("*") : $("#referenceUrl").val());
+                h = window.location.href.substring(window.location.href.lastIndexOf("datos-comparativa")).split("#"),
+                i;
+            h.length > 1 && (o = typeof $("#referenceUrl").val() == "undefined" ? h.join("*") : $("#referenceUrl").val());
             switch (n) {
                 case "callmeback":
-                    i = $("#txtCmbNombre").val();
-                    t = $("input[name='radio-time']:checked");
-                    t !== undefined && t.siblings().length > 1 && (u = t.siblings()[1].innerText);
+                    t = $("#txtCmbNombre").val();
+                    i = $("input[name='radio-time']:checked");
+                    i !== undefined && i.siblings().length > 1 && (u = i.siblings()[1].innerText);
                     r = $("#txtTelephone").val();
                     break;
                 case "emailmeback":
-                    i = $("#txtEmailNombre").val();
+                    t = $("#txtEmailNombre").val();
                     e = $("#txtEmail").val();
                     f = $("#txtMessage").val()
             }
-            h = location.href.split("#")[1] || "";
-            c = CommonData.Urls.SaveCallMeBackURL + "callerName=" + i + "&callerTeleNumber=" + r + "&callerTime=" + u + "&callerEmailId=" + e + "&callerProductName=" + l + "&callerQuestion=" + f + "&customerActivityId=0&referenceUrl=" + o + "&projectName=''&functionalityName=''&questionNo=" + h;
+            var a = {
+                    callerName: t,
+                    callerTeleNumber: r,
+                    callerTime: u,
+                    callerEmailId: e,
+                    callerProductName: s,
+                    callerQuestion: f,
+                    customerActivityId: 0,
+                    referenceUrl: o,
+                    projectName: "",
+                    functionalityName: ""
+                },
+                c = location.href.split("#")[1] || "",
+                l = CommonData.Urls.SaveCallMeBackURL + "callerName=" + t + "&callerTeleNumber=" + r + "&callerTime=" + u + "&callerEmailId=" + e + "&callerProductName=" + s + "&callerQuestion=" + f + "&customerActivityId=0&referenceUrl=" + o + "&projectName=''&functionalityName=''&questionNo=" + c;
             $.ajax({
                 type: "POST",
-                url: c,
+                url: l,
                 async: !1,
                 dataType: "json",
                 contentType: "application/json",
@@ -5439,7 +6618,7 @@ var stickydiv = $(".help-button sticky"),
             })
         };
         this.pushDatalayerEvent = function(n) {
-            CommonService.pushDataLayerEvent(n)
+            HomeCommonService.pushDataLayerEvent(n)
         }
     };
 $(document).ready(function() {
@@ -5459,13 +6638,52 @@ $(document).ready(function() {
         $(n.target).parents(".help-button").length == 0 && ($("#help-button").css("opacity", 1), $("#CMBErrorSummary").html(""), $("#CMBErrorSummary").css("display", "none"), $("#EMBErrorContainer").html(""), $("#EMBErrorContainer").css("display", "none"), $(".help-wrapper").removeClass("in desktop mobile callmeback chat email"), $("body").attr("style", ""))
     })
 });
-/*!
- * dist/inputmask
- * https://github.com/RobinHerbots/Inputmask
- * Copyright (c) 2010 - 2020 Robin Herbots
- * Licensed under the MIT license
- * Version: 5.0.6-beta.17
- */
+
+function OnIPTrackerModelSuccess(n) {
+    var t = typeof n == "string" ? JSON.parse(n) : n,
+        i;
+    if (t && t.IPTrackerModel.IsEnabled) try {
+        i = IPTrackerService.checkIfNewSession(t.IPTrackerModel.Settings.CookieKey);
+        i && IPTrackerService.getLocation(t)
+    } catch (r) {
+        console.log("OnIPTrackerModelSuccess : FAIL.. && error:" + r)
+    }
+}
+
+function OnIPTrackerModelError(n) {
+    console.log("SaveUserIPAddress : FAIL.. && response:" + n)
+}
+var IPTrackerService = IPTrackerService || {};
+IPTrackerService.checkIfNewSession = function(n) {
+    return CommonFunctionsModule.getCookie(n) === "false" || CommonFunctionsModule.getCookie(n) === "" ? !0 : !1
+};
+IPTrackerService.getLocation = function(n) {
+    var t = new XMLHttpRequest;
+    t.open("GET", n.IPTrackerModel.Settings.TrackerApiEndpoint, !0);
+    t.onload = function() {
+        var r, u, i;
+        t.status >= 200 && t.status < 400 && (r = JSON.parse(t.responseText), u = r.query, CommonFunctionsModule.setCookieForHours(n.IPTrackerModel.Settings.CookieKey, !0, 36), i = {}, i = IPTrackerService.getSaveModel(i, r, n.IPTrackerModel.Settings.SessionTrackerId), SaveUserIPAddress(i))
+    };
+    t.onerror = function() {
+        console.log("Could not reach geolocation server")
+    };
+    t.send()
+};
+IPTrackerService.getSaveModel = function(n, t, i) {
+    return n.IpAddress = t.query, n.SessionId = i, n.Lattitude = t.lat, n.Longitude = t.lon, n.ZipCode = t.zip, n.AutonomousSystemNumber = t.as, n.City = t.city, n
+};
+IPTrackerService.InitIPTracker = function(n, t) {
+    var i = n + t;
+    $.ajax({
+        type: "GET",
+        async: !1,
+        url: i,
+        contentType: "application/json",
+        dataType: "json",
+        success: OnIPTrackerModelSuccess,
+        failure: OnIPTrackerModelError
+    })
+};
 ! function(n, t) {
     var i, r;
     if ("object" == typeof exports && "object" == typeof module) module.exports = t();
@@ -8482,7 +9700,7 @@ var exports = {
     config: function(n, t) {
         return n = n ? n : 100, {
             inputFormat: "dd/mm/yyyy",
-            placeholder: "dd/mm/aaaa",
+            placeholder: "dd/mm/yyyy",
             min: this.date(n),
             max: this.date(t),
             insertMode: !0,
@@ -8495,8 +9713,10 @@ var exports = {
         }
     },
     date: function(n) {
-        var t = new Date;
-        return n = n && !isNaN(n) ? parseInt(n) : 0, [t.getDate(), t.getMonth() + 1, t.getFullYear() - n].map(function(n) {
+        var t = new Date,
+            i = n && !isNaN(n) && n != ".5" ? parseInt(n) : 0;
+        n == ".5" && (t = new Date(t.setMonth(t.getMonth() + 6)));
+        return [t.getDate(), t.getMonth() + 1, t.getFullYear() - i].map(function(n) {
             return n < 10 && (n = "0" + n), n
         }).join("/")
     },
@@ -8543,33 +9763,31 @@ var exports = {
         e
     },
     setErrors: function(n, t, i, r) {
-        var l = n.inputmask.userOptions.minAge,
-            o = this.errors(l),
+        var c = n.inputmask.userOptions.minAge,
+            v = this.errors(c),
             u = "",
-            f, h, c;
+            f, s, h;
         if (r) {
             var e = this.getDateCompare(i, t.key, "0"),
-                a = this.getDateCompare(i, t.key, "9"),
-                v = n.inputmask.opts.min.date,
-                s = n.inputmask.opts.max.date;
+                l = this.getDateCompare(i, t.key, "9"),
+                a = n.inputmask.opts.min.date,
+                o = n.inputmask.opts.max.date;
             switch (!0) {
-                case e > s:
-                    u = o.todayOverflow;
-                    $("#errorTxtCalendarBirthDateMain").removeClass("hidden");
-                    $("#errorTxtCalendarBirthDateMain").text(u);
+                case e > o:
+                    u = n.id == "txt_initial_date_insurance" ? "Revisa la fecha de contratación/renovación. No puede ser superior a 6 meses desde la fecha actual." : "El tomador del seguro debe ser mayor de edad.";
+                    $(".error-txt").text(u);
                     break;
-                case a < v:
-                    u = o.maxAgeOverflow;
-                    $("#errorTxtCalendarBirthDateMain").removeClass("hidden");
-                    $("#errorTxtCalendarBirthDateMain").text(u)
+                case l < a:
+                    u = "Por favor, selecciona una fecha válida.";
+                    $(".error-txt").text(u)
             }
             f = this.config(90, 18).max.split("/");
-            h = new Date(f[2], f[1] - 1, f[0]);
-            e > h && e <= s ? $("#dobWarning").removeClass("hidden") : $("#dobWarning").addClass("hidden")
+            s = new Date(f[2], f[1] - 1, f[0]);
+            e > s && e <= o ? $("#dobWarning").removeClass("hidden") : $("#dobWarning").addClass("hidden")
         }
         u.length == 0 && $("#errorTxtCalendarBirthDateMain").addClass("hidden");
-        c = this.getParent(n, "form-control");
-        c
+        h = this.getParent(n, "form-control");
+        h
     },
     getParent: function(n, t) {
         for (var i = n; i.parentNode && !i.classList.contains(t);) i = i.parentNode;
@@ -8584,215 +9802,4 @@ var exports = {
     getDateCompare: function(n, t, i) {
         return n[2] = (n[2].replace(/a/g, "") + t + Array(4).fill(i).join("")).substring(0, 4), new Date(n[2], n[1] - 1, n[0])
     }
-};
-var CommonFunctionsModule = {
-    formatNumberWithSeperator: function(n) {
-        var f = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ",",
-            e, r;
-        n += "";
-        var u = n.split("."),
-            t = u[0],
-            i = "";
-        for (u.forEach(function(n, t) {
-                t !== 0 && (i += n)
-            }), e = u.length > 1 ? "." : "", r = /(\d+)(\d{3})/; r.test(t);) t = t.replace(r, "$1" + f + "$2");
-        return i = i.replace(r, "$1" + f + "$2"), t + e + i
-    },
-    getAgeUsingDateOfBirth: function(n) {
-        var t = new Date,
-            i = new Date(n),
-            r = t.getFullYear() - i.getFullYear(),
-            u = t.getMonth() - i.getMonth();
-        return (u < 0 || u === 0 && t.getDate() < i.getDate()) && r--, r
-    },
-    isValidDateFormatDDMMYYYY: function(n) {
-        return /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/.test(n)
-    },
-    loadScript: function(n, t) {
-        var i = document.createElement("script");
-        i.type = "text/javascript";
-        i.readyState ? i.onreadystatechange = function() {
-            (i.readyState === "loaded" || i.readyState === "complete") && (i.onreadystatechange = null, t())
-        } : i.onload = function() {
-            t()
-        };
-        i.src = n;
-        document.getElementsByTagName("head")[0].appendChild(i)
-    },
-    setCookieForHours: function(n, t, i) {
-        var u = new Date,
-            f, r;
-        u.setTime(u.getTime() + i * 36e5);
-        f = "expires=" + u.toUTCString();
-        r = window.location.href.replace("//", "/").split("/")[1].split(".");
-        r = r[r.length - 2] + "." + r[r.length - 1];
-        document.cookie = n + "=" + t + ";" + f + ";path=/;domain=" + r + ";"
-    },
-    setCookieForDays: function(n, t, i) {
-        var u = new Date,
-            f, r;
-        u.setTime(u.getTime() + i * 864e5);
-        f = "expires=" + u.toUTCString();
-        r = window.location.href.replace("//", "/").split("/")[1].split(".");
-        r = r[r.length - 2] + "." + r[r.length - 1];
-        document.cookie = n + "=" + t + ";" + f + ";path=/;domain=" + r + ";"
-    },
-    getCookie: function(n) {
-        for (var t, r = n + "=", f = decodeURIComponent(document.cookie), u = f.split(";"), i = 0; i < u.length; i++) {
-            for (t = u[i]; t.charAt(0) == " ";) t = t.substring(1);
-            if (t.indexOf(r) == 0) return t.substring(r.length, t.length)
-        }
-        return ""
-    },
-    allowNumbersOnly: function(n) {
-        $(n).val($(n).val().replace(/[^0-9]/g, ""))
-    },
-    onlyNumberInput: function(n) {
-        n = n ? n : window.event;
-        var t = n.which ? n.which : n.keyCode;
-        return t < 32 || t > 47 && t < 58
-    },
-    IsValidEmail: function(n) {
-        var r, u, f, i;
-        if (CommonService.selectedItem.email = $.trim(CommonService.selectedItem.email), CommonService.selectedItem.email == "") return !1;
-        var t = CommonService.selectedItem.email,
-            h = t.substr(t.lastIndexOf(".") + 1);
-        if (h.length > 5) return !1;
-        if (t.match(/@+/) == null || (r = t.split("@"), u = r[0], u.match(/\.$/) != null || t.match(/\.\./) != null) || (f = t.match(/^[A-Za-z0-9]+[A-Za-z0-9_\.-]+@[A-Za-z0-9]+([\.-]?[A-Za-z0-9]+)*(\.[A-Za-z0-9]{2,5})+$/), f == null)) return document.getElementById(n).focus(), !1;
-        var e = document.getElementById(n).value,
-            o = e.substring(e.lastIndexOf("@") + 1),
-            s;
-        for (i = 0; i < o.length; i++)
-            if (s = o.substring(i, i + 1), "(~`!#$%^&*_+|=}{'?/)".indexOf(s) >= 0) return document.getElementById(n).focus(), !1;
-        return !0
-    },
-    getCurrentEnvCMSUrl: function(n, t) {
-        var i = window.location.href,
-            r = window.location.search.toLowerCase().indexOf("utm_source=seguros.es") > 0;
-        return r ? this.getSegurosCMSUrl() : i.indexOf("localhost") >= 0 || i.indexOf("rastreatortest.com") >= 0 || i.indexOf("rastreatorlocal.com") >= 0 || i.indexOf("rastreatordev.com") >= 0 ? n : i.indexOf("rastreator.com") >= 0 ? t : void 0
-    },
-    getSegurosCMSUrl: function() {
-        if (window.location.ancestorOrigins != undefined && window.location.ancestorOrigins[0] !== undefined) return window.location.ancestorOrigins[0];
-        var n = document.URL;
-        return n.indexOf("localhost") >= 0 || n.indexOf("rastreatortest.com") >= 0 || n.indexOf("rastreatorlocal.com") >= 0 || n.indexOf("rastreatordev.com") >= 0 ? segTest : segProd
-    },
-    getMaintenancePageURL: function() {
-        return document.location.hostname.indexOf("rastreator.com") > -1 ? "https://maintenance.rastreator.com/mantenimiento.html" : "https://maintenance.rastreatortest.com/mantenimiento.html"
-    },
-    checkBotSession: function(n, t) {
-        $.ajax({
-            type: "GET",
-            async: !1,
-            url: n,
-            contentType: "application/json",
-            dataType: "json",
-            success: t
-        })
-    }
-};
-
-function OnIPTrackerModelSuccess(n) {
-    var t = typeof n == "string" ? JSON.parse(n) : n,
-        i;
-    if (t && t.IPTrackerModel.IsEnabled) try {
-        i = IPTrackerService.checkIfNewSession(t.IPTrackerModel.Settings.CookieKey);
-        i && IPTrackerService.getLocation(t)
-    } catch (r) {
-        console.log("OnIPTrackerModelSuccess : FAIL.. && error:" + r)
-    }
-}
-
-function OnIPTrackerModelError(n) {
-    console.log("SaveUserIPAddress : FAIL.. && response:" + n)
-}
-var IPTrackerService = IPTrackerService || {};
-IPTrackerService.checkIfNewSession = function(n) {
-    return CommonFunctionsModule.getCookie(n) === "false" || CommonFunctionsModule.getCookie(n) === "" ? !0 : !1
-};
-IPTrackerService.getLocation = function(n) {
-    var t = new XMLHttpRequest;
-    t.open("GET", n.IPTrackerModel.Settings.TrackerApiEndpoint, !0);
-    t.onload = function() {
-        var r, u, i;
-        t.status >= 200 && t.status < 400 && (r = JSON.parse(t.responseText), u = r.query, CommonFunctionsModule.setCookieForHours(n.IPTrackerModel.Settings.CookieKey, !0, 36), i = {}, i = IPTrackerService.getSaveModel(i, r, n.IPTrackerModel.Settings.SessionTrackerId), SaveUserIPAddress(i), CommonService && (CommonService.isIPTrackerExecuted = !0))
-    };
-    t.onerror = function() {
-        console.log("Could not reach geolocation server")
-    };
-    t.send()
-};
-IPTrackerService.getSaveModel = function(n, t, i) {
-    return n.IpAddress = t.query, n.SessionId = i, n.Lattitude = t.lat, n.Longitude = t.lon, n.ZipCode = t.zip, n.AutonomousSystemNumber = t.as, n.City = t.city, n
-};
-IPTrackerService.InitIPTracker = function(n, t) {
-    var i = n + t;
-    $.ajax({
-        type: "GET",
-        async: !1,
-        url: i,
-        contentType: "application/json",
-        dataType: "json",
-        success: OnIPTrackerModelSuccess,
-        failure: OnIPTrackerModelError
-    })
-};
-
-function OnCaptchaModelSuccess(n) {
-    var t = typeof n == "string" ? JSON.parse(n) : n;
-    loadCaptchaClientApi(t)
-}
-
-function OnCaptchaModelError(n) {
-    console.log("SaveVerifyCaptcha : FAIL.. && Error response:" + n)
-}
-
-function CheckIfNewSession(n) {
-    return CommonFunctionsModule.getCookie(n) === "false" || CommonFunctionsModule.getCookie(n) === "" ? !0 : !1
-}
-
-function OnCaptchaReady(n) {
-    window.grecaptcha && grecaptcha.ready(function() {
-        try {
-            var t = CheckIfNewSession(n.CaptchaV3Model.Settings.CookieKey);
-            t && (CommonFunctionsModule.setCookieForDays(n.CaptchaV3Model.Settings.CookieKey, !0, 1), grecaptcha.execute(n.CaptchaV3Model.Settings.SiteKey, {
-                action: "homepage"
-            }).then(function(t) {
-                var i = n.CaptchaV3Model.Settings.CaptchaVerificationCustomAPI + "?sessiontrackerid=" + n.CaptchaV3Model.Settings.SessionTrackerId + "&token=" + t;
-                $.getJSON(i, function(n) {
-                    console.log(n)
-                });
-                CommonService && (CommonService.isCaptchaScoreInserted = !0)
-            }));
-            hideCaptchaIcon()
-        } catch (i) {
-            console.log(i)
-        }
-    })
-}
-
-function hideCaptchaIcon() {
-    setTimeout(function() {
-        var n = document.getElementsByClassName("grecaptcha-badge");
-        n != null && n.length > 0 && n[0].parentElement != null && (n[0].parentElement.hidden = !0)
-    }, 1e3)
-}
-
-function loadCaptchaClientApi(n) {
-    n.CaptchaV3Model.IsEnabled && CommonFunctionsModule.loadScript(n.CaptchaV3Model.Settings.ClientApi, function() {
-        OnCaptchaReady(n)
-    })
-}
-var ReCaptchaV3Service = ReCaptchaV3Service || {};
-ReCaptchaV3Service.InitCaptcha = function(n, t) {
-    var i = n + t;
-    $.ajax({
-        type: "GET",
-        async: !1,
-        url: i,
-        contentType: "application/json",
-        dataType: "json",
-        success: OnCaptchaModelSuccess,
-        failure: OnCaptchaModelError
-    });
-    hideCaptchaIcon()
 };
