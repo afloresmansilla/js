@@ -4833,7 +4833,7 @@ var PreviousEmail = "",
                         i = i + "&hidSelectedInsuranceStartDateYearValue=" + k.getFullYear().toString();
 
                         //Esto lo he cambiado
-                        //HomeCommonService.isCJ ? (d = HomeCommonService.captchaRequired(i), n[0].IsCaptchaRequired = d, HomeCommonService.isCaptchaRequiredForAutomation = d) : n[0].IsCaptchaRequired = !1;
+                        HomeCommonService.isCJ ? (d = HomeCommonService.captchaRequired(i), n[0].IsCaptchaRequired = d, HomeCommonService.isCaptchaRequiredForAutomation = d) : n[0].IsCaptchaRequired = !1;
                         
                         g = $.trim($("#hidEmailIdFromSSO").val());
                         g && (n[0].SelectedValue = g);
