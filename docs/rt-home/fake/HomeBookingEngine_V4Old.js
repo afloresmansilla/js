@@ -4021,7 +4021,7 @@ var CommonData = {
         CheckSpamEmailAPIKey: "IsSpamEmail",
         GetCallCentreExecutiveAPIKey: "GetCallCenterExecutives",
         SavePartialRiskAPIKey: "SavePartialRisk",
-        CJQuestionAPIKey: "GetDependentQuestionsForCJ",
+        CJQuestionAPIKey: "GetQuestionMasterForCJ",
         WSQuestionAPIKey: "GetQuestionModelForWS",
         WSCheckCaptchaAPIKey: "CheckCaptchaRequiredForWS",
         CaptchaValidationKey: "ValidateCaptcha",
@@ -4298,8 +4298,8 @@ var CommonFunctionsModule = {
     }
 };
 
-/*
 
+/*
 function OnCaptchaSuccess(n) {
     var t = typeof n == "string" ? JSON.parse(n) : n;
     OnCaptchaReady(t)
@@ -4338,6 +4338,7 @@ function hideCaptchaIcon() {
         n != null && n.length > 0 && n[0].parentElement != null && (n[0].parentElement.hidden = !0)
     }, 2e3)
 }
+
 var ReCaptchaV3Service = ReCaptchaV3Service || {};
 ReCaptchaV3Service.InitCaptcha = function(n, t) {
     var i = n + t;
@@ -4352,7 +4353,9 @@ ReCaptchaV3Service.InitCaptcha = function(n, t) {
     });
     hideCaptchaIcon()
 };
+
 */
+
 var upaCommonService = {
     isAlreadyLogedin: !1,
     isUserLoggedIn: !1,
@@ -4390,8 +4393,9 @@ var upaCommonService = {
                 upaAutoPopulateService.addUPAData(n.detail[0].data, !0)
             }
         }), n.addEventListener("logout", function() {
-            HomeCommonService.saveCounter("rs.upa.c-salir.Q1");
-            upaAutoPopulateService.addUPAData(null, !1)
+            upaCommonService.isUserLoggedIn = !1;
+            upaCommonService.isAlreadyLogedin = !1;
+            HomeCommonService.saveCounter("rs.upa.c-salir.Q1")
         }))
     },
     appendLoginTriggerInHeader: function() {
@@ -4708,9 +4712,9 @@ var PreviousEmail = "",
         loadTemplate: function(n) {
             var s = "",
                 u = n[0].TemplateName,
-                l = n[0].QuestionNumber,
+                a = n[0].QuestionNumber,
                 r = n[0].TemplateHtml,
-                c, t, f, h, it, rt, a, e, v, d, g, nt, tt, ut, ft, o;
+                c, t, f, h, it, rt, v, e, y, g, nt, tt, l, ut, ft, o;
             if ($("#PrivacyInfoDiv").addClass("hidden"), $("#prev").hide(), $(".divLegalText").hide(), h = HomeCommonService.isCJ ? "next" : "btnClose", $("#" + h).text("Avanzar"), c = !1, (n[0].QuestionKey == CommonData.QuestionKeys.InsuranceSection.JewelsOutOfSafeBox || n[0].QuestionKey == CommonData.QuestionKeys.InsuranceSection.ValueOfAllSpecialObjects) && (c = !0), c || $("#" + CommonData.Constants.CJQuestionTemplateContainer).html(""), HomeCommonService.isCJ ? (HomeCommonService.currentSection = n[0].SectionName, HomeCommonService.previousSection !== HomeCommonService.currentSection && (n[0].QuestionKey === CommonData.QuestionKeys.InsuranceSection.Continent || n[0].QuestionKey === CommonData.QuestionKeys.PolicyHolderSection.PolicyHolderDateofBirth || n[0].QuestionKey === CommonData.QuestionKeys.OtherSection.Email) && (HomeCommonService.previousSection = HomeCommonService.currentSection, s = HomeCommonService.getCounterName(HomeCommonService.currentSection), HomeCommonService.saveCounter(s)), upaCommonService.isUPAEnable && n[0].QuestionKey == CommonData.QuestionKeys.OtherSection.Email || (s = HomeCommonService.getCounterName(n[0].QuestionKey), HomeCommonService.saveCounter(s)), HomeCommonService.dataLayerEvent = {
                     event: "virtualpage",
                     virtualpage: "customerjourney",
@@ -4769,12 +4773,12 @@ var PreviousEmail = "",
                         it = this.getQuestionsByGroupKey(CommonData.GroupKeys.JewelsInSafeAndOutSafeBox);
                         rt = this.getQuestion(CommonData.QuestionKeys.InsuranceSection.ValueOfAllSpecialObjects);
                         this.renameNextButton("No me interesa");
-                        a = !1;
+                        v = !1;
                         n[0].Options.forEach(function(n) {
-                            a = n.IsSelected;
+                            v = n.IsSelected;
                             n.subQuestions = n.Value == "1" ? it : rt
                         });
-                        a && this.renameNextButton("Avanzar");
+                        v && this.renameNextButton("Avanzar");
                         this.getQuestionsByGroupKey(CommonData.GroupKeys.JewelsInSafeAndOutSafeBox);
                         HomeCommonService.appendTemplateTo(r, n, CommonData.Constants.CJQuestionTemplateContainer);
                         HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
@@ -4806,35 +4810,38 @@ var PreviousEmail = "",
                         t = HomeCommonService.getSelectedValueFromContract(n[0].RiskNode);
                         !t && upaAutoPopulateService.IsSignIn && (t = upaAutoPopulateService.UPAData.dni);
                         PreviousDIN == "" && (PreviousDIN = t);
-                        v = JSON.parse(JSON.stringify(n));
-                        v[0].SelectedValue = HomeCommonService.isCJ == !1 && MaskDIN(PreviousDIN) == MaskDIN(t) ? MaskDIN(t) : t;
-                        HomeCommonService.appendTemplateTo(r, v, CommonData.Constants.CJQuestionTemplateContainer);
+                        y = JSON.parse(JSON.stringify(n));
+                        y[0].SelectedValue = HomeCommonService.isCJ == !1 && MaskDIN(PreviousDIN) == MaskDIN(t) ? MaskDIN(t) : t;
+                        HomeCommonService.appendTemplateTo(r, y, CommonData.Constants.CJQuestionTemplateContainer);
                         HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
                         break;
                     case CommonData.QuestionKeys.OtherSection.Phone:
                         break;
                     case CommonData.QuestionKeys.OtherSection.Email:
-                        var y = HomeCommonService.contractType.PolicyHolderBirthDate.split("-"),
-                            p = HomeCommonService.contractType.PolicyStartRealDate.split("-"),
-                            w = new Date(y[0], y[1] - 1, y[2], 0, 0, 0, 0),
+                        var p = HomeCommonService.contractType.PolicyHolderBirthDate.split("-"),
+                            w = HomeCommonService.contractType.PolicyStartRealDate.split("-"),
                             b = new Date(p[0], p[1] - 1, p[2], 0, 0, 0, 0),
-                            k = !1,
+                            k = new Date(w[0], w[1] - 1, w[2], 0, 0, 0, 0),
+                            d = !1,
                             i = CommonData.Urls.CaptchaRequiredCheckURL + $.trim($("#hidJourneyTime").val());
                         i = i + "&hidPostalCode=" + HomeCommonService.contractType.HouseDetails.PostalCode;
-                        i = i + "&hidSelectedPolicyHolderDateofBirthDayValue=" + w.getDate().toString();
-                        i = i + "&hidSelectedPolicyHolderDateofBirthMonthValue=" + (w.getMonth() + 1).toString();
-                        i = i + "&hidSelectedPolicyHolderDateofBirthYearValue=" + w.getFullYear().toString();
-                        i = i + "&hidSelectedInsuranceStartDateDayValue=" + b.getDate().toString();
-                        i = i + "&hidSelectedInsuranceStartDateMonthValue=" + (b.getMonth() + 1).toString();
-                        i = i + "&hidSelectedInsuranceStartDateYearValue=" + b.getFullYear().toString();
-                        HomeCommonService.isCJ ? (k = HomeCommonService.captchaRequired(i), n[0].IsCaptchaRequired = k, HomeCommonService.isCaptchaRequiredForAutomation = k) : n[0].IsCaptchaRequired = !1;
-                        d = $.trim($("#hidEmailIdFromSSO").val());
-                        d && (n[0].SelectedValue = d);
-                        n[0].SelectedValue && (n[0].SelectedValue.indexOf("*") < 0 && (PreviousEmail = n[0].SelectedValue), g = "", g = EmailMask(n[0].SelectedValue), n[0].SelectedValue = g, n[0].Title += " (Utilizaste éste en la anterior comparativa. Si quieres, puedes cambiarlo)");
+                        i = i + "&hidSelectedPolicyHolderDateofBirthDayValue=" + b.getDate().toString();
+                        i = i + "&hidSelectedPolicyHolderDateofBirthMonthValue=" + (b.getMonth() + 1).toString();
+                        i = i + "&hidSelectedPolicyHolderDateofBirthYearValue=" + b.getFullYear().toString();
+                        i = i + "&hidSelectedInsuranceStartDateDayValue=" + k.getDate().toString();
+                        i = i + "&hidSelectedInsuranceStartDateMonthValue=" + (k.getMonth() + 1).toString();
+                        i = i + "&hidSelectedInsuranceStartDateYearValue=" + k.getFullYear().toString();
+
+                        //Esto lo he cambiado
+                        HomeCommonService.isCJ ? (d = HomeCommonService.captchaRequired(i), n[0].IsCaptchaRequired = d, HomeCommonService.isCaptchaRequiredForAutomation = d) : n[0].IsCaptchaRequired = !1;
+                        
+                        g = $.trim($("#hidEmailIdFromSSO").val());
+                        g && (n[0].SelectedValue = g);
+                        n[0].SelectedValue && (n[0].SelectedValue.indexOf("*") < 0 && (PreviousEmail = n[0].SelectedValue), nt = "", nt = EmailMask(n[0].SelectedValue), n[0].SelectedValue = nt, n[0].Title += " (Utilizaste éste en la anterior comparativa. Si quieres, puedes cambiarlo)");
                         HomeCommonService.appendTemplateTo(r, n[0], CommonData.Constants.CJQuestionTemplateContainer);
                         HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation);
                         HomeCommonService.isCJ && upaCommonService.isUPAEnable && upaCommonService.showUpaComponent();
-                        n[1] !== null && n[1] !== undefined && n[1] !== "" && (!upaAutoPopulateService.IsSignIn && n[1].SelectedValue && n[1].IsMaskingEnable ? (HomeCommonService.isCJ && (n[1].Title = "Teléfono"), n[1].SelectedValue.indexOf("●") < 0 && (PreviousPhone = n[1].SelectedValue), nt = "", nt = HomeCommonService.isCJ ? MaskPhoneNumber(n[1].SelectedValue) : n[1].SelectedValue, n[1].SelectedValue = nt) : (t = HomeCommonService.getSelectedValueFromContract(n[1].RiskNode), upaAutoPopulateService.IsSignIn && upaAutoPopulateService.UPAData ? (tt = upaAutoPopulateService.UPAData.mobileNumber, n[1].SelectedValue = MaskPhoneNumber(tt), PreviousPhone = tt) : n[1].SelectedValue = t), $.get(CommonData.Urls.TemplateURL + n[1].TemplateName, function(t) {
+                        n[1] !== null && n[1] !== undefined && n[1] !== "" && (!upaAutoPopulateService.IsSignIn && n[1].SelectedValue && n[1].IsMaskingEnable ? (HomeCommonService.isCJ && (n[1].Title = "Teléfono"), n[1].SelectedValue.indexOf("●") < 0 && (PreviousPhone = n[1].SelectedValue), tt = "", tt = HomeCommonService.isCJ ? MaskPhoneNumber(n[1].SelectedValue) : n[1].SelectedValue, n[1].SelectedValue = tt) : (t = HomeCommonService.getSelectedValueFromContract(n[1].RiskNode), l = upaAutoPopulateService.UPAData.mobileNumber, l && upaAutoPopulateService.IsSignIn ? (n[1].SelectedValue = MaskPhoneNumber(l), PreviousPhone = l) : n[1].SelectedValue = t), $.get(CommonData.Urls.TemplateURL + n[1].TemplateName, function(t) {
                             upaCommonService.isUPAEnable ? (HomeCommonService.appendTemplateTo(t, n[1], "appendPhoneTemplate"), HomeCommonService.appendTemplateTo(t, n[1], "appendPhoneFailTemplate")) : (HomeCommonService.appendTemplateTo(t, n[1], "appendPhoneTemplate"), HomeCommonService.manageNavigationButtons(u, HomeCommonService.isCJ, n[0].QuestionKey === CommonData.QuestionKeys.HouseSection.Occupation));
                             upaCommonService.isUPAEnable && !HomeCommonService.isCJ && $("#divEmail").hide()
                         }));
@@ -4890,13 +4897,15 @@ var PreviousEmail = "",
             }, 2e3) : HomeCommonService.isCJ && upaCommonService.isUPAEnable && n[0].QuestionKey != CommonData.QuestionKeys.OtherSection.Email ? HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent) : HomeCommonService.isCJ && !upaCommonService.isUPAEnable ? HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent) : HomeCommonService.isCJ || HomeCommonService.pushDataLayerEvent(HomeCommonService.dataLayerEvent);
             HomeCommonService.selectedItem = {};
             c || (this.currentQuestion = n[n.length - 1]);
-            //Esto lo he Quitado
-            //HomeCommonService.isCJ && (HomeCommonService.isBrowserButtonClicked || cj.manageHash(l), progressBar.updateProgress(n[0].QuestionNumber), HomeCommonService.ElementScrollIntoView("cj-wrapper"), l === 1 && document.readyState === "interactive" && $("head").append('<link  href="' + CommonData.Urls.NEW_COOKIE_CSS + '" rel="stylesheet" type="text/css" />'), l === 2 && ReCaptchaV3Service && ReCaptchaV3Service.InitCaptcha("https://seguro-hogar.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi), HomeCommonService.isIPTrackerExecuted == !1 && IPTrackerService && (HomeCommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-hogar.rastreator.com", CommonData.Urls.GetIPTrackerModelApi)), upaCommonService.isUserLoggedIn = upaCommonService.getCookie("verifieduserInfo") != null ? !0 : !1, upaCommonService.showHideUPALoginIcon());
-            HomeCommonService.isCJ && (HomeCommonService.isBrowserButtonClicked || cj.manageHash(a), progressBar.updateProgress(n[0].QuestionNumber), HomeCommonService.ElementScrollIntoView("cj-wrapper"), a === 1 && document.readyState === "interactive" && $("head").append('<link  href="' + CommonData.Urls.NEW_COOKIE_CSS + '" rel="stylesheet" type="text/css" />'), a === 2, HomeCommonService.isIPTrackerExecuted == !1 && IPTrackerService && (HomeCommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-hogar.rastreator.com", CommonData.Urls.GetIPTrackerModelApi)), upaCommonService.showHideUPALoginIcon());
 
+
+            //Esto lo he quitado
+            //HomeCommonService.isCJ && (HomeCommonService.isBrowserButtonClicked || cj.manageHash(a), progressBar.updateProgress(n[0].QuestionNumber), HomeCommonService.ElementScrollIntoView("cj-wrapper"), a === 1 && document.readyState === "interactive" && $("head").append('<link  href="' + CommonData.Urls.NEW_COOKIE_CSS + '" rel="stylesheet" type="text/css" />'), a === 2 && ReCaptchaV3Service && ReCaptchaV3Service.InitCaptcha("https://seguro-hogar.rastreator.com", CommonData.Urls.GetCaptchaV3ModelApi), HomeCommonService.isIPTrackerExecuted == !1 && IPTrackerService && (HomeCommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-hogar.rastreator.com", CommonData.Urls.GetIPTrackerModelApi)), upaCommonService.showHideUPALoginIcon());
+
+
+            HomeCommonService.isCJ && (HomeCommonService.isBrowserButtonClicked || cj.manageHash(a), progressBar.updateProgress(n[0].QuestionNumber), HomeCommonService.ElementScrollIntoView("cj-wrapper"), a === 1 && document.readyState === "interactive" && $("head").append('<link  href="' + CommonData.Urls.NEW_COOKIE_CSS + '" rel="stylesheet" type="text/css" />'), a === 2, HomeCommonService.isIPTrackerExecuted == !1 && IPTrackerService && (HomeCommonService.isIPTrackerExecuted = !0, IPTrackerService.InitIPTracker("https://seguro-hogar.rastreator.com", CommonData.Urls.GetIPTrackerModelApi)), upaCommonService.showHideUPALoginIcon());
             maskingDob()
         },
-
         answerQuestion: function() {},
         moveNext: function() {},
         movePrevious: function() {
@@ -5367,12 +5376,8 @@ var PreviousEmail = "",
             }
         },
         updateQuestionModelDependencies: function() {
-            var n = HomeCommonService.currentQuestion.DependentMethods,
-                t = HomeCommonService.contractType;
-            HomeCommonService.WebHTTPCall(CommonData.Urls.QuestionAPI + CommonData.Constants.CJQuestionAPIKey, CommonData.Constants.CJQuestionAPIKey, 14, !1, "POST", JSON.stringify({
-                ContractType: t,
-                DependentMethods: n
-            }))
+            var n = JSON.stringify(HomeCommonService.contractType);
+            HomeCommonService.WebHTTPCall(CommonData.Urls.QuestionAPI + CommonData.Constants.CJQuestionAPIKey, CommonData.Constants.CJQuestionAPIKey, 14, !1, "POST", n)
         },
         setCDN: function(n) {
             n && (CommonData.Urls.JS_CDN = n.BaseJsUrl, CommonData.Urls.Image_CDN = n.BaseImageUrl, CommonData.Urls.CSS_CDN = n.BaseCssUrl, CommonData.Urls.NEW_COOKIE_CSS = n.NewCookieCssUrl, CommonData.Urls.NEW_COOKIE_JS = n.NewCookieJsUrl, this.manageHelpWindowButtons(n))
@@ -5497,6 +5502,8 @@ function HandleResponse() {
                     HomeCommonService.questionMaster = t.questionModel;
                     HomeCommonService.isCJ = !0;
                     HomeCommonService.contractType = t.contract;
+                    HomeCommonService.setCDN(t.resourceModel);
+                    HomeCommonService.questionMaster = HomeCommonService.questionMaster;
                     HomeCommonService.currentQuestion && HomeCommonService.currentQuestion.HasDependents ? (u = $.grep(HomeCommonService.questionMaster, function(n) {
                         return n.QuestionKey === HomeCommonService.currentQuestion.QuestionKey
                     }), HomeCommonService.currentQuestion = u[0], HomeCommonService.renderQuestion(HomeCommonService.currentQuestion.NextQuestionKey)) : HomeCommonService.renderQuestion(HomeCommonService.questionMaster[questionIndex].QuestionKey);
@@ -5800,11 +5807,13 @@ var digitsOnly = /[1234567890]/g,
                 case CommonData.QuestionKeys.PolicyHolderSection.HabitualPostalCode:
                     i = HomeValidationService.validateHabitualPostalCode(t);
                     break;
+
                 case CommonData.QuestionKeys.OtherSection.Email:
                     i = HomeValidationService.validateVCEmailQuestion(t);
                     break;
                 case CommonData.QuestionKeys.OtherSection.Phone:
                     i = HomeValidationService.validatePhone(t)
+                
             }
             return i
         },
@@ -6774,18 +6783,18 @@ IPTrackerService.InitIPTracker = function(n, t) {
                             n.end = n.begin = h.numericInput ? f.call(i, a) : a;
                             break
                         }
-                    default:
-                        var c = n.begin,
-                            v = e.call(i, c, !0),
-                            s = f.call(i, -1 !== v || u.call(i, 0) ? v : -1);
-                        if (c <= s) n.end = n.begin = u.call(i, c, !1, !0) ? c : f.call(i, c);
-                        else {
-                            var y = b.validPositions[v],
-                                l = r.getTestTemplate.call(i, s, y ? y.match.locator : void 0, y),
-                                p = r.getPlaceholder.call(i, s, l.match);
-                            ("" === p || o.call(i)[s] === p || !0 === l.match.optionalQuantifier || !0 === l.match.newBlockMarker) && (u.call(i, s, h.keepStatic, !0) || l.match.def !== p) || (w = f.call(i, s), (w <= c || c === s) && (s = w));
-                            n.end = n.begin = s
-                        }
+                        default:
+                            var c = n.begin,
+                                v = e.call(i, c, !0),
+                                s = f.call(i, -1 !== v || u.call(i, 0) ? v : -1);
+                            if (c <= s) n.end = n.begin = u.call(i, c, !1, !0) ? c : f.call(i, c);
+                            else {
+                                var y = b.validPositions[v],
+                                    l = r.getTestTemplate.call(i, s, y ? y.match.locator : void 0, y),
+                                    p = r.getPlaceholder.call(i, s, l.match);
+                                ("" === p || o.call(i)[s] === p || !0 === l.match.optionalQuantifier || !0 === l.match.newBlockMarker) && (u.call(i, s, h.keepStatic, !0) || l.match.def !== p) || (w = f.call(i, s), (w <= c || c === s) && (s = w));
+                                n.end = n.begin = s
+                            }
                 }
                 return n
             }
